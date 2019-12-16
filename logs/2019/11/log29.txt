@@ -1,0 +1,281 @@
+[2019-11-29 00:02:33] [187.101.216.253 / Conn #0] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36", "Content-Length": "0"}
+[2019-11-29 00:02:34] [187.101.216.253 / Conn #0] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 00:02:33 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 00:02:34] [SERVER] Cached "/homepage.html" (6143 bytes).
+[2019-11-29 00:02:34] [187.101.216.253 / Conn #0] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 00:02:34] [187.101.216.253 / Conn #0] Connection terminated
+[2019-11-29 00:04:24] [201.236.250.177 / Conn #1] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7", "Content-Length": "0"}
+[2019-11-29 00:04:24] [201.236.250.177 / Conn #1] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 00:04:24 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 00:04:24] [201.236.250.177 / Conn #1] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 00:04:25] [201.236.250.177 / Conn #1] Connection terminated
+[2019-11-29 00:08:49] [45.83.64.113 / Conn #2] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:65.0) Gecko/20100101 Firefox/65.0", "Accept": "*/*", "Accept-Language": "en;q=0.7,en-US;q=0.3", "Cache-Control": "no-cache", "Connection": "keep-alive", "Pragma": "no-cache", "Accept-Encoding": "gzip"}
+[2019-11-29 00:08:49] [45.83.64.113 / Conn #2] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 00:08:49 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 00:08:49] [45.83.64.113 / Conn #2] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 00:08:50] [45.83.64.113 / Conn #2] Connection terminated
+[2019-11-29 00:52:54] [159.203.201.86 / Conn #3] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 zgrab/0.x", "Accept": "*/*", "Accept-Encoding": "gzip"}
+[2019-11-29 00:52:54] [159.203.201.86 / Conn #3] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 00:52:54 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 00:52:54] [159.203.201.86 / Conn #3] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 00:52:55] [159.203.201.86 / Conn #3] Connection terminated
+[2019-11-29 01:03:34] [170.238.36.21 / Conn #4] [HTTP-REQUEST] {"GET": "/", "User-Agent": "masscan/1.0 (https://github.com/robertdavidgraham/masscan)", "Accept": "*/*"}
+[2019-11-29 01:03:34] [170.238.36.21 / Conn #4] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 01:03:34 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 01:03:34] [170.238.36.21 / Conn #4] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 01:03:38] [170.238.36.21 / Conn #4] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 01:03:38] [170.238.36.21 / Conn #4] Connection terminated
+[2019-11-29 01:19:43] [221.122.108.139 / Conn #5] Connection terminated
+[2019-11-29 01:29:53] [84.131.89.236 / Conn #6] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213", "Accept": "text/plain,text/html"}
+[2019-11-29 01:29:53] [84.131.89.236 / Conn #6] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 01:29:53 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 01:29:53] [84.131.89.236 / Conn #6] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 01:29:56] [84.131.89.236 / Conn #6] Connection terminated
+[2019-11-29 01:39:11] [103.90.205.61 / Conn #7] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36", "Content-Length": "0"}
+[2019-11-29 01:39:11] [103.90.205.61 / Conn #7] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 01:39:11 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 01:39:11] [103.90.205.61 / Conn #7] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 01:39:11] [103.90.205.61 / Conn #7] Connection terminated
+[2019-11-29 03:26:20] [51.38.239.33 / Conn #8] [HTTP-REQUEST] {"GET": "/", "User-Agent": "masscan/1.0 (https://github.com/robertdavidgraham/masscan)", "Accept": "*/*"}
+[2019-11-29 03:26:20] [51.38.239.33 / Conn #8] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 03:26:20 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 03:26:20] [51.38.239.33 / Conn #8] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 03:26:24] [51.38.239.33 / Conn #8] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 03:26:24] [51.38.239.33 / Conn #8] Connection terminated
+[2019-11-29 03:30:33] [173.212.204.184 / Conn #9] [HTTP-REQUEST] {"GET": "/", "User-Agent": "masscan/1.0 (https://github.com/robertdavidgraham/masscan)", "Accept": "*/*"}
+[2019-11-29 03:30:33] [173.212.204.184 / Conn #9] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 03:30:33 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 03:30:33] [173.212.204.184 / Conn #9] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 03:30:37] [173.212.204.184 / Conn #9] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 03:30:37] [173.212.204.184 / Conn #9] Connection terminated
+[2019-11-29 03:48:03] [41.220.23.74 / Conn #10] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36", "Content-Length": "0", "Via": "HTTP/1.1 forward.http.proxy:3128", "Connection": "keep-alive"}
+[2019-11-29 03:48:03] [41.220.23.74 / Conn #10] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 03:48:03 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 03:48:03] [41.220.23.74 / Conn #10] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 03:48:04] [41.220.23.74 / Conn #10] Connection terminated
+[2019-11-29 03:56:42] [190.186.4.225 / Conn #11] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36", "Content-Length": "0"}
+[2019-11-29 03:56:42] [190.186.4.225 / Conn #11] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 03:56:42 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 03:56:42] [190.186.4.225 / Conn #11] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 03:56:43] [190.186.4.225 / Conn #11] Connection terminated
+[2019-11-29 04:03:45] [149.36.255.195 / Conn #12] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36", "Content-Length": "0"}
+[2019-11-29 04:03:45] [149.36.255.195 / Conn #12] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 04:03:45 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 04:03:45] [149.36.255.195 / Conn #12] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 04:03:46] [149.36.255.195 / Conn #12] Connection terminated
+[2019-11-29 04:04:39] [94.102.49.193 / Conn #13] [HTTP-REQUEST] {"GET": "/", "Accept-Encoding": "identity", "Host": "176.23.117.213", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "User-Agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"}
+[2019-11-29 04:04:39] [94.102.49.193 / Conn #13] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 04:04:39 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 04:04:39] [94.102.49.193 / Conn #13] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 04:04:40] [94.102.49.193 / Conn #13] Connection terminated
+[2019-11-29 04:04:41] [94.102.49.193 / Conn #14] [HTTP-REQUEST] {"GET": "/robots.txt", "Host": "176.23.117.213", "Accept-Encoding": "identity"}
+[2019-11-29 04:04:41] [94.102.49.193 / Conn #14] [INFO] /robots.txt doesn't exist, returning 404 page.
+[2019-11-29 04:04:41] [94.102.49.193 / Conn #14] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 04:04:41 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 04:04:41] [SERVER] Cached "404.html" (533 bytes).
+[2019-11-29 04:04:41] [94.102.49.193 / Conn #14] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 04:04:42] [94.102.49.193 / Conn #14] [ERROR] java.net.SocketException: Connection reset
+[2019-11-29 04:04:42] [94.102.49.193 / Conn #14] Connection terminated
+[2019-11-29 04:04:52] [94.102.49.193 / Conn #15] [HTTP-REQUEST] {"GET": "/sitemap.xml", "Host": "176.23.117.213", "Accept-Encoding": "identity"}
+[2019-11-29 04:04:52] [94.102.49.193 / Conn #15] [INFO] /sitemap.xml doesn't exist, returning 404 page.
+[2019-11-29 04:04:52] [94.102.49.193 / Conn #15] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 04:04:52 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 04:04:52] [94.102.49.193 / Conn #15] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 04:04:56] [94.102.49.193 / Conn #15] [ERROR] java.net.SocketException: Connection reset
+[2019-11-29 04:04:56] [94.102.49.193 / Conn #15] Connection terminated
+[2019-11-29 04:05:10] [31.179.251.101 / Conn #16] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7", "Content-Length": "0"}
+[2019-11-29 04:05:10] [31.179.251.101 / Conn #16] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 04:05:10 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 04:05:10] [31.179.251.101 / Conn #16] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 04:05:11] [31.179.251.101 / Conn #16] Connection terminated
+[2019-11-29 04:08:01] [93.152.194.180 / Conn #17] Connection terminated
+[2019-11-29 04:21:55] [103.75.32.238 / Conn #18] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36", "Content-Length": "0"}
+[2019-11-29 04:21:55] [103.75.32.238 / Conn #18] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 04:21:55 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 04:21:55] [103.75.32.238 / Conn #18] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 04:21:55] [103.75.32.238 / Conn #18] Connection terminated
+[2019-11-29 05:15:02] [203.210.85.142 / Conn #19] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36", "Content-Length": "0"}
+[2019-11-29 05:15:02] [203.210.85.142 / Conn #19] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 05:15:02 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 05:15:02] [203.210.85.142 / Conn #19] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 05:15:02] [203.210.85.142 / Conn #19] Connection terminated
+[2019-11-29 06:19:21] [176.120.199.95 / Conn #20] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36", "Content-Length": "0"}
+[2019-11-29 06:19:21] [176.120.199.95 / Conn #20] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 06:19:21 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 06:19:21] [176.120.199.95 / Conn #20] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 06:19:21] [176.120.199.95 / Conn #20] Connection terminated
+[2019-11-29 06:34:28] [5.189.163.253 / Conn #21] [HTTP-REQUEST] {"GET": "/", "User-Agent": "masscan/1.0 (https://github.com/robertdavidgraham/masscan)", "Accept": "*/*"}
+[2019-11-29 06:34:28] [5.189.163.253 / Conn #21] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 06:34:28 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 06:34:28] [5.189.163.253 / Conn #21] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 06:34:32] [5.189.163.253 / Conn #21] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 06:34:32] [5.189.163.253 / Conn #21] Connection terminated
+[2019-11-29 07:26:45] [5.75.34.23 / Conn #22] [HTTP-REQUEST] {"POST": "/editBlackAndWhiteList", "Authorization": "Basic YWRtaW46ezEyMjEzQkQxLTY5QzctNDg2Mi04NDNELTI2MDUwMEQxREE0MH0=", "Host": "213.117.23.176:80", "User-Agent": "curl/7.29.0", "Accept": "*/*", "Content-Length": "617", "Content-Type": "application/x-www-form-urlencoded"}
+[2019-11-29 07:26:45] [5.75.34.23 / Conn #22] [INFO] /editBlackAndWhiteList.html doesn't exist, returning 404 page.
+[2019-11-29 07:26:45] [5.75.34.23 / Conn #22] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 07:26:45 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 07:26:45] [5.75.34.23 / Conn #22] Connection terminated
+[2019-11-29 07:46:37] [85.105.78.158 / Conn #23] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36", "Content-Length": "0"}
+[2019-11-29 07:46:37] [85.105.78.158 / Conn #23] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 07:46:37 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 07:46:37] [85.105.78.158 / Conn #23] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 07:46:37] [85.105.78.158 / Conn #23] Connection terminated
+[2019-11-29 09:07:51] [209.97.190.223 / Conn #24] [HTTP-REQUEST] {"GET": "/", "User-Agent": "masscan/1.0 (https://github.com/robertdavidgraham/masscan)", "Accept": "*/*"}
+[2019-11-29 09:07:51] [209.97.190.223 / Conn #24] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 09:07:51 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 09:07:51] [209.97.190.223 / Conn #24] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 09:07:55] [209.97.190.223 / Conn #24] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 09:07:55] [209.97.190.223 / Conn #24] Connection terminated
+[2019-11-29 09:52:36] [109.109.234.26 / Conn #25] [HTTP-REQUEST] {"GET": "HTTP/1.1", "Accept": "*/*", "Accept-Language": "en-us", "Accept-Encoding": "gzip, deflate", "User-Agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98)", "Host": "176.23.117.213", "Connection": "Close"}
+[2019-11-29 09:52:36] [109.109.234.26 / Conn #25] [INFO] HTTP/1.1 doesn't exist, returning 404 page.
+[2019-11-29 09:52:36] [109.109.234.26 / Conn #25] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 09:52:36 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 09:52:36] [109.109.234.26 / Conn #25] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 09:52:40] [109.109.234.26 / Conn #25] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 09:52:40] [109.109.234.26 / Conn #25] Connection terminated
+[2019-11-29 09:52:40] [109.109.234.26 / Conn #26] [HTTP-REQUEST] {"GET": "/.env", "Accept": "*/*", "Accept-Language": "en-us", "Accept-Encoding": "gzip, deflate", "User-Agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98)", "Host": "176.23.117.213", "Connection": "Close"}
+[2019-11-29 09:52:40] [109.109.234.26 / Conn #26] [INFO] /.env doesn't exist, returning 404 page.
+[2019-11-29 09:52:40] [109.109.234.26 / Conn #26] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 09:52:40 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 09:52:40] [109.109.234.26 / Conn #26] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 09:52:44] [109.109.234.26 / Conn #26] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 09:52:44] [109.109.234.26 / Conn #26] Connection terminated
+[2019-11-29 10:26:02] [180.177.104.161 / Conn #27] [HTTP-REQUEST] {"POST": "/editBlackAndWhiteList", "Accept-Encoding": "identity", "Content-Length": "586", "Accept-Language": "en-us", "Host": "176.23.117.213", "Accept": "*/*", "User-Agent": "ApiTool", "Connection": "close", "Cache-Control": "max-age=0", "Content-Type": "text/xml", "Authorization": "Basic YWRtaW46ezEyMjEzQkQxLTY5QzctNDg2Mi04NDNELTI2MDUwMEQxREE0MH0="}
+[2019-11-29 10:26:02] [180.177.104.161 / Conn #27] [INFO] /editBlackAndWhiteList.html doesn't exist, returning 404 page.
+[2019-11-29 10:26:02] [180.177.104.161 / Conn #27] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 10:26:02 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 10:26:06] [180.177.104.161 / Conn #27] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 10:26:06] [180.177.104.161 / Conn #27] Connection terminated
+[2019-11-29 11:10:31] [185.173.35.17 / Conn #28] [HTTP-REQUEST] {"GET": "/", "User-Agent": "NetSystemsResearch studies the availability of various services across the internet. Our website is netsystemsresearch.com", "Accept": "*/*"}
+[2019-11-29 11:10:31] [185.173.35.17 / Conn #28] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 11:10:31 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 11:10:31] [185.173.35.17 / Conn #28] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 11:10:35] [185.173.35.17 / Conn #28] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 11:10:35] [185.173.35.17 / Conn #28] Connection terminated
+[2019-11-29 12:02:51] [173.249.16.234 / Conn #29] [HTTP-REQUEST] {"GET": "/", "User-Agent": "masscan/1.0 (https://github.com/robertdavidgraham/masscan)", "Accept": "*/*"}
+[2019-11-29 12:02:51] [173.249.16.234 / Conn #29] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 12:02:51 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 12:02:51] [173.249.16.234 / Conn #29] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 12:02:55] [173.249.16.234 / Conn #29] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 12:02:55] [173.249.16.234 / Conn #29] Connection terminated
+[2019-11-29 14:41:32] [39.97.235.30 / Conn #30] [ERROR] java.net.SocketException: Connection reset
+[2019-11-29 14:41:32] [39.97.235.30 / Conn #30] Connection terminated
+[2019-11-29 14:41:32] [39.97.235.30 / Conn #31] [ERROR] java.net.SocketException: Connection reset
+[2019-11-29 14:41:32] [39.97.235.30 / Conn #31] Connection terminated
+[2019-11-29 15:30:51] [37.27.3.126 / Conn #32] Connection terminated
+[2019-11-29 15:30:57] [37.27.3.126 / Conn #33] Connection terminated
+[2019-11-29 15:45:14] [188.121.126.193 / Conn #34] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36", "Content-Length": "0", "X-Loop-Control": "188.121.126.193 CF71E0329BB2AF6F90D1563AB0A5151E, 1.0 internal", "Cache-Control": "max-age=2419200", "Connection": "keep-alive"}
+[2019-11-29 15:45:14] [188.121.126.193 / Conn #34] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 15:45:14 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 15:45:14] [188.121.126.193 / Conn #34] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 15:45:14] [188.121.126.193 / Conn #34] [ERROR] java.net.SocketException: Connection reset
+[2019-11-29 15:45:14] [188.121.126.193 / Conn #34] Connection terminated
+[2019-11-29 15:45:35] [188.121.126.193 / Conn #35] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36", "Content-Length": "0", "X-Loop-Control": "188.121.126.193 CF71E0329BB2AF6F90D1563AB0A5151E, 1.0 internal", "Cache-Control": "max-age=2419200", "Connection": "keep-alive"}
+[2019-11-29 15:45:35] [188.121.126.193 / Conn #35] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 15:45:35 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 15:45:35] [188.121.126.193 / Conn #35] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 15:45:35] [188.121.126.193 / Conn #35] [ERROR] java.net.SocketException: Connection reset
+[2019-11-29 15:45:35] [188.121.126.193 / Conn #35] Connection terminated
+[2019-11-29 16:06:14] [162.243.205.148 / Conn #36] [HTTP-REQUEST] {"GET": "HTTP/1.1", "Accept": "*/*", "Accept-Language": "en-us", "Accept-Encoding": "gzip, deflate", "User-Agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98)", "Host": "176.23.117.213", "Connection": "Close"}
+[2019-11-29 16:06:14] [162.243.205.148 / Conn #36] [INFO] HTTP/1.1 doesn't exist, returning 404 page.
+[2019-11-29 16:06:14] [162.243.205.148 / Conn #36] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 16:06:14 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 16:06:14] [162.243.205.148 / Conn #36] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 16:06:18] [162.243.205.148 / Conn #36] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 16:06:18] [162.243.205.148 / Conn #36] Connection terminated
+[2019-11-29 16:06:18] [162.243.205.148 / Conn #37] [HTTP-REQUEST] {"GET": "/.env", "Accept": "*/*", "Accept-Language": "en-us", "Accept-Encoding": "gzip, deflate", "User-Agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98)", "Host": "176.23.117.213", "Connection": "Close"}
+[2019-11-29 16:06:18] [162.243.205.148 / Conn #37] [INFO] /.env doesn't exist, returning 404 page.
+[2019-11-29 16:06:18] [162.243.205.148 / Conn #37] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 16:06:18 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 16:06:18] [162.243.205.148 / Conn #37] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 16:06:22] [162.243.205.148 / Conn #37] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 16:06:22] [162.243.205.148 / Conn #37] Connection terminated
+[2019-11-29 16:32:23] [103.138.145.228 / Conn #38] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36", "Content-Length": "0"}
+[2019-11-29 16:32:23] [103.138.145.228 / Conn #38] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 16:32:23 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 16:32:23] [103.138.145.228 / Conn #38] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 16:32:24] [103.138.145.228 / Conn #38] Connection terminated
+[2019-11-29 16:43:38] [157.230.216.203 / Conn #39] [HTTP-REQUEST] {"GET": "/", "User-Agent": "Mozilla/0 (Project 25499 Scanner)", "Host": "176.23.117.213"}
+[2019-11-29 16:43:38] [157.230.216.203 / Conn #39] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 16:43:38 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 16:43:38] [157.230.216.203 / Conn #39] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 16:43:39] [157.230.216.203 / Conn #39] Connection terminated
+[2019-11-29 16:43:39] [157.230.216.203 / Conn #40] Connection terminated
+[2019-11-29 16:43:39] [157.230.216.203 / Conn #41] Connection terminated
+[2019-11-29 16:43:39] [157.230.216.203 / Conn #42] Connection terminated
+[2019-11-29 16:43:39] [157.230.216.203 / Conn #43] [HTTP-REQUEST] {"GET": "/requested.html", "Host": "176.23.117.213 "}
+[2019-11-29 16:43:39] [157.230.216.203 / Conn #43] [INFO] /requested.html doesn't exist, returning 404 page.
+[2019-11-29 16:43:39] [157.230.216.203 / Conn #43] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 16:43:39 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 16:43:39] [157.230.216.203 / Conn #43] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 16:43:40] [157.230.216.203 / Conn #43] Connection terminated
+[2019-11-29 16:59:57] [193.9.46.185 / Conn #44] Connection terminated
+[2019-11-29 17:32:17] [5.189.155.14 / Conn #45] [HTTP-REQUEST] {"GET": "/", "User-Agent": "masscan/1.0 (https://github.com/robertdavidgraham/masscan)", "Accept": "*/*"}
+[2019-11-29 17:32:17] [5.189.155.14 / Conn #45] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 17:32:17 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 17:32:17] [5.189.155.14 / Conn #45] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 17:32:21] [5.189.155.14 / Conn #45] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 17:32:21] [5.189.155.14 / Conn #45] Connection terminated
+[2019-11-29 18:30:07] [128.14.133.58 / Conn #46] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36 ", "Accept": "*/*", "Accept-Encoding": "gzip"}
+[2019-11-29 18:30:07] [128.14.133.58 / Conn #46] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 18:30:07 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 18:30:07] [128.14.133.58 / Conn #46] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 18:30:07] [128.14.133.58 / Conn #46] Connection terminated
+[2019-11-29 19:26:32] [195.154.56.58 / Conn #47] [HTTP-REQUEST] {"GET": "/", "User-Agent": "masscan/1.0 (https://github.com/robertdavidgraham/masscan)", "Accept": "*/*"}
+[2019-11-29 19:26:32] [195.154.56.58 / Conn #47] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 19:26:32 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 19:26:32] [195.154.56.58 / Conn #47] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 19:26:36] [195.154.56.58 / Conn #47] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 19:26:36] [195.154.56.58 / Conn #47] Connection terminated
+[2019-11-29 19:52:54] [46.46.107.123 / Conn #48] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36", "Content-Length": "0"}
+[2019-11-29 19:52:54] [46.46.107.123 / Conn #48] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 19:52:54 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 19:52:54] [46.46.107.123 / Conn #48] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 19:52:54] [46.46.107.123 / Conn #48] Connection terminated
+[2019-11-29 21:00:49] [185.112.249.139 / Conn #49] [HTTP-REQUEST] {"GET": "/"}
+[2019-11-29 21:00:49] [185.112.249.139 / Conn #49] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 21:00:49 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 21:00:49] [185.112.249.139 / Conn #49] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 21:00:53] [185.112.249.139 / Conn #49] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 21:00:53] [185.112.249.139 / Conn #49] Connection terminated
+[2019-11-29 21:12:11] [45.238.118.126 / Conn #50] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36", "Content-Length": "0"}
+[2019-11-29 21:12:11] [45.238.118.126 / Conn #50] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 21:12:11 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 21:12:11] [45.238.118.126 / Conn #50] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 21:12:12] [45.238.118.126 / Conn #50] Connection terminated
+[2019-11-29 22:33:50] [173.249.2.122 / Conn #51] [HTTP-REQUEST] {"GET": "/", "User-Agent": "masscan/1.0 (https://github.com/robertdavidgraham/masscan)", "Accept": "*/*"}
+[2019-11-29 22:33:50] [173.249.2.122 / Conn #51] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 22:33:50 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 22:33:50] [173.249.2.122 / Conn #51] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 22:33:54] [173.249.2.122 / Conn #51] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 22:33:54] [173.249.2.122 / Conn #51] Connection terminated
+[2019-11-29 23:03:38] [45.148.10.83 / Conn #52] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36", "Accept": "*/*", "Accept-Encoding": "gzip"}
+[2019-11-29 23:03:38] [45.148.10.83 / Conn #52] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:03:38 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 23:03:38] [45.148.10.83 / Conn #52] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 23:03:38] [45.148.10.83 / Conn #52] Connection terminated
+[2019-11-29 23:12:05] [185.37.212.6 / Conn #53] [HTTP-REQUEST] {"GET": "/", "User-Agent": "masscan/1.0 (https://github.com/robertdavidgraham/masscan)", "Accept": "*/*"}
+[2019-11-29 23:12:05] [185.37.212.6 / Conn #53] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:12:05 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 23:12:05] [185.37.212.6 / Conn #53] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 23:12:09] [185.37.212.6 / Conn #53] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 23:12:09] [185.37.212.6 / Conn #53] Connection terminated
+[2019-11-29 23:26:10] [122.51.94.127 / Conn #54] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 23:26:10] [122.51.94.127 / Conn #54] Connection terminated
+[2019-11-29 23:26:10] [122.51.94.127 / Conn #55] [HTTP-REQUEST] {"GET": "/TP/public/index.php", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6)", "Connection": "close", "Accept-Encoding": "gzip"}
+[2019-11-29 23:26:10] [122.51.94.127 / Conn #55] [INFO] /TP/public/index.php doesn't exist, returning 404 page.
+[2019-11-29 23:26:10] [122.51.94.127 / Conn #55] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:26:10 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 23:26:10] [122.51.94.127 / Conn #55] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 23:26:11] [122.51.94.127 / Conn #56] [HTTP-REQUEST] {"GET": "/TP/index.php", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6)", "Connection": "close", "Accept-Encoding": "gzip"}
+[2019-11-29 23:26:11] [122.51.94.127 / Conn #56] [INFO] /TP/index.php doesn't exist, returning 404 page.
+[2019-11-29 23:26:11] [122.51.94.127 / Conn #56] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:26:11 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 23:26:11] [122.51.94.127 / Conn #56] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 23:26:11] [122.51.94.127 / Conn #57] [HTTP-REQUEST] {"GET": "/thinkphp/html/public/index.php", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6)", "Connection": "close", "Accept-Encoding": "gzip"}
+[2019-11-29 23:26:11] [122.51.94.127 / Conn #57] [INFO] /thinkphp/html/public/index.php doesn't exist, returning 404 page.
+[2019-11-29 23:26:11] [122.51.94.127 / Conn #57] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:26:11 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 23:26:11] [122.51.94.127 / Conn #57] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 23:26:12] [122.51.94.127 / Conn #58] [HTTP-REQUEST] {"GET": "/html/public/index.php", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6)", "Connection": "close", "Accept-Encoding": "gzip"}
+[2019-11-29 23:26:12] [122.51.94.127 / Conn #58] [INFO] /html/public/index.php doesn't exist, returning 404 page.
+[2019-11-29 23:26:12] [122.51.94.127 / Conn #58] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:26:12 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 23:26:12] [122.51.94.127 / Conn #58] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 23:26:12] [122.51.94.127 / Conn #59] [HTTP-REQUEST] {"GET": "/public/index.php", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6)", "Connection": "close", "Accept-Encoding": "gzip"}
+[2019-11-29 23:26:12] [122.51.94.127 / Conn #59] [INFO] /public/index.php doesn't exist, returning 404 page.
+[2019-11-29 23:26:12] [122.51.94.127 / Conn #59] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:26:12 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 23:26:12] [122.51.94.127 / Conn #59] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 23:26:13] [122.51.94.127 / Conn #60] [HTTP-REQUEST] {"GET": "/TP/html/public/index.php", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6)", "Connection": "close", "Accept-Encoding": "gzip"}
+[2019-11-29 23:26:13] [122.51.94.127 / Conn #60] [INFO] /TP/html/public/index.php doesn't exist, returning 404 page.
+[2019-11-29 23:26:13] [122.51.94.127 / Conn #60] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:26:13 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 23:26:13] [122.51.94.127 / Conn #60] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 23:26:13] [122.51.94.127 / Conn #61] [HTTP-REQUEST] {"GET": "/elrekt.php", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6)", "Connection": "close", "Accept-Encoding": "gzip"}
+[2019-11-29 23:26:13] [122.51.94.127 / Conn #61] [INFO] /elrekt.php doesn't exist, returning 404 page.
+[2019-11-29 23:26:13] [122.51.94.127 / Conn #61] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:26:13 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 23:26:13] [122.51.94.127 / Conn #61] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #62] [HTTP-REQUEST] {"GET": "/index.php", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6)", "Connection": "close", "Accept-Encoding": "gzip"}
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #62] [INFO] /index.php doesn't exist, returning 404 page.
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #62] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:26:14 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #62] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #55] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #55] Connection terminated
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #56] [ERROR] java.net.SocketException: Connection reset
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #61] [ERROR] java.net.SocketException: Connection reset
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #57] [ERROR] java.net.SocketException: Connection reset
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #58] [ERROR] java.net.SocketException: Connection reset
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #60] [ERROR] java.net.SocketException: Connection reset
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #59] [ERROR] java.net.SocketException: Connection reset
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #57] Connection terminated
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #59] Connection terminated
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #60] Connection terminated
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #61] Connection terminated
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #58] Connection terminated
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #56] Connection terminated
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #62] Connection terminated
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #63] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows; U; Windows NT 6.0;en-US; rv:1.9.2) Gecko/20100115 Firefox/3.6)", "Connection": "close", "Accept-Encoding": "gzip"}
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #63] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:26:14 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 23:26:14] [122.51.94.127 / Conn #63] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 23:26:15] [122.51.94.127 / Conn #63] Connection terminated
+[2019-11-29 23:37:52] [206.189.37.55 / Conn #64] [HTTP-REQUEST] {"GET": "/", "User-Agent": "masscan/1.0 (https://github.com/robertdavidgraham/masscan)", "Accept": "*/*"}
+[2019-11-29 23:37:52] [206.189.37.55 / Conn #64] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:37:52 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 23:37:52] [206.189.37.55 / Conn #64] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 23:37:56] [206.189.37.55 / Conn #64] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 23:37:56] [206.189.37.55 / Conn #64] Connection terminated
+[2019-11-29 23:38:27] [207.180.234.135 / Conn #65] [HTTP-REQUEST] {"GET": "/", "User-Agent": "masscan/1.0 (https://github.com/robertdavidgraham/masscan)", "Accept": "*/*"}
+[2019-11-29 23:38:27] [207.180.234.135 / Conn #65] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Fri Nov 29 23:38:27 CET 2019", "Content-type": "text/html", "Content-length": "6143", "Connection": "close"}
+[2019-11-29 23:38:27] [207.180.234.135 / Conn #65] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6143}
+[2019-11-29 23:38:31] [207.180.234.135 / Conn #65] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-11-29 23:38:31] [207.180.234.135 / Conn #65] Connection terminated

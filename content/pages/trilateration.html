@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="DA">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Andreas D. Kunz"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../darktheme.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+		
+	</head>
+	<body>
+		<div style="width: 250px;">
+			<a href="/"><button style="float: right; width: 70px; height: 40px">Tilbage</button></a>
+			<h1>Trilateration</h1>
+		</div>
+		<script type="text/javascript">
+			let u, g;
+
+let prevCost;
+let points;
+let unsuccessfullMoves = 0;
+let optimisingIndex;
+
+
+
+function setup() {
+  
+  optimisingIndex = 0;
+  createCanvas(1280, 700);
+  points = [
+    createVector(600, 100),
+    createVector(200, 600),
+    createVector(100, 400)
+    //createVector(100, 300),
+    //createVector(120, 400),
+    //createVector(100, 500),
+    //createVector(1000, 450)
+
+  ];
+
+  //for (let i = 0; i < 3; ++i)
+  //	points.push(createVector(random(1280), random(700)));
+
+
+  u = createVector(300, 400);
+
+  g = averageVector(points);
+  
+  mouseX = 200;
+  mouseY = 200;
+  mouseMoved();
+
+  frameRate(144);
+  
+}
+
+function keyPressed() {
+   if (++optimisingIndex >= points.length) optimisingIndex = 0;
+}
+
+
+function mouseMoved() {
+  u.x = round(mouseX);
+  u.y = round(mouseY);
+  points.forEach(function(s) {
+    s.wantedCost = dist(s.x, s.y, u.x, u.y);
+  });
+  
+}
+
+
+function draw() {
+	for (let k = 0; k < 1; ++k) {
+  background(51);
+  textSize(20);
+
+  
+
+  
+  fill(0,255,120, 255/3);
+  stroke(0,255,0);
+  points.forEach(function(s) {
+    ellipse(s.x, s.y, s.wantedCost * 2, s.wantedCost * 2);
+  });
+    
+  calcCost();
+
+  
+  fill(255);
+  points.forEach(function (s) {
+    stroke(255,0,0);
+    line(s.x, s.y, g.x, g.y);
+    stroke(0,255,0);
+    line(s.x, s.y, u.x, u.y);
+    noStroke();
+    ellipse(s.x, s.y, 10, 10);
+  });
+  
+  textSize(20);
+  fill(255);
+  for (let i = 0; i < points.length; ++i) {
+    text(points[i].wantedCost, 10, 20 + i * 20);
+    text(points[i].currCost, 600, 20 + i * 20);
+  }
+  
+  text("u.x: " + u.x, 10, 670);
+  text("u.y: " + u.y, 10, 690);
+  text("g.x: " + round(g.x), 500, 670);
+  text("g.y: " + round(g.y), 500, 690);
+  
+  let totalWantedCost = diffAll(points, "wantedCost", "currCost");
+  let totalCurrCost = averageAll(points, "currCost");
+  
+  let moveStep = totalWantedCost / 2;
+  
+  text("totalWantedCost: " + totalWantedCost, 10, 500);
+  text("totalCurrCost: " + totalCurrCost, 10, 520);
+  text("moveStep: " + moveStep * 100, 10, 540);
+  
+  let xMove = random(-moveStep, moveStep);
+  let yMove = random(-moveStep, moveStep);
+  
+  let prevCost = points[optimisingIndex].currCost;
+  g.x += xMove;
+  g.y += yMove;
+  
+  calcCost();
+  let newCost = points[optimisingIndex].currCost;
+  let wantedCost = points[optimisingIndex].wantedCost;
+  if (abs(newCost - wantedCost) > abs(prevCost - wantedCost)) {
+    g.x -= xMove;
+    g.y -= yMove;
+    ++unsuccessfullMoves;
+    
+    if (unsuccessfullMoves > 5) {
+       unsuccessfullMoves = 0;
+      if (++optimisingIndex >= points.length) optimisingIndex  = 0;
+    }
+  } else {
+    
+    unsuccessfullMoves = 0;
+  }
+
+  
+  fill(0);
+  ellipse(g.x, g.y, 10,10);
+
+  }
+}
+
+function calcCost() {
+  points.forEach(function (s) {
+    s.currCost = dist(s.x, s.y, g.x, g.y);
+  });
+}
+
+function averageVector(vectors) {
+  let x = 0;
+  let y = 0;
+  
+  vectors.forEach(function (v) {
+    x += v.x;
+    y += v.y;
+  });
+  
+  return createVector(x / vectors.length, y / vectors.length);
+}
+
+
+function sumAll(arr, field) {
+  let sum = 0;
+  arr.forEach(function (s) {
+    sum += s[field]; 
+  });
+  return sum;
+}
+
+function averageAll(arr, field) {
+  let sum = sumAll(arr, field);
+  return sum / arr.length;
+}
+
+function diffAll(arr, fieldOne, fieldTwo) {
+  let diffSum = 0;
+  arr.forEach(function(s) {
+    diffSum += abs(s[fieldOne] - s[fieldTwo]); 
+  });
+  return diffSum;
+}
+
+		</script>
+	</body>
+</html>

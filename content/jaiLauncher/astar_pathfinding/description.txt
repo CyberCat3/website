@@ -1,0 +1,1 @@
+This is an application that showcases different pathfinding algorithms. You can build a "maze" yourself and find the best path.

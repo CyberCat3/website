@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="DA">
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="Andreas D. Kunz"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="../../darktheme.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>		
+	</head>
+	<body>
+		<h1>Simon</h1>
+		<script type="text/javascript">
+			const WIDTH = 1200;
+			const HEIGHT = 800;
+			const SIDE_OFFSET = 300;
+			let jaiImage;
+			let jaibelOne = getJaibel(SIDE_OFFSET,HEIGHT/2, 0.2, 0.2, 150, "Andreas\nBTLGY-RKDQ0-LEFXE");
+			let jaibelTwo = getJaibel(WIDTH-SIDE_OFFSET,HEIGHT/2, 0.2, 0.2, 150, "Onkel Henrik\n2W2EV-34FB8-2808T");
+			let jaibels = [jaibelOne, jaibelTwo];
+
+			function setup() {
+				createCanvas(WIDTH,HEIGHT);
+				jaiImage = loadImage("../../image/Jaibel.png");
+			}
+			
+			function draw() {
+				for (let jaibel of jaibels) {
+					jaibel.update();
+				}
+				background(255);
+				//clear();
+				for (let jaibel of jaibels) {
+					jaibel.draw();
+				}
+			}
+
+			function setSign(number, sign) {
+				if ((number < 0) == (sign)) {
+					return number * -1;
+				}
+				return number;
+			}
+
+
+			function getJaibel(x, y, width, height, radius, code) {
+				return {
+					x: x,
+					y: y,
+					ogX: x,
+					ogY: y,
+					xVel: 0,
+					yVel: 0,
+					width: width,
+					height: height,
+					radius: radius,
+					radiusX: radius,
+					radiusY: radius,
+					drag: 0.9,
+					code: code,
+					reactMouse: true,
+					trigger: 0,
+					update: function () {
+						if (this.reactMouse) {
+							let dx = this.x - mouseX;
+							let dy = this.y - mouseY;
+							let _dist = dist(this.x, this.y, mouseX, mouseY);
+							if (_dist < this.radius) {
+								this.xVel += dx / 10;
+								this.yVel += dy / 10;
+								this.trigger++;
+								if (this.trigger > 200) {
+									this.reactMouse = false;
+									this.xVel *= 3;
+									this.yVel *= 3;
+									this.radiusX = 200;
+									this.radiusY = 60;
+									this.drag = 0.99;
+									this.draw = function() {
+										textSize(40);
+										textAlign(CENTER);
+										text(this.code, this.x, this.y);
+									};
+								}
+							} else {
+								if (this.trigger > 3) this.trigger -= 3;
+							}
+						} else {
+							let dx = this.ogX - this.x;
+							let dy = this.ogY - this.y
+
+							this.xVel += (Math.random() - 0.5) / 4 + dx / 1000;
+							this.yVel += (Math.random() - 0.5) / 4 + dy / 1000;
+						}
+
+						if (this.x > WIDTH - this.radiusX) {
+							this.xVel = setSign(this.xVel, false);
+							--x;
+						} else if (this.x < 0 + this.radiusX) {
+							this.xVel = setSign(this.xVel, true);
+							++x;
+						}
+						if (this.y > HEIGHT - this.radiusY) {
+							this.yVel = setSign(this.yVel, false);
+							++y;
+						} else if (this.y < 0 + this.radiusY) {
+							this.yVel = setSign(this.yVel, true);
+							--y;
+						}
+						
+						this.x += this.xVel *= this.drag;
+						this.y += this.yVel *= this.drag;
+					},
+					draw: function() {
+						imageMode(CENTER);
+						push();
+						translate(this.x,this.y);
+						scale(this.width, this.height);
+						image(jaiImage, 0, 0, jaiImage.width*(this.trigger / 100 + 1), jaiImage.height*(this.trigger / 100 + 1));
+						pop();
+					} 
+				}
+			}
+
+
+		</script>
+	</body>
+</html>

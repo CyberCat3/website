@@ -1,0 +1,1 @@
+A simple constellation simulator. Press F11 to toggle fullscreen.

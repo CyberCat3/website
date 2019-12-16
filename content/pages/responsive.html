@@ -1,0 +1,22 @@
+<DOCTYPE !html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<link rel="stylesheet" href="../darktheme.css">
+		<meta name="author" content="Andreas D. Kunz"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<p style="font-size: 2vw"> Scale Jaibel </p>
+		<img src="/image/jaibel.png" style="width: 10%; height: auto" />
+		<p> Anden Scale Jaibel </p>
+		<img src="/image/jaibel.png" style="max-width: 20%; height: auto" />
+		<br/>
+		<picture>
+  			<source srcset="/image/helicopter.png" media="(max-width: 600px)">
+			<source srcset="/image/plane.png" media="(max-width: 900px)">
+  			<source srcset="/image/tank.png">
+  			<img src="/image/plane.png" alt="plane" style="width:50%; height: auto">
+		</picture>
+	</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="DA">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="author" content="Andreas D. Kunz"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link rel="stylesheet" href="../../darktheme.css"/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
+	</head>	
+	<body>
+		<h1>Trygve</h1>
+		<script type="text/javascript">
+			const WIDTH = 1200;
+			const HEIGHT = 600;
+
+			let y = 100;
+			let yVel = 0;
+			let groundY = 500;
+			let jaiImage;
+
+			let steam = "KTRJ2-7AZYI-NDBA9";
+			let steamStack = steam.split("").reverse();
+
+			let characters = [];
+			let spawnIn = 60;
+
+			let fails = 0;
+
+			let totalFrames = 0;
+
+			let currentCode = "";
+
+			function getNextSteamCharacter() {
+				return steamStack.pop();
+			}
+
+
+
+			let keysPressed = {};
+
+			function setup() {
+				createCanvas(WIDTH, HEIGHT);
+				jaiImage = loadImage("../../image/Jaibel.png");
+			}
+
+			function keyPressed() {
+				keysPressed[key] = true;
+				if (key == "p") loop();
+			}
+
+			function keyReleased() {
+				keysPressed[key] = false;
+			}
+
+			function mousePressed() {
+				keysPressed["mouse"] = true;
+				loop();
+			}
+
+			function mouseReleased() {
+				keysPressed["mouse"] = false;
+			}
+
+			function removeFromArray(arr, toBeRemoved) {
+				for (let i = 0; i < arr.length; ++i) {
+					if (arr[i] == toBeRemoved) {
+						arr.splice(i,1);
+					}
+				}
+			}
+
+			let clumplimit = 3;
+
+			function draw() {
+				
+				
+
+				if (--spawnIn <= 0) {
+
+					if (clumplimit == 0 || Math.random() > 0.5) {
+						spawnIn = 20 + fails + round(Math.random() * 38 + fails);
+						clumplimit = 2;
+					} else {
+						spawnIn = 5 + round(Math.random() * 5);
+						--clumplimit;
+					}
+
+					let nextCharacter = getNextSteamCharacter();
+					if (nextCharacter != undefined) {
+						characters.push(newSteamCharacter(nextCharacter));
+					}
+
+					
+				}
+				
+				if ((keysPressed[" "] || keysPressed["mouse"]) && y == groundY) {
+					yVel -= 20;
+				}
+				for (let c of characters) {
+					c.update();
+				}
+
+				y += yVel;
+				yVel += 1;
+				if (y > groundY) {
+					yVel = 0;
+					y = groundY;
+				}
+
+				let leastDist = Infinity;
+				for (let c of characters) {
+					let _dist = dist(200,y,c.x,groundY+50);
+					if (_dist < leastDist) leastDist = _dist;
+				}
+				if (leastDist < 90) {
+					characters = [];
+					y = 100;
+					currentCode = "";
+					fails++;
+					steamStack = steam.split("").reverse();
+				}
+
+				background(200);
+				imageMode(CENTER);
+
+				if (totalFrames++ == 18) {
+					text("Tryk på \"p\" for at starte", 300, HEIGHT / 2);
+					noLoop();
+				}
+
+				for (let c of characters) {
+					c.draw();
+				}
+
+				textSize(20);
+				text("Fails: " + fails, 10, 30);
+				textSize(75);
+				text(currentCode, 75, 100);
+
+				image(jaiImage, 200, y, jaiImage.width / 5, jaiImage.height / 5);
+
+				if (currentCode == steam) {
+					push();
+					textSize(120);
+					rotate(PI / 8);
+					text("TILLYKKE!", WIDTH / 2, HEIGHT / 2 - 300);
+					pop();
+				}
+			}
+
+			function newSteamCharacter(char) {
+				return {
+					char: char,
+					x: WIDTH,
+					update: function() {
+						this.x -= 10;
+						if (this.x < -20) {
+							currentCode += this.char;
+							removeFromArray(characters, this);
+						}
+					},
+					draw: function() {
+						textSize(60);
+						text(this.char, this.x, groundY + 50);
+					}
+				}
+			}
+
+		</script>
+	</body>
+</html>

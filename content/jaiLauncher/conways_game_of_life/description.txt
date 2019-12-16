@@ -1,0 +1,1 @@
+This is my implementation of Conway's game of life. You can read more about it at: https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life

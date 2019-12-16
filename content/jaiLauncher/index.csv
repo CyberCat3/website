@@ -1,0 +1,6 @@
+name,displayName,version,type,description,image,executable
+jaibel_stryger,JaibelStryger,1,javafx-app,description.txt,logo.jpg,JaibelSweeper.jar
+maze_generator,MazeGenerator,1,javafx-app,description.txt,logo.png,MazeGenerator.jar
+astar_pathfinding,Pathfinding,1,javafx-app,description.txt,logo.png,ASTARpathfinding.jar
+constellations,Constellations,1,javafx-app,description.txt,logo.png,ConstellationFX.jar
+conways_game_of_life,Game of Life,1,javafx-app,description.txt,logo.png,ConwaysGameOfLife.jar

@@ -1,0 +1,2 @@
+A random maze generator. This is completely useless and can't write the mazes the a file, it's just nice to look at it.
+This was one of my first projects with JavaFX.
