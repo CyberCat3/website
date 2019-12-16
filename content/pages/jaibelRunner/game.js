@@ -32,9 +32,6 @@ function keyReleased() {
 function setup() {
     jaibel = new Jaibel();
     createCanvas(WIDTH, HEIGHT);
-
-    let obstacle = new Obstacle(() => {}, () => obstacles.delete(obstacle));
-    obstacles.add(obstacle);
 }
 let spawnCloudIn = 0;
 let spawnObstacleIn = 0;
