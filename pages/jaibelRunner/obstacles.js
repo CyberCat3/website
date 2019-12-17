@@ -1,6 +1,7 @@
 let obstacleImages = [];
 function setupObstacles() {
     obstacleImages.push(loadImage("assets/obstacles/cactus.png"));
+    obstacleImages.push(loadImage("assets/obstacles/tumbleweed.png"));
 }
 
 class Obstacle {
