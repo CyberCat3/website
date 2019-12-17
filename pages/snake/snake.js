@@ -50,16 +50,16 @@ class Snake {
         for (let i = 0; i < this.body.length - 1; ++i) {
             if (head.x == this.body[i].x && head.y == this.body[i].y) {
                 noLoop();
-                let snake = this;
-                setTimeout(function(){
-                    snake.body = [];
-                    snake.grow();
-                    snake.grow();
-                    snake.grow();
-                    snake.grow();
-                    snake.dir = 1;
-                    loop();
-                }, 2000);
+                setTimeout(function() {
+                    textAlign(CENTER);
+                    textSize(45);
+                    noStroke();
+                    fill(0);
+                    text("Du døede, tryk \"mellemrum\" for at prøve igen.", WINDOW_WIDTH / 2 + 2, WINDOW_HEIGHT / 2 + 2);
+                    fill(255);
+                    text("Du døede, tryk \"mellemrum\" for at prøve igen.", WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
+                }, 0);
+                isDead = true;
             }
         }
 

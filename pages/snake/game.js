@@ -6,6 +6,8 @@ const WINDOW_HEIGHT = CELLS_VERTICAL * CELL_SIZE;
 const IMPORTANT_FRAME = 8;
 const PIXELS_PER_FRAME = CELL_SIZE / IMPORTANT_FRAME;
 
+var isDead = false;
+
 console.log("CELLS_HORIZONTAL", CELLS_HORIZONTAL);
 console.log("CELLS_VERTICAL", CELLS_VERTICAL);
 console.log("CELL_SIZE", CELL_SIZE);
@@ -88,6 +90,7 @@ function draw() {
 	noStroke();
 	fill(255);
 	textSize(48);
+	textAlign(LEFT);
 	text("Score: " + score, 10, 48);
 	imageMode(CORNER);
 	image(appleImg, food.x * CELL_SIZE, food.y * CELL_SIZE, CELL_SIZE * 0.9, CELL_SIZE * 0.9);
@@ -95,7 +98,19 @@ function draw() {
 }
 
 function keyPressed() {
-	keyQueue.queue(key);
+	if (key === " ") {
+		if (isDead) {
+			snake.body = [];
+			for (let i = 0; i < 4; ++i) {
+				snake.grow();
+			}
+			snake.dir = 1;
+			keyQueue = new Queue();
+			loop();
+		}
+	} else {
+		keyQueue.queue(key);
+	}
 }
 
 console.log("game.js loaded");
