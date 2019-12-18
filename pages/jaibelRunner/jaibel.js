@@ -47,7 +47,7 @@ class Jaibel {
         if (keysPressed.has(" ")) { this.jump(); }
 
         this.y += this.yVel;
-        this.yVel += 1;
+        this.yVel += 0.9;
         if (this.y >= this.groundLevel) {
             this.y = this.groundLevel;
             this.yVel = 0;
@@ -76,11 +76,9 @@ class Jaibel {
         }
         let currImageFrame = jaiFrames[this.currAnimationFrame];
         image(currImageFrame, this.x, this.y - offset, this.imgWidth, this.imgHeight);
-        // noStroke();
-        // let myColor = color(255,0,0);
-        // myColor.setAlpha(128);
-        // fill(myColor);
-        // rect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height);
+        noStroke();
+        fill(TRANSPARENT_RED);
+        rect(this.x - this.width / 2, this.y - this.height / 2, this.width, this.height);
     }
 }
 
