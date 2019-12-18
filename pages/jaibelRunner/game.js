@@ -45,8 +45,10 @@ function draw() {
         clouds.add(cloud);
     }
     if (--spawnObstacleIn < 0) {
-        spawnObstacleIn = random(120, 160);
-        let obstacle = new Obstacle(() => {}, () => obstacles.delete(obstacle));
+        spawnObstacleIn = random(60, 160);
+        let obstacle = new Obstacle(jaibel, () => obstacles.delete(obstacle), () => {
+            console.log("Jaibel collided");
+        });
         obstacles.add(obstacle);
     }
     background(BACKGROUND_COLOR);
