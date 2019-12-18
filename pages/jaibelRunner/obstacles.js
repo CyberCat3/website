@@ -30,17 +30,27 @@ class Obstacle {
 
         // Test collide here
         
-
     }
 
     draw() {
         imageMode(CENTER);
         push();
         translate(this.x, GAME_LINE);
-        if (this.type === "tumbleweed") {
-            translate(0, sin(this.dir) * 20 + 20);
-            rotate(this.dir);
+        switch (this.type) {
+            case "tumbleweed":
+                translate(0, sin(this.dir) * 20 + 20);
+                rotate(this.dir);
+                fill(TRANSPARENT_RED);
+                circle(0,0,this.width * 0.9);
+            break;
+            case "cactus":
+                fill(TRANSPARENT_RED);
+                //circle(0,0,this.width * 0.9);
+                
+                rect(-this.width / 2 + 10, -this.height / 2 + 50, this.width - 20, this.height * 0.7);
+            break;
         }
+
         image(this.img, 0, 0, this.width, this.height);
         pop();
     }
