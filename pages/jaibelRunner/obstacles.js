@@ -29,6 +29,7 @@ class Obstacle {
         this.dir -= 0.1;
 
         // Test collide here
+        
 
     }
 

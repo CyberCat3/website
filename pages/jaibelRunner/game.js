@@ -75,3 +75,4 @@ function draw() {
 }
 
 console.log("game.js loaded");
+console.log("Thanks to Ben Moren for creating p5.collide2D!");
