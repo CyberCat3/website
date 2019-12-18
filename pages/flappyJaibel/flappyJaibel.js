@@ -6,6 +6,7 @@ let fails = 0;
 
 let trygveCodeStack;
 let simonCodeStack;
+let asgerCodeStack;
 
 let codeHeader;
 
@@ -25,7 +26,6 @@ window.onload = () => {
     let header = document.getElementById("titleHeader");
     let button = document.getElementById("backButton");
 	button.style = "float: left; margin-right: 10px; width: 80px; height: " + header.clientHeight + "px;";
-	console.log(button.style);
 }
 
 function preload() {
@@ -96,6 +96,11 @@ function reset() {
 		codeHeader = document.getElementById("steamCode");
 		codeHeader.textContent = "Kode:";
 		gameMode = "simon";
+	} else if (queryParameters.mode === "asger") {
+		header.textContent = "FlappyJaibel - Asger edition - Fra Anne, Thomas, Trygve & Andreas";
+		codeHeader = document.getElementById("steamCode");
+		codeHeader.textContent = "Kode:";
+		gameMode = "asger";		
 	}
 
 	console.log("Gamemode is: " + gameMode);
@@ -106,7 +111,8 @@ function reset() {
 	treeFrame = 0;
 	trees = new Set();
 	trygveCodeStack = "A23DE-512FG-GGG21".split("").reverse();
-        simonCodeStack = "91BCE-GGG21-512FG".split("").reverse();
+	simonCodeStack = "91BCE-GGG21-512FG".split("").reverse();
+	asgerCodeStack = "BBBBB-AAAAA-CCCCC".split("").reverse();
 	jaibel = new FlappyJaibel();
 }
 
@@ -120,15 +126,19 @@ function limit(x, y) {
 function draw() {
 	let dieThisFrame = false;
 	if (treeFrame-- <= 0) {
-		if (gameMode === "trygve" ||gameMode === "simon") {
+		if (gameMode === "trygve" || gameMode === "simon" || gameMode === "asger") {
 			treeFrame = 80 + floor(fails * 2 + random(0, 60)) - limit(score / 35, 70);
 		} else {
 			treeFrame = 80 + floor(random(0, 60));
 		}
 		let tree = new Tree(random(110, HEIGHT - 110));
 		
-		if (gameMode === "trygve" || gameMode === "simon") {
-			tree.letter = gameMode === "trygve" ? trygveCodeStack.pop() : gameMode === "simon" ? simonCodeStack.pop() : undefined;
+		if (gameMode === "trygve" || gameMode === "simon" || gameMode === "asger") {
+			tree.letter = 
+				gameMode === "trygve" ? trygveCodeStack.pop() :
+				gameMode === "simon" ? simonCodeStack.pop() :
+				gameMode === "asger" ? asgerCodeStack.pop() : 
+				undefined;
 			if (tree.letter) {
 				trees.add(tree);
 			}
@@ -155,7 +165,7 @@ function draw() {
 				} else {
 					codeHeader.textContent += tree.letter;
 				}
-				if ((gameMode === "simon" || gameMode === "trygve") && trees.size === 0) {
+				if ((gameMode === "simon" || gameMode === "trygve" || gameMode === "asger") && trees.size === 0) {
 					setTimeout(() => {
 						noLoop();
 						setTimeout(() => {
@@ -186,12 +196,12 @@ function draw() {
 	textAlign(LEFT);
 	fill(0);
 	text("Score: " + score, 5, 32);
-	if (gameMode === "trygve" || gameMode === "simon") {
+	if (gameMode === "trygve" || gameMode === "simon" || gameMode === "asger") {
 		text("Fejl: " + fails, 5, 67);
 	}
 	fill(255);
 	text("Score: " + score, 3, 30);
-	if (gameMode === "trygve" || gameMode === "simon") {
+	if (gameMode === "trygve" || gameMode === "simon" || gameMode === "asger") {
 		text("Fejl: " + fails, 3, 65);
 	}
 	if (dieThisFrame) {
