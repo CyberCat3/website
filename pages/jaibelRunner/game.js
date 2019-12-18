@@ -7,6 +7,8 @@ const GAME_LINE = HEIGHT - HEIGHT / 3;
 const BACKGROUND_COLOR = color(150, 200, 255);
 const SAND_COLOR = color(255,255,132);
 const BACKGROUND_COLOR_TRANSPARENT = color(150,200,255,100);
+const TRANSPARENT_RED = color(255,0,0);
+TRANSPARENT_RED.setAlpha(128);
 
 let jaibel;
 let keysPressed = new Set();
@@ -45,7 +47,8 @@ function draw() {
         clouds.add(cloud);
     }
     if (--spawnObstacleIn < 0) {
-        spawnObstacleIn = random(60, 160);
+        spawnObstacleIn = random(40, 160);
+        sw
         let obstacle = new Obstacle(jaibel, () => obstacles.delete(obstacle), () => {
             console.log("Jaibel collided");
         });
