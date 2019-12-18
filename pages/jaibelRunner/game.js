@@ -48,9 +48,9 @@ function draw() {
     }
     if (--spawnObstacleIn < 0) {
         spawnObstacleIn = random(40, 160);
-        sw
         let obstacle = new Obstacle(jaibel, () => obstacles.delete(obstacle), () => {
             console.log("Jaibel collided");
+            noLoop();
         });
         obstacles.add(obstacle);
     }
