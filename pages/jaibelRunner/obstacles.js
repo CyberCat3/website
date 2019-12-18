@@ -29,30 +29,52 @@ class Obstacle {
         this.dir -= 0.1;
 
         // Test collide here
+        let jb = { // jb for JaibelBounds
+            x: this.jaibel.x - this.jaibel.width / 2,
+            y: this.jaibel.y - this.jaibel.height / 2,
+            w: this.jaibel.width,
+            h: this.jaibel.height
+        }
+        if (this.type === "tumbleweed") {
+            if (collideRectCircle(jb.x, jb.y, jb.w, jb.h, // Jaibel bounds
+                this.x,                                 // tumbleweed x
+                GAME_LINE + sin(this.dir) * 20 + 20,    // tumbleweed y
+                this.width * 0.9))                     // tumbleweed radius
+                {
+                    this.onCollide();
+                }
+        } else if (this.type === "cactus") {
+            let collideWidth = this.width * 0.65;
+            let collideHeight = this.height * 0.7;
+            if (collideRectRect(jb.x, jb.y, jb.w, jb.h, // Jaibel bounds
+                this.x - collideWidth / 2, // Cactus x
+                GAME_LINE - collideHeight / 2 + 23, // Cactus y
+                collideWidth, collideHeight)) { // Cactus width and height
+                    this.onCollide();
+            }
+        }
         
     }
 
     draw() {
         imageMode(CENTER);
-        push();
-        translate(this.x, GAME_LINE);
-        switch (this.type) {
-            case "tumbleweed":
-                translate(0, sin(this.dir) * 20 + 20);
-                rotate(this.dir);
-                fill(TRANSPARENT_RED);
-                circle(0,0,this.width * 0.9);
-            break;
-            case "cactus":
-                fill(TRANSPARENT_RED);
-                //circle(0,0,this.width * 0.9);
-                
-                rect(-this.width / 2 + 10, -this.height / 2 + 50, this.width - 20, this.height * 0.7);
-            break;
-        }
+        if (this.type === "tumbleweed") {
+            let offsetY = sin(this.dir) * 20 + 20;
+            push();
+            translate(this.x, GAME_LINE + offsetY);
+            rotate(this.dir);
+            image(this.img, 0, 0, this.width, this.height);
+            fill(TRANSPARENT_RED);
+            circle(0,0,this.width * 0.9);
+            pop();
 
-        image(this.img, 0, 0, this.width, this.height);
-        pop();
+        } else if (this.type === "cactus") {
+            image(this.img, this.x, GAME_LINE, this.width, this.height);
+            let collideWidth = this.width * 0.65;
+            let collideHeight = this.height * 0.7;
+            fill(TRANSPARENT_RED);
+            rect(this.x - collideWidth / 2, GAME_LINE - collideHeight / 2 + 23, collideWidth, collideHeight);
+        }
     }
 }
 
