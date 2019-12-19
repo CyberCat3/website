@@ -10,6 +10,8 @@ const BACKGROUND_COLOR_TRANSPARENT = color(150,200,255,100);
 const TRANSPARENT_RED = color(255,0,0);
 TRANSPARENT_RED.setAlpha(128);
 
+let showHitbox = false;
+
 let jaibel;
 let keysPressed = new Set();
 
@@ -25,6 +27,9 @@ function preload() {
 
 function keyPressed() {
     keysPressed.add(key);
+    if (key === "o") {
+        showHitbox = !showHitbox;
+    }
 }
 
 function keyReleased() {
@@ -35,6 +40,7 @@ function setup() {
     jaibel = new Jaibel();
     createCanvas(WIDTH, HEIGHT);
 }
+
 let spawnCloudIn = 0;
 let spawnObstacleIn = 0;
 let clouds = new Set();
@@ -59,20 +65,20 @@ function draw() {
     rectMode(CORNER);
     fill(SAND_COLOR);
     rect(0, HORIZON_LINE, WIDTH, HEIGHT);
-
+    
     for (let cloud of clouds) {
         cloud.update();
         cloud.draw();
     }
-
+    
     for (let obstacle of obstacles) {
         obstacle.update();
         obstacle.draw();
     }
-
+    
     // fill(BACKGROUND_COLOR_TRANSPARENT);
     // rect(0,0,WIDTH,HORIZON_LINE);
-
+    
     jaibel.update();
     jaibel.draw();
 }

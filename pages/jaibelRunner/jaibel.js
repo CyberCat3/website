@@ -76,10 +76,12 @@ class Jaibel {
         }
         let currImageFrame = jaiFrames[this.currAnimationFrame];
         image(currImageFrame, this.x, this.y - offset, this.imgWidth, this.imgHeight);
-        noStroke();
-        fill(TRANSPARENT_RED);
-        let collideWidth = this.width * 0.5;
-        rect(this.x - collideWidth / 2 + 5, this.y - this.height / 2, collideWidth, this.height);
+        if (showHitbox) {
+            noStroke();
+            fill(TRANSPARENT_RED);
+            let collideWidth = this.width * 0.4;
+            rect(this.x - collideWidth / 2 + 5, this.y - this.height / 2 - 10, collideWidth, this.height);
+        }
     }
 }
 

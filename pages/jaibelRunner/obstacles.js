@@ -29,10 +29,10 @@ class Obstacle {
         this.dir -= 0.1;
         
         // Test collide here
-        let collideWidth = this.jaibel.width * 0.5; // The collide width used for jaibel.
+        let collideWidth = this.jaibel.width * 0.4; // The collide width used for jaibel.
         let jb = { // jb for JaibelBounds
             x: this.jaibel.x - collideWidth / 2 + 5,
-            y: this.jaibel.y - this.jaibel.height / 2,
+            y: this.jaibel.y - this.jaibel.height / 2 - 10,
             w: collideWidth,
             h: this.jaibel.height
         }
@@ -65,16 +65,20 @@ class Obstacle {
             translate(this.x, GAME_LINE + offsetY);
             rotate(this.dir);
             image(this.img, 0, 0, this.width, this.height);
-            fill(TRANSPARENT_RED);
-            circle(0,0,this.width * 0.9);
+            if (showHitbox) {
+                fill(TRANSPARENT_RED);
+                circle(0,0,this.width * 0.9);
+            }
             pop();
 
         } else if (this.type === "cactus") {
             image(this.img, this.x, GAME_LINE, this.width, this.height);
-            let collideWidth = this.width * 0.65;
-            let collideHeight = this.height * 0.7;
-            fill(TRANSPARENT_RED);
-            rect(this.x - collideWidth / 2, GAME_LINE - collideHeight / 2 + 23, collideWidth, collideHeight);
+            if (showHitbox) {
+                let collideWidth = this.width * 0.65;
+                let collideHeight = this.height * 0.7;
+                fill(TRANSPARENT_RED);
+                rect(this.x - collideWidth / 2, GAME_LINE - collideHeight / 2 + 23, collideWidth, collideHeight);
+            }
         }
     }
 }
