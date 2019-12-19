@@ -11,8 +11,6 @@ const TRANSPARENT_RED = color(255,0,0);
 TRANSPARENT_RED.setAlpha(128);
 
 let showHitbox = false;
-
-let jaibel;
 let keysPressed = new Set();
 
 function preload() {
@@ -29,22 +27,35 @@ function keyPressed() {
     keysPressed.add(key);
     if (key === "o") {
         showHitbox = !showHitbox;
+    } else if (key === " ") {
+        if (isDead) {
+            reset();
+        }
     }
 }
 
 function keyReleased() {
     keysPressed.delete(key);
 }
+let jaibel, spawnCloudIn, spawnObstacleIn, clouds, obstacles, isDead;
+
 
 function setup() {
-    jaibel = new Jaibel();
+    clouds = new Set();
     createCanvas(WIDTH, HEIGHT);
+    reset();
 }
 
-let spawnCloudIn = 0;
-let spawnObstacleIn = 0;
-let clouds = new Set();
-let obstacles = new Set();
+
+function reset() {
+    jaibel = new Jaibel();
+    spawnCloudIn = 0;
+    spawnObstacleIn = 0;
+    obstacles = new Set();
+    isDead = false;
+    loop();
+}
+
 
 function draw() {
     if (--spawnCloudIn < 0) {
@@ -57,6 +68,7 @@ function draw() {
         let obstacle = new Obstacle(jaibel, () => obstacles.delete(obstacle), () => {
             console.log("Jaibel collided");
             noLoop();
+            isDead = true;
         });
         obstacles.add(obstacle);
     }
