@@ -1,14 +1,25 @@
 const WIDTH = 1000;
 const HEIGHT = 600;
-let gameMode = "standard";
 let score = 0;
 let fails = 0;
 
-let trygveCodeStack;
-let simonCodeStack;
-let asgerCodeStack;
+let isDead;
+let treeFrame;
+let trees;
+let jaibel;
 
+let queryParameters;
+let header;
 let codeHeader;
+
+let giftMap = {
+	     trygve: { kode: "TRYGV-EFALS-KKODE", titel: "FlappyJaibel - Trygve Edition - Fra Andreas"                       },
+	      simon: { kode: "SIMON-FALSK-KODEX", titel: "FlappyJaibel - Simon Edition - Fra Andreas"                        },
+	      asger: { kode: "ASGER-FALSK-KODEX", titel: "FlappyJaibel - Asger edition - Fra Anne, Thomas, Trygve & Andreas" },
+	trygveEllen: { kode: "TRYGV-EMORM-ORGAV", titel: "FlappyJaibel - Trygve Edition - Fra Ellen"                         }
+};
+
+let gift = false;
 
 function queryParametersToObject(query) {
 	let objectToBeReturned = {};
@@ -20,6 +31,22 @@ function queryParametersToObject(query) {
 	}
 
 	return objectToBeReturned;
+}
+
+function reset() {
+	if (equalsAny(queryParameters.mode, ["trygve", "simon", "asger", "trygveEllen"])) {
+		gift = giftMap[queryParameters.mode];
+		gift.codeStack = gift.kode.split("").reverse();
+		header.textContent = gift.titel;
+		codeHeader.textContent = "Kode:";
+	}
+
+	console.log("GiftMode: " + JSON.stringify(gift));
+
+	isDead = false;
+	treeFrame = 0;
+	trees = new Set();
+	jaibel = new FlappyJaibel();
 }
 
 window.onload = () => {
@@ -39,6 +66,9 @@ function preload() {
 }
 
 function setup() {
+	queryParameters = queryParametersToObject(document.location.href.substring(document.location.href.indexOf("?") + 1));
+	header = document.getElementById("titleHeader");
+	codeHeader = document.getElementById("steamCode");
     createCanvas(WIDTH, HEIGHT).parent("canvasHolder");
     frameRate(60);
     reset();
@@ -75,47 +105,6 @@ function died() {
 	text("Du døede, tryk \"mellemrum\" for at prøve igen.", WIDTH / 2, HEIGHT / 2);
 }
 
-let isDead;
-let treeFrame;
-let trees;
-let jaibel;
-
-function reset() {
-
-	let queryParameters = queryParametersToObject(document.location.href.substring(document.location.href.indexOf("?") + 1));
-
-	let header = document.getElementById("titleHeader");
-
-	if (queryParameters.mode === "trygve") {
-		header.textContent = "FlappyJaibel - Trygve edition";
-		codeHeader = document.getElementById("steamCode");
-		codeHeader.textContent = "Kode:";
-		gameMode = "trygve";
-	} else if (queryParameters.mode === "simon") {
-		header.textContent = "FlappyJaibel - Simon edition";
-		codeHeader = document.getElementById("steamCode");
-		codeHeader.textContent = "Kode:";
-		gameMode = "simon";
-	} else if (queryParameters.mode === "asger") {
-		header.textContent = "FlappyJaibel - Asger edition - Fra Anne, Thomas, Trygve & Andreas";
-		codeHeader = document.getElementById("steamCode");
-		codeHeader.textContent = "Kode:";
-		gameMode = "asger";		
-	}
-
-	console.log("Gamemode is: " + gameMode);
-
-
-
-	isDead = false;
-	treeFrame = 0;
-	trees = new Set();
-	trygveCodeStack = "A23DE-512FG-GGG21".split("").reverse();
-	simonCodeStack = "91BCE-GGG21-512FG".split("").reverse();
-	asgerCodeStack = "BBBBB-AAAAA-CCCCC".split("").reverse();
-	jaibel = new FlappyJaibel();
-}
-
 function limit(x, y) {
 	if (x > y) {
 		return y;
@@ -123,31 +112,35 @@ function limit(x, y) {
 	return x;
 }
 
+function equalsAny(object, others) {
+	for (let other of others) {
+		if (object === other) {
+			return true;
+		}
+	}
+	return false;
+}
+
 function draw() {
 	let dieThisFrame = false;
 	if (treeFrame-- <= 0) {
-		if (gameMode === "trygve" || gameMode === "simon" || gameMode === "asger") {
+		if (gift) {
 			treeFrame = 80 + floor(fails * 2 + random(0, 60)) - limit(score / 35, 70);
 		} else {
 			treeFrame = 80 + floor(random(0, 60));
 		}
 		let tree = new Tree(random(110, HEIGHT - 110));
 		
-		if (gameMode === "trygve" || gameMode === "simon" || gameMode === "asger") {
-			tree.letter = 
-				gameMode === "trygve" ? trygveCodeStack.pop() :
-				gameMode === "simon" ? simonCodeStack.pop() :
-				gameMode === "asger" ? asgerCodeStack.pop() : 
-				undefined;
+		if (gift) {
+			tree.letter = gift.codeStack.pop();
 			if (tree.letter) {
 				trees.add(tree);
 			}
 		} else {
 			trees.add(tree);
 		}
-
-
 	}
+
 	jaibel.update();
 
 	if (jaibel.y < -75 || jaibel.y > HEIGHT + 75) {
@@ -165,7 +158,7 @@ function draw() {
 				} else {
 					codeHeader.textContent += tree.letter;
 				}
-				if ((gameMode === "simon" || gameMode === "trygve" || gameMode === "asger") && trees.size === 0) {
+				if (gift && trees.size === 0) {
 					setTimeout(() => {
 						noLoop();
 						setTimeout(() => {
@@ -196,12 +189,12 @@ function draw() {
 	textAlign(LEFT);
 	fill(0);
 	text("Score: " + score, 5, 32);
-	if (gameMode === "trygve" || gameMode === "simon" || gameMode === "asger") {
+	if (gift) {
 		text("Fejl: " + fails, 5, 67);
 	}
 	fill(255);
 	text("Score: " + score, 3, 30);
-	if (gameMode === "trygve" || gameMode === "simon" || gameMode === "asger") {
+	if (gift) {
 		text("Fejl: " + fails, 3, 65);
 	}
 	if (dieThisFrame) {
