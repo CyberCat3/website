@@ -13,10 +13,10 @@ let header;
 let codeHeader;
 
 let giftMap = {
-	     trygve: { kode: "TRYGV-EFALS-KKODE", titel: "FlappyJaibel - Trygve Edition - Fra Andreas"                       },
-	      simon: { kode: "SIMON-FALSK-KODEX", titel: "FlappyJaibel - Simon Edition - Fra Andreas"                        },
-	      asger: { kode: "ASGER-FALSK-KODEX", titel: "FlappyJaibel - Asger edition - Fra Anne, Thomas, Trygve & Andreas" },
-	trygveEllen: { kode: "TRYGV-EMORM-ORGAV", titel: "FlappyJaibel - Trygve Edition - Fra Ellen"                         }
+	      "trygve": { kode: "TRYGV-EFALS-KKODE", titel: "FlappyJaibel - Trygve Edition - Fra Andreas"                       },
+	       "simon": { kode: "SIMON-FALSK-KODEX", titel: "FlappyJaibel - Simon Edition - Fra Andreas"                        },
+	       "asger": { kode: "ASGER-FALSK-KODEX", titel: "FlappyJaibel - Asger edition - Fra Anne, Thomas, Trygve & Andreas" },
+	"trygve-ellen": { kode: "TRYGV-EMORM-ORGAV", titel: "FlappyJaibel - Trygve Edition - Fra Ellen"                         }
 };
 
 let gift = false;
@@ -34,7 +34,7 @@ function queryParametersToObject(query) {
 }
 
 function reset() {
-	if (equalsAny(queryParameters.mode, ["trygve", "simon", "asger", "trygveEllen"])) {
+	if (equalsAny(queryParameters.mode, ["trygve", "simon", "asger", "trygve-ellen"])) {
 		gift = giftMap[queryParameters.mode];
 		gift.codeStack = gift.kode.split("").reverse();
 		header.textContent = gift.titel;
