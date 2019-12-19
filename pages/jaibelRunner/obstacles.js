@@ -27,12 +27,13 @@ class Obstacle {
             return;
         }
         this.dir -= 0.1;
-
+        
         // Test collide here
+        let collideWidth = this.jaibel.width * 0.5; // The collide width used for jaibel.
         let jb = { // jb for JaibelBounds
-            x: this.jaibel.x - this.jaibel.width / 2,
+            x: this.jaibel.x - collideWidth / 2 + 5,
             y: this.jaibel.y - this.jaibel.height / 2,
-            w: this.jaibel.width,
+            w: collideWidth,
             h: this.jaibel.height
         }
         if (this.type === "tumbleweed") {
