@@ -87,14 +87,19 @@ function draw() {
 
 	transitionOffset = PIXELS_PER_FRAME * (frameIndex + 1);	
 	background(30);
-	noStroke();
-	fill(255);
-	textSize(48);
-	textAlign(LEFT);
-	text("Score: " + score, 10, 48);
+
 	imageMode(CORNER);
 	image(appleImg, food.x * CELL_SIZE, food.y * CELL_SIZE, CELL_SIZE * 0.9, CELL_SIZE * 0.9);
+	
 	snake.draw();
+	
+	textAlign(LEFT);
+	textSize(48);
+	noStroke();
+	fill(0);
+	text("Score: " + score, 12, 50);
+	fill(255);
+	text("Score: " + score, 10, 48);
 }
 
 function keyPressed() {
