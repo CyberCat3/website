@@ -37,7 +37,7 @@ function keyPressed() {
 function keyReleased() {
     keysPressed.delete(key);
 }
-let jaibel, spawnCloudIn, spawnObstacleIn, clouds, obstacles, isDead;
+let jaibel, spawnCloudIn, spawnObstacleIn, clouds, obstacles, isDead, score, scoreInterval;
 
 
 function setup() {
@@ -49,28 +49,47 @@ function setup() {
 
 function reset() {
     jaibel = new Jaibel();
-    spawnCloudIn = 0;
-    spawnObstacleIn = 0;
+    spawnCloudIn = spawnObstacleIn = score = 0;
+    scoreInterval = setInterval(() => ++score, 1000);
     obstacles = new Set();
     isDead = false;
     loop();
 }
 
+function died() {
+    console.log("Jaibel died");
+    noLoop();
+    clearInterval(scoreInterval);
+    setTimeout(() => {
+        isDead = true;
+        textAlign(CENTER);
+        textSize(45);
+        fill(0);
+        text("Du døede, tryk \"mellemrum\" for at prøve igen.", WIDTH / 2 + 2, HEIGHT / 2 + 2);
+        fill(255);
+        text("Du døede, tryk \"mellemrum\" for at prøve igen.", WIDTH / 2, HEIGHT / 2);
+    }, 0);
+}
+
+let factory = {
+    createCloud: () => {
+        let cloud = new Cloud(() => clouds.delete(cloud));
+        return cloud;
+    },
+    createObstacle: () => {
+        let obstacle = new Obstacle(jaibel, () => obstacles.delete(obstacle), died);
+        return obstacle;
+    }
+}
 
 function draw() {
     if (--spawnCloudIn < 0) {
         spawnCloudIn = random(120, 160);
-        let cloud = new Cloud(() => clouds.delete(cloud));
-        clouds.add(cloud);
+        clouds.add(factory.createCloud());
     }
     if (--spawnObstacleIn < 0) {
         spawnObstacleIn = random(40, 160);
-        let obstacle = new Obstacle(jaibel, () => obstacles.delete(obstacle), () => {
-            console.log("Jaibel collided");
-            noLoop();
-            isDead = true;
-        });
-        obstacles.add(obstacle);
+        obstacles.add(factory.createObstacle());
     }
     background(BACKGROUND_COLOR);
     noStroke();
@@ -93,6 +112,13 @@ function draw() {
     
     jaibel.update();
     jaibel.draw();
+    
+    textSize(40);
+    textAlign(LEFT);
+    fill(0);
+    text("Score: " + score, 9,42);
+    fill(255);
+    text("Score: " + score, 7,40);
 }
 
 console.log("game.js loaded");
