@@ -7,6 +7,7 @@ const IMPORTANT_FRAME = 8;
 const PIXELS_PER_FRAME = CELL_SIZE / IMPORTANT_FRAME;
 
 var isDead = false;
+var isPaused = false;
 
 console.log("CELLS_HORIZONTAL", CELLS_HORIZONTAL);
 console.log("CELLS_VERTICAL", CELLS_VERTICAL);
@@ -102,6 +103,23 @@ function draw() {
 	text("Score: " + score, 10, 48);
 }
 
+function togglePause() {
+    isPaused = !isPaused;
+    if (isPaused) {
+        noLoop();
+        setTimeout(() => {
+            textAlign(CENTER);
+            textSize(45);
+            fill(0);
+            text("Pause", WINDOW_WIDTH / 2 + 2, WINDOW_HEIGHT / 2 + 2);
+            fill(255);
+            text("Pause", WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
+        }, 50);
+    } else {
+        loop();
+    }
+}
+
 function keyPressed() {
 	if (key === " ") {
 		if (isDead) {
@@ -113,6 +131,8 @@ function keyPressed() {
 			keyQueue = new Queue();
 			loop();
 		}
+	} else if (key === "p") {
+		togglePause();
 	} else {
 		keyQueue.queue(key);
 	}
