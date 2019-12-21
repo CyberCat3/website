@@ -65,10 +65,23 @@ function draw() {
 	if (++frameIndex >= IMPORTANT_FRAME) {
 		frameIndex = 0;
 		snake.update();
+		
+		if (isPaused) {
+			noLoop();
+			keyQueue = new Queue(4);
+			setTimeout(() => {
+				textAlign(CENTER);
+				textSize(45);
+				fill(0);
+				text("Pause", WINDOW_WIDTH / 2 + 2, WINDOW_HEIGHT / 2 + 2);
+				fill(255);
+				text("Pause", WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
+			}, 0);
+		}
 
 		if (keyQueue.elementsLeft > 0) {
 			let key = keyQueue.deque();
-
+			
 			switch (key) {
 				case "w": case "ArrowUp":    snake.changeDir(0); break;
 				case "d": case "ArrowRight": snake.changeDir(1); break;
@@ -76,19 +89,18 @@ function draw() {
 				case "a": case "ArrowLeft":  snake.changeDir(3); break;
 			}
 		}
-
+		
 		if (snake.head.x == food.x && snake.head.y == food.y) {
 			snake.grow();
 			findNewFoodSpot();
 		}
-
+		
 		score = (snake.body.length - 4) * 10;
-
 	}
-
+	
 	transitionOffset = PIXELS_PER_FRAME * (frameIndex + 1);	
 	background(30);
-
+	
 	imageMode(CORNER);
 	image(appleImg, food.x * CELL_SIZE, food.y * CELL_SIZE, CELL_SIZE * 0.9, CELL_SIZE * 0.9);
 	
@@ -103,24 +115,20 @@ function draw() {
 	text("Score: " + score, 10, 48);
 }
 
-function togglePause() {
-    isPaused = !isPaused;
-    if (isPaused) {
-        noLoop();
-        setTimeout(() => {
-            textAlign(CENTER);
-            textSize(45);
-            fill(0);
-            text("Pause", WINDOW_WIDTH / 2 + 2, WINDOW_HEIGHT / 2 + 2);
-            fill(255);
-            text("Pause", WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
-        }, 50);
-    } else {
-        loop();
-    }
-}
-
 function keyPressed() {
+	if (isPaused) {
+		switch (key) {
+			case "p":
+			case "w": case "a": case "s": case "d":
+			case "ArrowUp":		case "ArrowLeft":
+			case "ArrowDown":	case "ArrowRight":
+				isPaused = false;
+				loop();
+			break;
+		}
+	} else if (key === "p") {
+		isPaused = true;
+	}
 	if (key === " ") {
 		if (isDead) {
 			snake.body = [];
@@ -131,8 +139,6 @@ function keyPressed() {
 			keyQueue = new Queue();
 			loop();
 		}
-	} else if (key === "p") {
-		togglePause();
 	} else {
 		keyQueue.queue(key);
 	}
