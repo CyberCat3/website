@@ -23,22 +23,37 @@ function preload() {
     setupObstacles();
 }
 
+function togglePause() {
+    isPaused = !isPaused;
+    if (isPaused) {
+        noLoop();
+        setTimeout(() => {
+            textAlign(CENTER);
+            textSize(45);
+            fill(0);
+            text("Pause", WIDTH / 2 + 2, HEIGHT / 2 + 2);
+            fill(255);
+            text("Pause", WIDTH / 2, HEIGHT / 2);
+        }, 50);
+    } else {
+        loop();
+    }
+}
+
 function keyPressed() {
     keysPressed.add(key);
-    if (key === "o") {
-        showHitbox = !showHitbox;
-    } else if (key === " ") {
-        if (isDead) {
-            reset();
-        }
+    switch (key) {
+        case "o":   showHitbox = !showHitbox;   break;
+        case " ":   if (isDead) { reset(); }    break;
+        case "p":   togglePause();              break; 
     }
 }
 
 function keyReleased() {
     keysPressed.delete(key);
 }
-let jaibel, spawnCloudIn, spawnObstacleIn, clouds, obstacles, isDead, score, scoreInterval;
 
+let jaibel, spawnCloudIn, spawnObstacleIn, clouds, obstacles, isDead, isPaused, score, scoreInterval;
 
 function setup() {
     clouds = new Set();
