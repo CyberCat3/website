@@ -23,22 +23,33 @@ function preload() {
     setupObstacles();
 }
 
-function togglePause() {
-    isPaused = !isPaused;
-    if (isPaused) {
-        noLoop();
-        setTimeout(() => funkyText("Pause", 50, 41, 128, 185, true), 50);
-    } else {
-        loop();
-    }
+function pause() {
+    isPaused = true;
+    noLoop();
+    setTimeout(() => funkyText("Pause", 50, 41, 128, 185, true), 50);
 }
 
+function unpause() {
+    isPaused = false;
+    loop();
+}
 function keyPressed() {
     keysPressed.add(key);
     switch (key) {
-        case "o":   showHitbox = !showHitbox;   break;
-        case " ":   if (isDead) { reset(); }    break;
-        case "p":   togglePause();              break; 
+        case "o":
+            showHitbox = !showHitbox;
+            break;
+        case " ":
+            if (isDead) { reset(); }
+            if (isPaused) { unpause(); }
+            break;
+        case "p":
+            if (isPaused) {
+                unpause();
+            } else if (!isDead) {
+                pause();
+            }
+            break; 
     }
 }
 
