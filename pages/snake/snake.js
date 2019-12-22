@@ -97,8 +97,8 @@ class Snake {
             let cx = part.x * CELL_SIZE + CELL_SIZE / 2 + transitionX;
             let cy = part.y * CELL_SIZE + CELL_SIZE / 2 + transitionY;
 
-            stroke(255);
-            strokeWeight(CELL_SIZE / 2);
+            noStroke();
+            fill(255);
 
             if (i == this.body.length - 1) {
                 push();
@@ -113,10 +113,8 @@ class Snake {
                 }
                 image(jaibelImg, 0, 0, CELL_SIZE * 1.8, CELL_SIZE * 1.8);
                 pop();
-                //ellipse(cx, cy, CELL_SIZE / 2);
             } else {
-                ellipse(cx, cy, CELL_SIZE / 3.5);
-    
+                ellipse(cx, cy, CELL_SIZE / 1.2);    
             }
     	}
     }
