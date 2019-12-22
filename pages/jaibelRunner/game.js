@@ -27,14 +27,7 @@ function togglePause() {
     isPaused = !isPaused;
     if (isPaused) {
         noLoop();
-        setTimeout(() => {
-            textAlign(CENTER);
-            textSize(45);
-            fill(0);
-            text("Pause", WIDTH / 2 + 2, HEIGHT / 2 + 2);
-            fill(255);
-            text("Pause", WIDTH / 2, HEIGHT / 2);
-        }, 50);
+        setTimeout(() => funkyText("Pause", 50, 41, 128, 185, true), 50);
     } else {
         loop();
     }
@@ -77,12 +70,7 @@ function died() {
     clearInterval(scoreInterval);
     setTimeout(() => {
         isDead = true;
-        textAlign(CENTER);
-        textSize(45);
-        fill(0);
-        text("Du døede, tryk \"mellemrum\" for at prøve igen.", WIDTH / 2 + 2, HEIGHT / 2 + 2);
-        fill(255);
-        text("Du døede, tryk \"mellemrum\" for at prøve igen.", WIDTH / 2, HEIGHT / 2);
+        funkyText(`Du døede, tryk "mellemrum" for at prøve igen.`, 45, 231, 76, 60, true);
     }, 0);
 }
 
@@ -91,9 +79,20 @@ let factory = {
         let cloud = new Cloud(() => clouds.delete(cloud));
         return cloud;
     },
-    createObstacle: () => {
-        let obstacle = new Obstacle(jaibel, () => obstacles.delete(obstacle), died);
+    createObstacle: (type) => {
+        let obstacle = new Obstacle(jaibel, type, () => obstacles.delete(obstacle), died);
         return obstacle;
+    },
+
+    createMultipleObstacles: (amount) => {
+        let obstaclesCreated = [factory.createObstacle()];
+        let prevObstacle = obstaclesCreated[0];
+        for (let i = 1; i < amount; ++i) {
+            let nextObstacle = factory.createObstacle(prevObstacle.type);
+            nextObstacle.x = prevObstacle.x + nextObstacle.width * 1.1;
+            obstaclesCreated.push(prevObstacle = nextObstacle);
+        }
+        return obstaclesCreated;
     }
 }
 
@@ -104,7 +103,17 @@ function draw() {
     }
     if (--spawnObstacleIn < 0) {
         spawnObstacleIn = random(40, 160);
-        obstacles.add(factory.createObstacle());
+        let obstaclesToSpawn = 1;
+        if (Math.random() > 0.7) {
+            ++obstaclesToSpawn;
+        }
+        if (Math.random() > 0.7) {
+            ++obstaclesToSpawn;
+        }
+
+        for (let obstacle of factory.createMultipleObstacles(obstaclesToSpawn)) {
+            obstacles.add(obstacle);
+        }
     }
     background(BACKGROUND_COLOR);
     noStroke();
@@ -128,12 +137,7 @@ function draw() {
     jaibel.update();
     jaibel.draw();
     
-    textSize(40);
-    textAlign(LEFT);
-    fill(0);
-    text("Score: " + score, 9,42);
-    fill(255);
-    text("Score: " + score, 7,40);
+    funkyText(`Score: ${score}`, 48, 46, 204, 113, false);
 }
 
 console.log("game.js loaded");

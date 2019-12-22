@@ -1,14 +1,22 @@
-let obstacleImages = [];
+let obstacleImages;
+let obstacleTypes;
 function setupObstacles() {
-    obstacleImages.push({name: "cactus", img: loadImage("assets/obstacles/cactus.png")});
-    obstacleImages.push({name: "tumbleweed", img: loadImage("assets/obstacles/tumbleweed.png")});
+    obstacleImages = {
+        cactus: loadImage("assets/obstacles/cactus.png"),
+        tumbleweed: loadImage("assets/obstacles/tumbleweed.png")
+    }
+    obstacleTypes = Object.keys(obstacleImages);
+    // obstacleImages.push({name: "cactus", img: loadImage("assets/obstacles/cactus.png")});
+    // obstacleImages.push({name: "tumbleweed", img: loadImage("assets/obstacles/tumbleweed.png")});
 }
 
 class Obstacle {
-    constructor(jaibel, onOutOfScreen, onCollide) {
-        this.img = obstacleImages[int(random(0, obstacleImages.length))];
-        this.type = this.img.name;
-        this.img = this.img.img;
+    constructor(jaibel, type, onOutOfScreen, onCollide) {
+        if (!type) {
+            type = obstacleTypes[parseInt(obstacleTypes.length * Math.random())];
+        }
+        this.type = type;
+        this.img = obstacleImages[type];
         if (this.type === "tumbleweed") {
             this.dir = 0;
         }
