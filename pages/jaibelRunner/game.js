@@ -85,7 +85,7 @@ function died() {
     }, 0);
 }
 
-let factory = {
+const factory = {
     createCloud: () => {
         let cloud = new Cloud(() => clouds.delete(cloud));
         return cloud;
@@ -95,8 +95,8 @@ let factory = {
         return obstacle;
     },
 
-    createMultipleObstacles: (amount) => {
-        let obstaclesCreated = [factory.createObstacle()];
+    createMultipleObstacles: (amount, type) => {
+        let obstaclesCreated = [factory.createObstacle(type)];
         let prevObstacle = obstaclesCreated[0];
         for (let i = 1; i < amount; ++i) {
             let nextObstacle = factory.createObstacle(prevObstacle.type);
@@ -114,17 +114,15 @@ function draw() {
     }
     if (--spawnObstacleIn < 0) {
         spawnObstacleIn = random(40, 160);
-        let obstaclesToSpawn = 1;
-        if (Math.random() > 0.7) {
-            ++obstaclesToSpawn;
-        }
-        if (Math.random() > 0.7) {
-            ++obstaclesToSpawn;
+        
+        // obstacles.add(factory.createObstacle("palmtree"));
+
+        if (Math.random() > 0.5) {
+            factory.createMultipleObstacles(2, Math.random() > 0.5 ? "cactus" : "tumbleweed").forEach((o) => obstacles.add(o));
+        } else {
+            obstacles.add(factory.createObstacle());
         }
 
-        for (let obstacle of factory.createMultipleObstacles(obstaclesToSpawn)) {
-            obstacles.add(obstacle);
-        }
     }
     background(BACKGROUND_COLOR);
     noStroke();

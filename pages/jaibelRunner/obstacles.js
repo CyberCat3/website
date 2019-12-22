@@ -3,7 +3,8 @@ let obstacleTypes;
 function setupObstacles() {
     obstacleImages = {
         cactus: loadImage("assets/obstacles/cactus.png"),
-        tumbleweed: loadImage("assets/obstacles/tumbleweed.png")
+        tumbleweed: loadImage("assets/obstacles/tumbleweed.png"),
+        palmtree: loadImage("assets/obstacles/palmtree.png")
     }
     obstacleTypes = Object.keys(obstacleImages);
     // obstacleImages.push({name: "cactus", img: loadImage("assets/obstacles/cactus.png")});
@@ -45,24 +46,37 @@ class Obstacle {
             h: this.jaibel.height - 10
         }
         if (this.type === "tumbleweed") {
-            if (collideRectCircle(jb.x, jb.y, jb.w, jb.h, // Jaibel bounds
+            if (
+                collideRectCircle(jb.x, jb.y, jb.w, jb.h, // Jaibel bounds
                 this.x,                                 // tumbleweed x
                 GAME_LINE + sin(this.dir) * 20 + 20,    // tumbleweed y
-                this.width * 0.9))                     // tumbleweed radius
-                {
-                    this.onCollide();
-                }
+                this.width * 0.9                        // tumbleweed radius
+            )) {                                        
+                this.onCollide();
+            }
         } else if (this.type === "cactus") {
             let collideWidth = this.width * 0.65;
             let collideHeight = this.height * 0.7;
-            if (collideRectRect(jb.x, jb.y, jb.w, jb.h, // Jaibel bounds
+            if (
+                collideRectRect(jb.x, jb.y, jb.w, jb.h, // Jaibel bounds
                 this.x - collideWidth / 2, // Cactus x
                 GAME_LINE - collideHeight / 2 + 23, // Cactus y
-                collideWidth, collideHeight)) { // Cactus width and height
-                    this.onCollide();
+                collideWidth, collideHeight
+            )) { // Cactus width and height
+                this.onCollide();
             }
-        }
-        
+        } else if (this.type === "palmtree") {
+            let collideWidth = this.width * 0.4;
+            let collideHeight = this.height * 0.6;
+            if (
+                collideRectRect(jb.x, jb.y, jb.w, jb.h, // Jaibel bounds
+                this.x - collideWidth / 2,              // Palmtree x
+                GAME_LINE / 1.05 - collideHeight / 2,   // Palmtree y
+                collideWidth, collideHeight
+            )) {                                        // Palmtree width and height
+                this.onCollide();
+            }
+        }        
     }
 
     draw() {
@@ -86,6 +100,14 @@ class Obstacle {
                 let collideHeight = this.height * 0.7;
                 fill(TRANSPARENT_RED);
                 rect(this.x - collideWidth / 2, GAME_LINE - collideHeight / 2 + 23, collideWidth, collideHeight);
+            }
+        } else if (this.type === "palmtree") {  
+            image(this.img, this.x, GAME_LINE / 1.05, this.width * 0.8, this.height * 0.75);
+            if (showHitbox) {
+                let collideWidth = this.width * 0.4;
+                let collideHeight = this.height * 0.6;
+                fill(TRANSPARENT_RED);
+                rect(this.x - collideWidth / 2, GAME_LINE / 1.05 - collideHeight / 2, collideWidth, collideHeight);
             }
         }
     }
