@@ -42,7 +42,7 @@ class Obstacle {
             x: this.jaibel.x - collideWidth / 2 + 5,
             y: this.jaibel.y - this.jaibel.height / 2 - 10,
             w: collideWidth,
-            h: this.jaibel.height
+            h: this.jaibel.height - 10
         }
         if (this.type === "tumbleweed") {
             if (collideRectCircle(jb.x, jb.y, jb.w, jb.h, // Jaibel bounds

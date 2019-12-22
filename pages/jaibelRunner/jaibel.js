@@ -80,7 +80,7 @@ class Jaibel {
             noStroke();
             fill(TRANSPARENT_RED);
             let collideWidth = this.width * 0.4;
-            rect(this.x - collideWidth / 2 + 5, this.y - this.height / 2 - 10, collideWidth, this.height);
+            rect(this.x - collideWidth / 2 + 5, this.y - this.height / 2 - 10, collideWidth, this.height - 10);
         }
     }
 }
