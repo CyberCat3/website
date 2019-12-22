@@ -34,6 +34,20 @@ function findNewFoodSpot() {
 	} while (snakeBodyOnFood());
 }
 
+function funkyText(input, align, size, r, g, b) {
+	if (!size) { size = 45; }
+	if (!align) { align = CENTER; }
+	if (!r) { r = 255; }
+	if (!g && !b) { g = b = r; }
+	textAlign(align);
+	textSize(size);
+	fill(0);
+	noStroke();
+	text(input, WINDOW_WIDTH / 2 + 2, WINDOW_HEIGHT / 2 + 2);
+	fill(r,g,b);
+	text(input, WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
+}
+
 function snakeBodyOnFood() {
 	for (let part of snake.body) {
 		if (part.x == food.x && part.y == food.y) {
@@ -69,16 +83,9 @@ function draw() {
 		if (isPaused) {
 			noLoop();
 			keyQueue = new Queue(4);
-			setTimeout(() => {
-				textAlign(CENTER);
-				textSize(45);
-				fill(0);
-				text("Pause", WINDOW_WIDTH / 2 + 2, WINDOW_HEIGHT / 2 + 2);
-				fill(255);
-				text("Pause", WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2);
-			}, 0);
+			setTimeout(() => funkyText("Pause", CENTER, null, 41, 128, 185), 0);
 		}
-
+		
 		if (keyQueue.elementsLeft > 0) {
 			let key = keyQueue.deque();
 			
@@ -106,12 +113,17 @@ function draw() {
 	
 	snake.draw();
 	
+	if (isDead) {
+		noLoop();
+		funkyText("Du døede, tryk \"mellemrum\" for at prøve igen.", CENTER, 48, 231, 76, 60);
+	}
+
 	textAlign(LEFT);
 	textSize(48);
 	noStroke();
 	fill(0);
 	text("Score: " + score, 12, 50);
-	fill(255);
+	fill(46, 204, 113);
 	text("Score: " + score, 10, 48);
 }
 
@@ -122,15 +134,16 @@ function keyPressed() {
 			case "w": case "a": case "s": case "d":
 			case "ArrowUp":		case "ArrowLeft":
 			case "ArrowDown":	case "ArrowRight":
-				isPaused = false;
-				loop();
+			isPaused = false;
+			loop();
 			break;
 		}
-	} else if (key === "p") {
+	} else if (key === "p" && !isDead) {
 		isPaused = true;
 	}
 	if (key === " ") {
 		if (isDead) {
+			isDead = false;
 			snake.body = [];
 			for (let i = 0; i < 4; ++i) {
 				snake.grow();
