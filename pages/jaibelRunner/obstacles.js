@@ -30,7 +30,7 @@ class Obstacle {
     }
 
     update() {
-        this.x -= 9;
+        this.x -= 9 + score * 0.05;
         if (this.x < -this.width / 2) {
             this.onOutOfScreen();
             return;
@@ -41,9 +41,9 @@ class Obstacle {
         let collideWidth = this.jaibel.width * 0.4; // The collide width used for jaibel.
         let jb = { // jb for JaibelBounds
             x: this.jaibel.x - collideWidth / 2 + 5,
-            y: this.jaibel.y - this.jaibel.height / 2 - 10,
+            y: this.jaibel.y - this.jaibel.height / 2 - 15,
             w: collideWidth,
-            h: this.jaibel.height - 10
+            h: this.jaibel.height - 15
         }
         if (this.type === "tumbleweed") {
             if (

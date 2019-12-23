@@ -27,11 +27,13 @@ function pause() {
     isPaused = true;
     noLoop();
     setTimeout(() => funkyText("Pause", 50, 41, 128, 185, true), 50);
+    clearInterval(scoreInterval);
 }
 
 function unpause() {
     isPaused = false;
     loop();
+    scoreInterval = setInterval(() => ++score, 1000);
 }
 function keyPressed() {
     keysPressed.add(key);
@@ -64,7 +66,6 @@ function setup() {
     createCanvas(WIDTH, HEIGHT);
     reset();
 }
-
 
 function reset() {
     jaibel = new Jaibel();
@@ -113,7 +114,7 @@ function draw() {
         clouds.add(factory.createCloud());
     }
     if (--spawnObstacleIn < 0) {
-        spawnObstacleIn = random(40, 160);
+        spawnObstacleIn = random(40, Math.max(60, 160 - score / 1.25));
         
         // obstacles.add(factory.createObstacle("palmtree"));
 

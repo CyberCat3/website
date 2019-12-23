@@ -7,7 +7,7 @@ function setupJaibel() {
     jaiFrames.push(loadImage("assets/jaiFrames/air.png"));
 }
 
-const FRAME_TO_ANIMATION = 4;
+let frameToAnimation = 4;
 
 class Jaibel {
     constructor() {
@@ -22,7 +22,7 @@ class Jaibel {
 
         this.currAnimationFrame = 0;
         this.targetAnimationFrame = 0;
-        this.waitFrames = FRAME_TO_ANIMATION;
+        this.waitFrames = frameToAnimation;
     }
 
     jump() {
@@ -38,7 +38,7 @@ class Jaibel {
         }
 
         if (newFrame) {
-            this.waitFrames = FRAME_TO_ANIMATION;
+            this.waitFrames = Math.max(1, frameToAnimation - score / 90);
             if (++this.targetAnimationFrame >= jaiFrames.length) {
                 this.targetAnimationFrame = 0;
             }
@@ -80,7 +80,7 @@ class Jaibel {
             noStroke();
             fill(TRANSPARENT_RED);
             let collideWidth = this.width * 0.4;
-            rect(this.x - collideWidth / 2 + 5, this.y - this.height / 2 - 10, collideWidth, this.height - 10);
+            rect(this.x - collideWidth / 2 + 5, this.y - this.height / 2 - 15, collideWidth, this.height - 15);
         }
     }
 }
