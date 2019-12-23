@@ -21,6 +21,11 @@ class Obstacle {
         if (this.type === "tumbleweed") {
             this.dir = 0;
         }
+        this.velocityMultiplier =
+            this.type === "tumbleweed" ? 1.15 :
+            this.type === "toyata" ? 2 :
+            1;
+
         this.width = this.img.width;
         this.height = this.img.height;
         this.x = WIDTH + this.width / 2;
@@ -30,7 +35,7 @@ class Obstacle {
     }
 
     update() {
-        this.x -= 9 + score * 0.05;
+        this.x -= (9 + score * 0.05) * this.velocityMultiplier;
         if (this.x < -this.width / 2) {
             this.onOutOfScreen();
             return;
