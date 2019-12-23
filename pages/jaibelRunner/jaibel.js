@@ -38,7 +38,7 @@ class Jaibel {
         }
 
         if (newFrame) {
-            this.waitFrames = Math.max(1, frameToAnimation - score / 90);
+            this.waitFrames = Math.max(1, frameToAnimation + 0.5 - score / 70);
             if (++this.targetAnimationFrame >= jaiFrames.length) {
                 this.targetAnimationFrame = 0;
             }
