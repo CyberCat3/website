@@ -35,13 +35,24 @@ function unpause() {
     loop();
     scoreInterval = setInterval(() => ++score, 1000);
 }
+
+function touchStarted() {
+    key = " ";
+    keyPressed();
+}
+
+function touchEnded() {
+    key = " ";
+    keyReleased();
+}
+
 function keyPressed() {
     keysPressed.add(key);
     switch (key) {
         case "o":
             showHitbox = !showHitbox;
             break;
-        case " ":
+        case "w":    case "ArrowUp":    case " ":
             if (isDead) { reset(); }
             if (isPaused) { unpause(); }
             break;

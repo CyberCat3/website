@@ -44,7 +44,7 @@ class Jaibel {
             }
         }
 
-        if (keysPressed.has(" ")) { this.jump(); }
+        if (keysPressed.has(" ") || keysPressed.has("w") || keysPressed.has("ArrowUp")) { this.jump(); }
 
         this.y += this.yVel;
         this.yVel += 0.9;
