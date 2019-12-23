@@ -10,7 +10,6 @@ function smartImageLoad(img) {
 		loadingHeader.innerText = `Loaded ${img}!`;
 		setTimeout(() => {
 			if (--imagesLoading === 0) {
-				reset();
 				loadingDiv.hidden = true;
 			}
 		}, 100);

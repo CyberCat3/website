@@ -63,12 +63,22 @@ function keyReleased() {
 let jaibel, spawnCloudIn, spawnObstacleIn, clouds, obstacles, isDead, isPaused, score, scoreInterval;
 
 function setup() {
-    noLoop();
+    let drawFunction = draw;
+    draw = () => console.log("Stole the draw function!");
     setupJaibel();
     setTimeout(() => setupClouds(), 100);
     setTimeout(() => setupObstacles(), 200);
-    clouds = new Set();
     createCanvas(WIDTH, HEIGHT);
+    clouds = new Set();
+    setTimeout(() => {
+        draw = drawFunction;
+        background(BACKGROUND_COLOR);
+        noStroke();
+        fill(SAND_COLOR);
+        rect(0,GAME_LINE,WIDTH,HEIGHT);
+        funkyText(`Tryk "mellemrum" for at starte!`, 48, 241, 196, 15, true);
+        isDead = true;
+    }, 50);
     noLoop();
 }
 
@@ -120,9 +130,7 @@ function draw() {
     }
     if (--spawnObstacleIn < 0) {
         spawnObstacleIn = random(40, Math.max(60, 160 - score / 1.25));
-        
-        // obstacles.add(factory.createObstacle("palmtree"));
-
+            
         if (Math.random() > 0.5) {
             factory.createMultipleObstacles(2, Math.random() > 0.5 ? "cactus" : "tumbleweed").forEach((o) => obstacles.add(o));
         } else {

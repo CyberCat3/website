@@ -12,7 +12,7 @@ let frameToAnimation = 4;
 class Jaibel {
     constructor() {
         this.groundLevel = GAME_LINE;
-        this.y = this.groundLevel;
+        this.y = -100;
         this.yVel = 0;
         this.x = 100;
         this.imgWidth = jaiFrames[0].width / 2.5;
