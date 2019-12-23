@@ -1,3 +1,22 @@
+let imagesLoading = 0;
+
+function smartImageLoad(img) {
+	let loadingDiv = document.getElementById("p5_loading");
+	let loadingHeader = document.createElement("h3");
+	loadingHeader.innerText = `Loading ${img}...`;
+	++imagesLoading;
+	loadingDiv.appendChild(loadingHeader);
+	return loadImage(img, () => {
+		loadingHeader.innerText = `Loaded ${img}!`;
+		setTimeout(() => {
+			if (--imagesLoading === 0) {
+				reset();
+				loadingDiv.hidden = true;
+			}
+		}, 100);
+	});
+}
+
 function funkyText(input, size, r, g, b, inCenter) {
 	textAlign(inCenter ? CENTER : LEFT, TOP);
 	textSize(size);

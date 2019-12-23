@@ -1,7 +1,7 @@
 let cloudImages = [];
 function setupClouds() {
     for (let i = 1; i <= 3; ++i) {
-        cloudImages.push(loadImage(`assets/clouds/cloud${i == 1 ? "" : i}.png`));
+        cloudImages.push(smartImageLoad(`assets/clouds/cloud${i == 1 ? "" : i}.png`));
     }
 }
 

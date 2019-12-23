@@ -1,10 +1,10 @@
 let jaiFrames = [];
 function setupJaibel() {
-    jaiFrames.push(loadImage("assets/jaiFrames/contact.png"));
-    jaiFrames.push(loadImage("assets/jaiFrames/down.png"));
-    jaiFrames.push(loadImage("assets/jaiFrames/passing.png"));
-    jaiFrames.push(loadImage("assets/jaiFrames/up.png"));
-    jaiFrames.push(loadImage("assets/jaiFrames/air.png"));
+    jaiFrames.push(smartImageLoad("assets/jaiFrames/contact.png"));
+    jaiFrames.push(smartImageLoad("assets/jaiFrames/down.png"));
+    jaiFrames.push(smartImageLoad("assets/jaiFrames/passing.png"));
+    jaiFrames.push(smartImageLoad("assets/jaiFrames/up.png"));
+    jaiFrames.push(smartImageLoad("assets/jaiFrames/air.png"));
 }
 
 let frameToAnimation = 4;

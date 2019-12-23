@@ -13,16 +13,6 @@ TRANSPARENT_RED.setAlpha(128);
 let showHitbox = false;
 let keysPressed = new Set();
 
-function preload() {
-    let loadingHeader = document.getElementById("loadingHeader");
-    loadingHeader.innerText = "Loading jaibel...";
-    setupJaibel();
-    loadingHeader.innerText = "Loading clouds...";
-    setupClouds();
-    loadingHeader.innerText = "Loading obstacles...";
-    setupObstacles();
-}
-
 function pause() {
     isPaused = true;
     noLoop();
@@ -73,9 +63,13 @@ function keyReleased() {
 let jaibel, spawnCloudIn, spawnObstacleIn, clouds, obstacles, isDead, isPaused, score, scoreInterval;
 
 function setup() {
+    noLoop();
+    setupJaibel();
+    setTimeout(() => setupClouds(), 100);
+    setTimeout(() => setupObstacles(), 200);
     clouds = new Set();
     createCanvas(WIDTH, HEIGHT);
-    reset();
+    noLoop();
 }
 
 function reset() {

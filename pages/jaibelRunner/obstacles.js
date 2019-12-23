@@ -2,9 +2,9 @@ let obstacleImages;
 let obstacleTypes;
 function setupObstacles() {
     obstacleImages = {
-        cactus: loadImage("assets/obstacles/cactus.png"),
-        tumbleweed: loadImage("assets/obstacles/tumbleweed.png"),
-        palmtree: loadImage("assets/obstacles/palmtree.png")
+        cactus: smartImageLoad("assets/obstacles/cactus.png"),
+        tumbleweed: smartImageLoad("assets/obstacles/tumbleweed.png"),
+        palmtree: smartImageLoad("assets/obstacles/palmtree.png")
     }
     obstacleTypes = Object.keys(obstacleImages);
     // obstacleImages.push({name: "cactus", img: loadImage("assets/obstacles/cactus.png")});
