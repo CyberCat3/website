@@ -40,9 +40,9 @@ class Tree {
 
 	collidesWithJaibel(jaibel) {
 		let collidesTop = rectCircleColliding(JAIBEL_X_OFFSET, jaibel.y, JAIBEL_HITBOX_SIZE,
-			this.x - TREE_HITBOX_WIDTH / 2, 0, TREE_HITBOX_WIDTH, this.spot - 120);
+			this.x - TREE_HITBOX_WIDTH / 2, 0, TREE_HITBOX_WIDTH, this.spot - 120 * (1 + easifier * 2.70833));
 		let collidesBottom = rectCircleColliding(JAIBEL_X_OFFSET, jaibel.y, JAIBEL_HITBOX_SIZE,
-			this.x - TREE_HITBOX_WIDTH / 2, this.spot + 120, TREE_HITBOX_WIDTH, HEIGHT);
+			this.x - TREE_HITBOX_WIDTH / 2, this.spot + 120 * (1 + easifier * 2.70833), TREE_HITBOX_WIDTH, HEIGHT);
 		return collidesTop || collidesBottom;
 	}
 
@@ -50,10 +50,14 @@ class Tree {
 		imageMode(CENTER);
 		push();
 		translate(this.x, this.spot);
-		image(treeImage, 0, 325, TREE_WIDTH, 500);
+		image(treeImage, 0, 325 * (1 + easifier), TREE_WIDTH, 500);
 		rotate(PI);
-		image(treeImage, 0, 325, TREE_WIDTH, 500);
+		image(treeImage, 0, 325 * (1 + easifier), TREE_WIDTH, 500);
 		pop();
+
+		// fill("rgba(255,0,0,0.5)");
+		// rect(this.x - TREE_HITBOX_WIDTH / 2, 0, TREE_HITBOX_WIDTH, this.spot - 120 * (1 + easifier * 2.70833));
+		// rect(this.x - TREE_HITBOX_WIDTH / 2, this.spot + 120 * (1 + easifier * 2.70833), TREE_HITBOX_WIDTH, HEIGHT);
 
 		if (this.letter) {
 			textAlign(CENTER);
@@ -62,8 +66,6 @@ class Tree {
 			fill(255);
 			text(this.letter, this.x, this.spot);
 		}
-		//rect(this.x - TREE_HITBOX_WIDTH / 2, 0, TREE_HITBOX_WIDTH, this.spot - 100);
-		//rect(this.x - TREE_HITBOX_WIDTH / 2, this.spot + 100, TREE_HITBOX_WIDTH, HEIGHT);
 	}
 }
 

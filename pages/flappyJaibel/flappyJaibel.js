@@ -2,6 +2,7 @@ const WIDTH = 1000;
 const HEIGHT = 600;
 let score = 0;
 let fails = 0;
+let easifier = 0;
 
 let isDead;
 let treeFrame;
@@ -82,8 +83,13 @@ function mousePressed() {
 	}
 }
 
+function touchStarted() {
+	key = " ";
+	keyPressed();
+}
+
 function keyPressed() {
-	if (key === " ") {
+	if (key === " " || key === "ArrowUp" || key === "w") {
 		jaibel.jump();
 		if (isDead) {
 			reset();
@@ -93,7 +99,11 @@ function keyPressed() {
 }
 
 function died() {
-	++fails;
+	if (gift) {
+		++fails;
+		easifier = fails / 150;
+		console.log(`Game is now ${1 + easifier * 2} times easier.`);
+	}
 	score = 0;
 	setTimeout(() => isDead = true, 200);
 	noLoop();
@@ -125,11 +135,11 @@ function draw() {
 	let dieThisFrame = false;
 	if (treeFrame-- <= 0) {
 		if (gift) {
-			treeFrame = 80 + floor(fails * 2 + random(0, 60)) - limit(score / 35, 70);
+			treeFrame = (80 + floor(random(0, 60))) * (easifier + 1);
 		} else {
-			treeFrame = 80 + floor(random(0, 60));
+			treeFrame = 80 + floor(random(0, 60) - limit(score / 40, 60));
 		}
-		let tree = new Tree(random(110, HEIGHT - 110));
+		let tree = new Tree(random(110 * (easifier * 2.3 + 1), HEIGHT - 110 * (easifier * 2.3 + 1)));
 		
 		if (gift) {
 			tree.letter = gift.codeStack.pop();
