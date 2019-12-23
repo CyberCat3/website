@@ -66,8 +66,8 @@ function setup() {
     let drawFunction = draw;
     draw = () => console.log("Stole the draw function!");
     setupJaibel();
-    setTimeout(() => setupClouds(), 100);
-    setTimeout(() => setupObstacles(), 200);
+    setTimeout(() => setupClouds(), 80);
+    setTimeout(() => setupObstacles(), 160);
     createCanvas(WIDTH, HEIGHT);
     clouds = new Set();
     setTimeout(() => {
