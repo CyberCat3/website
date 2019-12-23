@@ -22,9 +22,7 @@ class Obstacle {
             this.dir = 0;
         }
         this.velocityMultiplier =
-            this.type === "tumbleweed" ? 1.15 :
-            this.type === "toyata" ? 2 :
-            1;
+            this.type === "tumbleweed" ? 1.1 : 1;
 
         this.width = this.img.width;
         this.height = this.img.height;
@@ -109,8 +107,8 @@ class Obstacle {
         } else if (this.type === "palmtree") {  
             image(this.img, this.x, GAME_LINE / 1.05, this.width * 0.8, this.height * 0.75);
             if (showHitbox) {
-                let collideWidth = this.width * 0.4;
-                let collideHeight = this.height * 0.6;
+                let collideWidth = this.width * 0.36;
+                let collideHeight = this.height * 0.59;
                 fill(TRANSPARENT_RED);
                 rect(this.x - collideWidth / 2, GAME_LINE / 1.05 - collideHeight / 2, collideWidth, collideHeight);
             }
