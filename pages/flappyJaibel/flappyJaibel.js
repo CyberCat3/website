@@ -14,10 +14,10 @@ let header;
 let codeHeader;
 
 let giftMap = {
-	      "trygve": { kode: "TRYGV-EFALS-KKODE", titel: "FlappyJaibel - Trygve Edition - Fra Andreas"                       },
-	       "simon": { kode: "SIMON-FALSK-KODEX", titel: "FlappyJaibel - Simon Edition - Fra Andreas"                        },
-	       "asger": { kode: "ASGER-FALSK-KODEX", titel: "FlappyJaibel - Asger edition - Fra Anne, Thomas, Trygve & Andreas" },
-	"trygve-ellen": { kode: "TRYGV-EMORM-ORGAV", titel: "FlappyJaibel - Trygve Edition - Fra Ellen"                         }
+	      "trygve": { kode: "APP56-XPH4I-OVVRY", titel: "FlappyJaibel - Trygve Edition - Fra Andreas"                       },
+	       "simon": { kode: "5HGGM-TTCHK-D65TP", titel: "FlappyJaibel - Simon Edition - Fra Andreas"                        },
+	       "asger": { kode: "JAQCL-5TTHG-E5IXG", titel: "FlappyJaibel - Asger edition - Fra Anne, Thomas, Trygve & Andreas" },
+	"trygve-ellen": { kode: "3BGQ6-8YZR6-DYAI2", titel: "FlappyJaibel - Trygve Edition - Fra Ellen"                         }
 };
 
 let gift = false;
