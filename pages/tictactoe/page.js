@@ -5,3 +5,5 @@ function fixButton() {
     button.style.width = "80px";
     button.style.height = `${header.clientHeight}px`;
 }
+
+console.log("page.js loaded");
