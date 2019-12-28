@@ -1,35 +1,3 @@
-let debugBoard;
-
-function generateMoveTree(board, player) {
-    let cell = { aScore: player === 'x' ? -Infinity : Infinity, board: board, children: [] };
-    
-    let boardState = getState(cell.board);
-    if (boardState !== null) {
-        switch (boardState.winner) {
-            case "x": cell.aScore = 1; break;
-            case 'o': cell.aScore = -1; break;
-            case 'tie': cell.aScore = 0; break;
-        }
-        return cell;
-    }
-
-    for (let i in cell.board) {
-        if (cell.board[i] === '') {
-            let nBoard = cell.board.slice(0);
-            nBoard[i] = player;
-            let child = generateMoveTree(nBoard, player === 'x' ? 'o' : 'x');
-            if (player === 'x') {
-                this.score = Math.max(this.score, child.aScore);
-            } else {
-                this.score = Math.min(this.score, child.aScore);
-            }
-            cell.children.push(child);
-        }
-    }
-
-    return cell;
-}
-
 function forEachBoardChild(board, player, callback) {
     for (let i in board) {
         if (board[i] === '') {
@@ -51,12 +19,12 @@ function benchmark() {
 }
 
 function aiMove() {
-    let score = { bestScore: currPlayer === 'x' ? -Infinity : Infinity, bestMove: -1};
+    let score = { bestScore: currPlayer === PLAYER_X ? -Infinity : Infinity, bestMove: -1};
     for (let i in board) {
         if (board[i] === '') {
             board[i] = currPlayer;
-            let minimaxEval = minimax(board, 0, currPlayer === 'o');
-            if (currPlayer === 'x') {
+            let minimaxEval = minimax(board, 0, currPlayer === PLAYER_O);
+            if (currPlayer === PLAYER_X) {
                 if (minimaxEval > score.bestScore) {
                     score.bestScore = minimaxEval;
                     score.bestMove = i;
@@ -78,16 +46,16 @@ function aiMove() {
 function minimax(board, depth, isMaximizing, alpha = -Infinity, beta = Infinity) {
     let winState = getState(board);
     if (winState) {
-        if (winState.winner === 'x') { return 1; }
-        if (winState.winner === 'o') { return -1; }
-        if (winState.winner === 'tie') { return 0; }
+        if (winState.winner === PLAYER_X) { return 1; }
+        if (winState.winner === PLAYER_O) { return -1; }
+        if (winState.winner === GAME_TIE) { return 0; }
     }
 
     if (isMaximizing) {
         let maxEval = -Infinity;
         for (let i = board.length - 1; i > 0; --i) {
             if (board[i] === '') {
-                board[i] = 'x';
+                board[i] = PLAYER_X;
                 let eval = minimax(board, depth + 1, false);
                 board[i] = '';
                 maxEval = Math.max(eval ,maxEval);
@@ -102,7 +70,7 @@ function minimax(board, depth, isMaximizing, alpha = -Infinity, beta = Infinity)
         let minEval = Infinity;
         for (let i = board.length - 1; i > 0; --i) {
             if (board[i] === '') {
-                board[i] = 'o';
+                board[i] = PLAYER_O;
                 let eval = minimax(board, depth + 1, true);
                 board[i] = '';
                 minEval = Math.min(eval, minEval);
@@ -152,7 +120,7 @@ function getState(board) {
         }
     }
     
-    return {winner: 'tie'};
+    return {winner: GAME_TIE};
 }
 
 console.log("gameFunctions.js loaded");

@@ -1,11 +1,12 @@
 new p5();
 const BACKGROUND_COLOR = color("rgba(255,255,255,0.7)");
+const PLAYER_X = 'x';
+const PLAYER_O = 'o';
+const GAME_TIE = 'tie';
 
 let boardSize, cellSize, strokeSize;
 let board, cells, gameState;
-let ai = "x";
-let human = "o";
-let currPlayer = ai;
+let currPlayer;
 
 let cellFactory = {
     x: (x,y) => new Cross(x,y),
@@ -17,6 +18,7 @@ function reset() {
              '', '', '',
              '', '', ''];
     cells = new Set();
+    currPlayer = PLAYER_X;
 }
 
 function placeCell(targetCellX, targetCellY) {
@@ -25,9 +27,20 @@ function placeCell(targetCellX, targetCellY) {
     if (board[targetCell] === '') {
         board[targetCell] = currPlayer;
         cells.add(cellFactory[currPlayer](targetCellX, targetCellY));
-        currPlayer = currPlayer === ai ? human : currPlayer === human ? ai : "How did this happen?";
+        currPlayer = currPlayer === PLAYER_X ? PLAYER_O : currPlayer === PLAYER_O ? PLAYER_X : "How did this happen?";
         gameState = getState(board);
+        if (gameState) {
+            console.log(gameState.winner);
+        }
     }
+}
+
+const ais = [
+    "Human", "George", "Bob", "Kurt", "Jaibel"
+]
+
+function changeAI(player, ai) {
+    console.log(`${player} is now ${ais[ai]}`);
 }
 
 function mousePressed() {
@@ -39,7 +52,7 @@ function mousePressed() {
 }
 
 function calcScale() {
-    boardSize = Math.min(windowWidth - 50, windowHeight - 150);
+    boardSize = Math.min(windowWidth - 50, windowHeight - 200);
     cellSize = boardSize / 3;
     strokeSize = cellSize / 40;
     resizeCanvas(boardSize, boardSize);
@@ -73,7 +86,7 @@ function draw() {
     }
 
     if (gameState) {
-        if (gameState.winner === "x" || gameState.winner === "o") {
+        if (gameState.winner === PLAYER_X || gameState.winner === PLAYER_O) {
             strokeWeight(strokeSize * 3);
             stroke(200,0,200);
 
@@ -85,7 +98,7 @@ function draw() {
             line(x1 * cellSize + cellSize / 2, y1 * cellSize + cellSize / 2,
                  x2 * cellSize + cellSize / 2, y2 * cellSize + cellSize / 2);
 
-        } else if (gameState.winner === "tie") {
+        } else if (gameState.winner === GAME_TIE) {
         } 
     }
 }

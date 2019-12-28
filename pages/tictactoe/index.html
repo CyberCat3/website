@@ -15,11 +15,43 @@
             display: flex;
             justify-content: center;
         }
+
+        .horiBar {
+            display: flex;
+            justify-content: center;
+        }
+
+        .horiBar * {
+            margin: 5px;
+        }
+        
     </style>
 </head>
 <body onresize="calcScale();" onload="fixButton();">
     <a href="/"><button id="backButton" style="float: left; margin-right: 10px;">Tilbage</button></a>
     <h1 id="titleHeader">Kryds og Bolle</h1>
+    <div id="playersDiv">
+        <div class="horiBar">
+            <h3>X is</h3>
+            <select onchange="changeAI(PLAYER_X, this.selectedIndex);">
+                <option selected>a Human</option>
+                <option>George (Easy AI)</option>
+                <option>Bob (Medium AI)</option>
+                <option>Kurt (Hard AI)</option>
+                <option>Jaibel (Super AI)</option>
+            </select>
+        </div>
+        <div class="horiBar">
+            <h3>O is</h3>
+            <select onchange="changeAI(PLAYER_O, this.selectedIndex);">
+                <option selected>a Human</option>
+                <option>George (Easy AI)</option>
+                <option>Bob (Medium AI)</option>
+                <option>Kurt (Hard AI)</option>
+                <option>Jaibel (Super AI)</option>
+            </select>
+        </div>
+    </div>
     <div id="canvasHolder"></div>
 </body>
 </html>
