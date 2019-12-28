@@ -1,10 +1,10 @@
-Navn,Plain,Alpha Beta Pruning,Alpha Beta Pruning + Reverse Search
-Lag #0,1083,822,31
-Lag #1,116,94,14
-Lag #2,14,13,1
-Lag #3,1,2,0
-Lag #4,0,0,0
-Lag #5,0,0,0
-Lag #6,0,1,0
-Lag #7,1,0,0
-Lag #8,0,1,0
+Layer,Plain,Alpha Beta Pruning,Alpha Beta Pruning + Reverse Search
+Layer #0,1083,822,31
+Layer #1,116,94,14
+Layer #2,14,13,1
+Layer #3,1,2,0
+Layer #4,0,0,0
+Layer #5,0,0,0
+Layer #6,0,1,0
+Layer #7,1,0,0
+Layer #8,0,1,0
