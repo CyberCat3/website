@@ -40,7 +40,42 @@ function forEachBoardChild(board, player, callback) {
     }
 }
 
-function minimax(board, depth, isMaximizing) {
+function benchmark() {
+    reset();
+    for (let i = 0; i < 9; ++i) {
+        let then = performance.now();
+        aiMove();
+        let now = performance.now();
+        console.log(`Layer #${i} took ${now-then} millis.`);
+    }
+}
+
+function aiMove() {
+    let score = { bestScore: currPlayer === 'x' ? -Infinity : Infinity, bestMove: -1};
+    for (let i in board) {
+        if (board[i] === '') {
+            board[i] = currPlayer;
+            let minimaxEval = minimax(board, 0, currPlayer === 'o');
+            if (currPlayer === 'x') {
+                if (minimaxEval > score.bestScore) {
+                    score.bestScore = minimaxEval;
+                    score.bestMove = i;
+                }
+            } else {
+                if (minimaxEval < score.bestScore) {
+                    score.bestScore = minimaxEval;
+                    score.bestMove = i;
+                }
+            }
+            board[i] = '';
+        }
+    }
+    let x = score.bestMove % 3;
+    let y = Math.floor(score.bestMove / 3);
+    placeCell(x, y);
+}
+
+function minimax(board, depth, isMaximizing, alpha = -Infinity, beta = Infinity) {
     let winState = getState(board);
     if (winState) {
         if (winState.winner === 'x') { return 1; }
@@ -50,33 +85,33 @@ function minimax(board, depth, isMaximizing) {
 
     if (isMaximizing) {
         let maxEval = -Infinity;
-        forEachBoardChild(board, 'x', (nBoard) => {
-            let eval = minimax(nBoard, depth + 1, false);
-            maxEval = Math.max(maxEval, eval);
-        });
-        // for (let i in board) {
-        //     if (board[i] === '') {
-        //         board[i] = 'x';
-        //         let eval = minimax(board, depth + 1, false);
-        //         board[i] = '';
-        //         maxEval = Math.max(eval ,maxEval);
-        //     }
-        // }
+        for (let i = board.length - 1; i > 0; --i) {
+            if (board[i] === '') {
+                board[i] = 'x';
+                let eval = minimax(board, depth + 1, false);
+                board[i] = '';
+                maxEval = Math.max(eval ,maxEval);
+                alpha = Math.max(alpha, maxEval);
+                if (beta <= alpha) {
+                    break;
+                }
+            }
+        }
         return maxEval;
     } else {
         let minEval = Infinity;
-        forEachBoardChild(board, 'o', (nBoard) => {
-            let eval = minimax(nBoard, depth + 1, true);
-            minEval = Math.min(minEval, eval);
-        });
-        // for (let i in board) {
-        //     if (board[i] === '') {
-        //         board[i] = 'o';
-        //         let eval = minimax(board, depth + 1, true);
-        //         board[i] = '';
-        //         minEval = Math.min(eval, minEval);
-        //     }
-        // }
+        for (let i = board.length - 1; i > 0; --i) {
+            if (board[i] === '') {
+                board[i] = 'o';
+                let eval = minimax(board, depth + 1, true);
+                board[i] = '';
+                minEval = Math.min(eval, minEval);
+                beta = Math.min(beta, minEval);
+                if (beta <= alpha) {
+                    break;
+                }
+            }
+        }
         return minEval;
     }
 }

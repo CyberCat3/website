@@ -19,31 +19,6 @@ function reset() {
     cells = new Set();
 }
 
-function aiMove() {
-    let score = { bestScore: currPlayer === 'x' ? -Infinity : Infinity, bestMove: -1};
-    for (let i in board) {
-        if (board[i] === '') {
-            board[i] = currPlayer;
-            let minimaxEval = minimax(board, 0, currPlayer === 'o');
-            if (currPlayer === 'x') {
-                if (minimaxEval > score.bestScore) {
-                    score.bestScore = minimaxEval;
-                    score.bestMove = i;
-                }
-            } else {
-                if (minimaxEval < score.bestScore) {
-                    score.bestScore = minimaxEval;
-                    score.bestMove = i;
-                }
-            }
-            board[i] = '';
-        }
-    }
-    let x = score.bestMove % 3;
-    let y = Math.floor(score.bestMove / 3);
-    placeCell(x, y);
-}
-
 function placeCell(targetCellX, targetCellY) {
     let targetCell = targetCellX + targetCellY * 3;
     
@@ -64,7 +39,6 @@ function mousePressed() {
 }
 
 function calcScale() {
-    console.log("scaling!");
     boardSize = Math.min(windowWidth - 50, windowHeight - 150);
     cellSize = boardSize / 3;
     strokeSize = cellSize / 40;
@@ -75,7 +49,7 @@ function calcScale() {
 function setup() {
     createCanvas(boardSize, boardSize).parent("canvasHolder");
     calcScale();
-    setInterval(calcScale, 7000);
+    setInterval(calcScale, 3000);
     reset();
 }
 
