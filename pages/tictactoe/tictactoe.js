@@ -6,7 +6,7 @@ const GAME_TIE = 'tie';
 
 let boardSize, cellSize, strokeSize;
 let board, cells, gameState;
-let currPlayer;
+let currPlayer; 
 
 let cellFactory = {
     x: (x,y) => new Cross(x,y),
@@ -24,10 +24,15 @@ function reset() {
 function placeCell(targetCellX, targetCellY) {
     let targetCell = targetCellX + targetCellY * 3;
     
+    if (gameState) {
+        return;
+    }
+
     if (board[targetCell] === '') {
         board[targetCell] = currPlayer;
         cells.add(cellFactory[currPlayer](targetCellX, targetCellY));
         currPlayer = currPlayer === PLAYER_X ? PLAYER_O : currPlayer === PLAYER_O ? PLAYER_X : "How did this happen?";
+        changeCurrPlayerIndicator(currPlayer.toUpperCase());
         gameState = getState(board);
         if (gameState) {
             console.log(gameState.winner);
@@ -71,7 +76,8 @@ function draw() {
 
     for (let i in board) {
         fill(BACKGROUND_COLOR);
-        strokeWeight(strokeSize / 2);
+        //strokeWeight(strokeSize / 2);
+        strokeWeight(1);
         stroke(0);
         let x = i % 3;
         let y = Math.floor(i / 3);

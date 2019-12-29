@@ -16,40 +16,61 @@
             justify-content: center;
         }
 
-        .horiBar {
+        .hbox {
             display: flex;
             justify-content: center;
         }
 
-        .horiBar * {
+        .hbox * {
             margin: 5px;
         }
-        
+
+        .vbox {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .vbox * {
+            margin: 5px;
+        }
+
+        .transitionFont {
+            transition: all 200ms ease;
+        }
+
+        h1 {
+            margin-bottom: 0px;
+        }
+
     </style>
 </head>
-<body onresize="calcScale();" onload="fixButton();">
+<body onresize="calcScale();" onload="patchHTML();">
     <a href="/"><button id="backButton" style="float: left; margin-right: 10px;">Tilbage</button></a>
     <h1 id="titleHeader">Kryds og Bolle</h1>
-    <div id="playersDiv">
-        <div class="horiBar">
-            <h3>X is</h3>
-            <select onchange="changeAI(PLAYER_X, this.selectedIndex);">
-                <option selected>a Human</option>
-                <option>George (Easy AI)</option>
-                <option>Bob (Medium AI)</option>
-                <option>Kurt (Hard AI)</option>
-                <option>Jaibel (Super AI)</option>
-            </select>
-        </div>
-        <div class="horiBar">
-            <h3>O is</h3>
-            <select onchange="changeAI(PLAYER_O, this.selectedIndex);">
-                <option selected>a Human</option>
-                <option>George (Easy AI)</option>
-                <option>Bob (Medium AI)</option>
-                <option>Kurt (Hard AI)</option>
-                <option>Jaibel (Super AI)</option>
-            </select>
+    <div class="hbox">
+        <p class="transitionFont">X</p>
+        <div class="vbox" style="margin-bottom: 10px;">
+            <div class="hbox">
+                <h3>X is</h3>
+                <select onchange="changeAI(PLAYER_X, this.selectedIndex);">
+                    <option selected>a Human</option>
+                    <option>George (Easy AI)</option>
+                    <option>Bob (Medium AI)</option>
+                    <option>Kurt (Hard AI)</option>
+                    <option>Jaibel (Super AI)</option>
+                </select>
+            </div>
+            <div class="hbox">
+                <h3>O is</h3>
+                <select onchange="changeAI(PLAYER_O, this.selectedIndex);">
+                    <option selected>a Human</option>
+                    <option>George (Easy AI)</option>
+                    <option>Bob (Medium AI)</option>
+                    <option>Kurt (Hard AI)</option>
+                    <option>Jaibel (Super AI)</option>
+                </select>
+            </div>
         </div>
     </div>
     <div id="canvasHolder"></div>
