@@ -4,9 +4,18 @@ const PLAYER_X = 'x';
 const PLAYER_O = 'o';
 const GAME_TIE = 'tie';
 
+const AGENT_HUMAN = "Human";
+const AGENT_GEORGE = "George";
+const AGENT_BOB = "Bob";
+const AGENT_KURT = "Kurt";
+const AGENT_JAIBEL = "Jaibel";
+
 let boardSize, cellSize, strokeSize;
 let board, cells, gameState;
-let currPlayer; 
+let currPlayer, currAgent;
+
+let agentX = AGENT_HUMAN;
+let agentO = AGENT_HUMAN;
 
 let cellFactory = {
     x: (x,y) => new Cross(x,y),
@@ -19,19 +28,29 @@ function reset() {
              '', '', ''];
     cells = new Set();
     currPlayer = PLAYER_X;
+    currAgent = agentX;
 }
 
 function placeCell(targetCellX, targetCellY) {
     let targetCell = targetCellX + targetCellY * 3;
-    
+
     if (gameState) {
         return;
     }
 
+    console.log({currAgent});
+
     if (board[targetCell] === '') {
         board[targetCell] = currPlayer;
+        
         cells.add(cellFactory[currPlayer](targetCellX, targetCellY));
         currPlayer = currPlayer === PLAYER_X ? PLAYER_O : currPlayer === PLAYER_O ? PLAYER_X : "How did this happen?";
+        currAgent  = currPlayer === PLAYER_X ? agentX   : currPlayer === PLAYER_O ? agentO   : "This should not happen";
+
+        if (currAgent !== AGENT_HUMAN) {
+            setTimeout(aiMove, 0);
+        }
+
         changeCurrPlayerIndicator(currPlayer.toUpperCase());
         gameState = getState(board);
         if (gameState) {
@@ -41,19 +60,35 @@ function placeCell(targetCellX, targetCellY) {
 }
 
 const ais = [
-    "Human", "George", "Bob", "Kurt", "Jaibel"
+    AGENT_HUMAN, AGENT_GEORGE, AGENT_BOB, AGENT_KURT, AGENT_JAIBEL
 ]
 
 function changeAI(player, ai) {
+    if (player === PLAYER_X) {
+        agentX = ais[ai];
+    } else if (player === PLAYER_O) {
+        agentO = ais[ai];
+    } else {
+        return;
+    }
+
+    currAgent  = currPlayer === PLAYER_X ? agentX   : currPlayer === PLAYER_O ? agentO   : "This should not happen";
+
+    if (currAgent !== AGENT_HUMAN) {
+        setTimeout(aiMove, 0);
+    }
+
     console.log(`${player} is now ${ais[ai]}`);
 }
 
 function mousePressed() {
-    if (mouseX < 0 || mouseY < 0) { return; }
-    if (mouseX > boardSize || mouseY > boardSize) { return; }
-    let targetCellX = Math.floor(mouseX / cellSize);
-    let targetCellY = Math.floor(mouseY / cellSize);
-    placeCell(targetCellX, targetCellY);
+    if ((agentX ===AGENT_HUMAN && currPlayer === PLAYER_X) || (agentO === AGENT_HUMAN && currPlayer === PLAYER_O)) {
+        if (mouseX < 0 || mouseY < 0) { return; }
+        if (mouseX > boardSize || mouseY > boardSize) { return; }
+        let targetCellX = Math.floor(mouseX / cellSize);
+        let targetCellY = Math.floor(mouseY / cellSize);
+        placeCell(targetCellX, targetCellY);
+    }
 }
 
 function calcScale() {

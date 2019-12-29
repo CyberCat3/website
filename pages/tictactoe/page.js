@@ -13,6 +13,8 @@ function patchHTML() {
     let vbox = document.querySelector(".hbox > .vbox");
     currPlayerIndicator.style.fontSize = `${vbox.clientHeight}px`;
     fixButton();
+
+    document.querySelectorAll(".hbox > .vbox > .hbox > select").forEach(select => select.selectedIndex = 0);
 }
 
 function fixButton() {
