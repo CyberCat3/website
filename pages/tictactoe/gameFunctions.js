@@ -39,16 +39,7 @@ function aiMove() {
     }
 }
 
-function hardMove() {
-    console.log("making a hardMove");
-    let me = currPlayer;
-    let other = currPlayer === PLAYER_X ? PLAYER_O : currPlayer === PLAYER_O ? PLAYER_X : "How?";
-
-    if (Math.abs(minimax(board, 0, currPlayer === PLAYER_X)) !== 0) {
-        superMove();
-        return;
-    }
-
+function doPriorityMove() {
     // middle, top-left, bottom-right, bottom-left, top-right
     // top, left, right, bottom.
     let placePriority = [4, 0, 8, 6, 2, 1, 3, 5, 7];
@@ -58,9 +49,57 @@ function hardMove() {
             let x = pos % 3;
             let y = Math.floor(pos / 3);
             placeCell(x,y);
+            console.log("Did priority placement");
             return;
         }
     }
+}
+
+function easyMove() {
+
+    if (Math.random() < 0.5) {
+        mediumMove();
+        return;
+    }
+
+    // middle, top-left, bottom-right, bottom-left, top-right
+    // top, left, right, bottom.
+    let placePriority = [0, 8, 6, 2, 1, 3, 5, 7, 4];
+
+    for (let pos of placePriority) {
+        if (board[pos] === '') {
+            let x = pos % 3;
+            let y = Math.floor(pos / 3);
+            placeCell(x,y);
+            console.log("Did priority placement");
+            return;
+        }
+    }
+}
+
+function mediumMove() {
+    if (Math.random() < 0.5) {
+        hardMove();
+    } else {
+        doPriorityMove();
+    }
+}
+
+function hardMove() {
+    console.log("making a hardMove");
+    let me = currPlayer;
+    let other = currPlayer === PLAYER_X ? PLAYER_O : currPlayer === PLAYER_O ? PLAYER_X : "How?";
+
+    if (Math.abs(minimax(board, 0, currPlayer !== PLAYER_X)) !== 0) {
+        if (Math.random() < 0.8) {
+            console.log("Did minimax");
+            superMove();
+            return;
+        }
+    }
+
+    doPriorityMove();    
+    console.log("hardMove over");
 }
 
 function superMove() {
@@ -137,11 +176,12 @@ function minimax(board, depth, isMaximizing) {
 }
 
 function logBoard(board) {
-    console.log("#=======#");
-    console.log(`| ${board[0] || " "} ${board[1] || " "} ${board[2] || " "} |`);
-    console.log(`| ${board[3] || " "} ${board[4] || " "} ${board[5] || " "} |`);
-    console.log(`| ${board[6] || " "} ${board[7] || " "} ${board[8] || " "} |`);
-    console.log("#=======#");
+    output =  "#=======#\n";
+    output += `| ${board[0] || " "} ${board[1] || " "} ${board[2] || " "} |\n`;
+    output += `| ${board[3] || " "} ${board[4] || " "} ${board[5] || " "} |\n`;
+    output += `| ${board[6] || " "} ${board[7] || " "} ${board[8] || " "} |\n`;
+    output += "#=======#";
+    console.log(output);
 }
 
 function equalsThree(a,b,c) {
