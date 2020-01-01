@@ -43,41 +43,33 @@ function aiMove() {
     placeCell(x, y);
 }
 
-function minimax(board, depth, isMaximizing, alpha = -Infinity, beta = Infinity) {
+function minimax(board, depth, isMaximizing) {
     let winState = getState(board);
     if (winState) {
-        if (winState.winner === PLAYER_X) { return 1; }
-        if (winState.winner === PLAYER_O) { return -1; }
+        if (winState.winner === PLAYER_X) { return 10 - depth; }
+        if (winState.winner === PLAYER_O) { return -10 + depth; }
         if (winState.winner === GAME_TIE) { return 0; }
     }
 
     if (isMaximizing) {
         let maxEval = -Infinity;
-        for (let i = board.length - 1; i > 0; --i) {
+        for (let i in board) {
             if (board[i] === '') {
                 board[i] = PLAYER_X;
                 let eval = minimax(board, depth + 1, false);
                 board[i] = '';
-                maxEval = Math.max(eval ,maxEval);
-                alpha = Math.max(alpha, maxEval);
-                if (beta <= alpha) {
-                    break;
-                }
+                maxEval = Math.max(eval, maxEval);
             }
         }
         return maxEval;
     } else {
         let minEval = Infinity;
-        for (let i = board.length - 1; i > 0; --i) {
+        for (let i in board) {
             if (board[i] === '') {
                 board[i] = PLAYER_O;
                 let eval = minimax(board, depth + 1, true);
                 board[i] = '';
                 minEval = Math.min(eval, minEval);
-                beta = Math.min(beta, minEval);
-                if (beta <= alpha) {
-                    break;
-                }
             }
         }
         return minEval;
