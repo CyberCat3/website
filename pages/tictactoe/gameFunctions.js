@@ -18,7 +18,67 @@ function benchmark() {
     }
 }
 
+function arrayEquals(arrOne, arrTwo) {
+    if (arrOne.length === arrTwo.length) {
+        for (let i in arrOne) {
+            if (arrOne[i] !== arrTwo[i]) {
+                return false;
+            }
+        }
+        return true;
+    }
+    return false;
+}
+
 function aiMove() {
+    switch (currAgent) {
+        case AGENT_JAIBEL: superMove();  break;
+        case AGENT_KURT:   hardMove();   break;
+        case AGENT_BOB:    mediumMove(); break;
+        case AGENT_GEORGE: easyMove();   break;
+    }
+}
+
+function hardMove() {
+    console.log("making a hardMove");
+    let me = currPlayer;
+    let other = currPlayer === PLAYER_X ? PLAYER_O : currPlayer === PLAYER_O ? PLAYER_X : "How?";
+
+    if (Math.abs(minimax(board, 0, currPlayer === PLAYER_X)) !== 0) {
+        superMove();
+        return;
+    }
+
+    // middle, top-left, bottom-right, bottom-left, top-right
+    // top, left, right, bottom.
+    let placePriority = [4, 0, 8, 6, 2, 1, 3, 5, 7];
+
+    for (let pos of placePriority) {
+        if (board[pos] === '') {
+            let x = pos % 3;
+            let y = Math.floor(pos / 3);
+            placeCell(x,y);
+            return;
+        }
+    }
+}
+
+function superMove() {
+    if (currPlayer === PLAYER_X) {
+        if (arrayEquals(board, ['','','',
+                                '','','',
+                                '','',''])) {
+            placeCell(0,0);
+            return;
+        }
+        if (arrayEquals(board, [PLAYER_X, '',      '',
+                                '',       PLAYER_O,'',
+                                '',       '',      ''])) {
+            placeCell(2,2);
+            return;
+        }
+    }
+    
     let score = { bestScore: currPlayer === PLAYER_X ? -Infinity : Infinity, bestMove: -1};
     for (let i in board) {
         if (board[i] === '') {

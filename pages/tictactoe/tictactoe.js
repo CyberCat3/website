@@ -48,7 +48,7 @@ function placeCell(targetCellX, targetCellY) {
         currAgent  = currPlayer === PLAYER_X ? agentX   : currPlayer === PLAYER_O ? agentO   : "This should not happen";
 
         if (currAgent !== AGENT_HUMAN) {
-            setTimeout(aiMove, 0);
+            setTimeout(aiMove, 300);
         }
 
         changeCurrPlayerIndicator(currPlayer.toUpperCase());
