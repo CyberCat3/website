@@ -13,6 +13,7 @@ const AGENT_JAIBEL = "Jaibel";
 let boardSize, cellSize, strokeSize;
 let board, cells, gameState;
 let currPlayer, currAgent;
+let winLineProggression;
 
 let agentX = AGENT_HUMAN;
 let agentO = AGENT_HUMAN;
@@ -37,6 +38,7 @@ function reset() {
     gameState = null;
     currPlayer = PLAYER_X;
     currAgent = agentX;
+    winLineProggression = 0;
     if (currAgent !== AGENT_HUMAN) {
         setTimeout(aiMove, 300);
     }
@@ -44,24 +46,22 @@ function reset() {
 
 function placeCell(targetCellX, targetCellY) {
     let targetCell = targetCellX + targetCellY * 3;
-
+    
     if (gameState) {
         return;
     }
-
-    console.log({currAgent});
-
+    
     if (board[targetCell] === '') {
         board[targetCell] = currPlayer;
         
         cells.add(cellFactory[currPlayer](targetCellX, targetCellY));
         currPlayer = currPlayer === PLAYER_X ? PLAYER_O : currPlayer === PLAYER_O ? PLAYER_X : "How did this happen?";
         currAgent  = currPlayer === PLAYER_X ? agentX   : currPlayer === PLAYER_O ? agentO   : "This should not happen";
-
+        
         if (currAgent !== AGENT_HUMAN) {
             setTimeout(aiMove, agentTimeouts[currAgent]);
         }
-
+        
         changeCurrPlayerIndicator(currPlayer.toUpperCase());
         gameState = getState(board);
         if (gameState) {
@@ -82,13 +82,13 @@ function changeAI(player, ai) {
     } else {
         return;
     }
-
+    
     currAgent  = currPlayer === PLAYER_X ? agentX   : currPlayer === PLAYER_O ? agentO   : "This should not happen";
-
+    
     if (currAgent !== AGENT_HUMAN) {
         setTimeout(aiMove, 0);
     }
-
+    
     console.log(`${player} is now ${ais[ai]}`);
 }
 
@@ -103,7 +103,7 @@ function mousePressed() {
 }
 
 function calcScale() {
-    boardSize = Math.min(windowWidth - 50, windowHeight - 200);
+    boardSize = Math.min(Math.max(windowWidth, 390) - 50, windowHeight - 200);
     cellSize = boardSize / 3;
     strokeSize = cellSize / 40;
     resizeCanvas(boardSize, boardSize);
@@ -117,9 +117,13 @@ function setup() {
     reset();
 }
 
+function lerp(a, b, f) {
+    return (a * (1.0 - f)) + (b * f);
+}
+
 function draw() {
     clear();
-
+    
     for (let i in board) {
         fill(BACKGROUND_COLOR);
         //strokeWeight(strokeSize / 2);
@@ -132,26 +136,55 @@ function draw() {
         rect(0,0,cellSize,cellSize, cellSize / 7, cellSize / 7);
         pop();
     }
-
+    
     for (let cell of cells) {
         cell.draw();
     }
-
+    
     if (gameState) {
         if (gameState.winner === PLAYER_X || gameState.winner === PLAYER_O) {
-            strokeWeight(strokeSize * 3);
-            stroke(200,0,200);
-
+            
             let x1 = gameState.start % 3;
             let y1 = Math.floor(gameState.start / 3);
             let x2 = gameState.end % 3;
             let y2 = Math.floor(gameState.end / 3);
-
-            line(x1 * cellSize + cellSize / 2, y1 * cellSize + cellSize / 2,
-                 x2 * cellSize + cellSize / 2, y2 * cellSize + cellSize / 2);
-
-        } else if (gameState.winner === GAME_TIE) {
+            
+            let [px1, py1, px2, py2] = [x1, y1, x2, y2].map(x => x * cellSize + cellSize / 2);
+            
+            let [cpx, cpy] = [[px1,px2],[py1,py2]].map(axis => lerp(axis[0], axis[1], winLineProggression));
+            
+            strokeWeight(strokeSize * 3);
+            stroke(70, 190, 50);
+            line(px1, py1, cpx, cpy);
         } 
+        push();
+        translate(0, cellSize / 5);
+        
+        noStroke();
+        fill("rgba(50,50,50,0.5)");
+        push();
+        translate(0, boardSize / 2);
+        rect(0, -cellSize / 1.8, boardSize * winLineProggression, cellSize / 1.6);
+        pop();
+        
+        push();
+        translate(boardSize / 2, boardSize / 2);
+        textAlign(CENTER);
+        textSize(cellSize / 1.5);
+        textFont("Helvetica");
+        fill(`rgba(255,255,255,${winLineProggression})`);
+        switch (gameState.winner) {
+            case PLAYER_X: text("X Won!", 0, 0); break;
+            case PLAYER_O: text("O Won!", 0, 0); break;
+            case GAME_TIE: text("Draw!",  0, 0); break;
+            default: console.log("blaa"); break;
+        }
+        pop();
+        pop();
+        
+        if (winLineProggression < 1) {
+            winLineProggression += (1 - winLineProggression) / 15;
+        }
     }
 }
 
