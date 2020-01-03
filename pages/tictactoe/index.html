@@ -43,12 +43,22 @@
             margin-bottom: 0px;
         }
 
+        #resetButton {
+            width: 10vw;
+            height: 50px;
+            margin-top: 30px;
+            margin-right: 40px;
+            font-size: large;
+            background-color: rgba(50,0,0,0.6);
+        }
+
     </style>
 </head>
 <body onresize="calcScale();" onload="patchHTML();">
     <a href="/"><button id="backButton" style="float: left; margin-right: 10px;">Tilbage</button></a>
     <h1 id="titleHeader">Kryds og Bolle</h1>
     <div class="hbox">
+        <button onclick="reset()" id="resetButton">Restart</button>
         <p class="transitionFont">X</p>
         <div class="vbox" style="margin-bottom: 10px;">
             <div class="hbox">

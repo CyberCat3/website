@@ -34,8 +34,12 @@ function reset() {
              '', '', '',
              '', '', ''];
     cells = new Set();
+    gameState = null;
     currPlayer = PLAYER_X;
     currAgent = agentX;
+    if (currAgent !== AGENT_HUMAN) {
+        setTimeout(aiMove, 300);
+    }
 }
 
 function placeCell(targetCellX, targetCellY) {
