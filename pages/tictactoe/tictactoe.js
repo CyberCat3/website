@@ -37,6 +37,7 @@ function reset() {
     cells = new Set();
     gameState = null;
     currPlayer = PLAYER_X;
+    changeCurrPlayerIndicator(currPlayer.toUpperCase());
     currAgent = agentX;
     winLineProggression = 0;
     if (currAgent !== AGENT_HUMAN) {
