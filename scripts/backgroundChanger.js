@@ -1,8 +1,6 @@
-function postHTMLLoad() {
-	for (let horibar of document.getElementsByClassName("horiBar")) {
-		for (let child of horibar.children) {
-			child.style="width:" + 100 / horibar.children.length + "%;";
-		}
+for (let horibar of document.getElementsByClassName("horiBar")) {
+	for (let child of horibar.children) {
+		child.style="width:" + 100 / horibar.children.length + "%;";
 	}
 }
 
