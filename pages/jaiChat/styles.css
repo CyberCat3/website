@@ -2,10 +2,12 @@ body {
     background: linear-gradient(140deg, #3498db, #9b59b6);
     width: 100vw;
     height: 100vh;
-    margin: -1px;
+    overflow: hidden;
+    margin: -1;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "Open Sans", Consolas, Helvetica, sans-serif;
 }
 
 .chat-app {
@@ -13,11 +15,15 @@ body {
 }
 
 .chat-app.container {
-    width: 80vw;
-    height: 80vh;
+    width: 70vw;
+    height: 70vh;
+    opacity: 0%;
     border-radius: 10px;
     border: 3px solid rgba(255,255,255,0.2);
     display: flex;
+    transition-property: width, height, opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
 }
 
 .chat-app.rooms {
@@ -50,6 +56,7 @@ body {
     padding: 5px 10px;
     color: black;
     transition: background-color 0.2s ease;
+    border-right: 3px solid rgba(255,255,255,0.1);
 }
 
 .chat-app.sender textarea:focus {
@@ -59,4 +66,39 @@ body {
 
 textarea:focus, select:focus{
     outline: none;
+}
+
+.chat-app.sender .send-button {
+    height: 100%;
+    width: 15%;
+    opacity: 100%;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.2s ease;
+    border-radius: 0px 0px 7px 0px;
+}
+
+@keyframes send-animation-keyframes {
+    0% { transform: translate(0%,0%); }
+    55% { transform: translate(150%, -150%); }
+    56% { transform: translate(150%, 150%); }
+    57% { transform: translate(-150%,150%); }
+    100% { transform: translate(0%,0%); }
+}
+
+.chat-app.sender .send-button:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.chat-app.sender .send-button:active {
+    background-color: rgba(255,255,255,0.8);
+}
+
+.send-animation {
+    animation: send-animation-keyframes 0.3s ease;
+}
+
+.chat-app.sender .send-button img {
+    width: 100%;
+    height: 100%;
+    opacity: 70%;
 }
