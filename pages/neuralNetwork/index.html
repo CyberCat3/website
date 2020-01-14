@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Andreas D. Kunz">
+    <title>Neuralt netværk</title>
+    <script src="https://cdn.jsdelivr.net/npm/p5" defer></script>
+    <script src="utils.js" defer></script>
+    <script src="training_point.js"></script>
+    <script src="neuralNetwork.js" defer></script>
+    <script src="sketch.js" defer></script>
+
+</head>
+<body>
+    <a href="/"><button id="backButton">Tilbage</button></a>
+    <h1 id="neuralNetworkHeader">Neuralt Netværk</h1>
+    <div id="p5_loading">
+        <h2 id="loadingHeader">Loading assets...</h2>
+    </div>
+    <link rel="stylesheet" href="/darktheme.css">
+
+    <script>
+        let header = document.getElementById("neuralNetworkHeader");
+    	let button = document.getElementById("backButton");
+        button.style = "float: left; margin-right: 10px; width: 80px; height: " + header.clientHeight + "px;";
+    </script>
+</body>
+</html>
