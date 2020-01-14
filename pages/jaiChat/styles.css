@@ -26,6 +26,21 @@ body {
     transition-timing-function: ease;
 }
 
+.messages-sender-container {
+    height: 100%;
+    width: 75%;
+}
+
+.chat-app.messages {
+    width: calc(100% - 30px);
+    height: calc(85% - 30px);
+    padding: 15px;
+}
+
+p {
+    margin-top: 0;
+}
+
 .chat-app.rooms {
     height: 100%;
     width: 25%;
@@ -38,8 +53,8 @@ body {
 .chat-app.sender {
     border-radius: 0px 0px 7px 0px;
     /* background-color: rgba(255,0,0,0.3); */
-    height: 15%;
-    width: 75%;
+    height: calc(15% - 3px);
+    width: 100%;
     border-top: 3px solid rgba(255,255,255,0.1);
     display: flex;
     align-self: flex-end;
