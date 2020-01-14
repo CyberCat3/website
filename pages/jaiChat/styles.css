@@ -17,34 +17,32 @@ body {
     height: 80vh;
     border-radius: 10px;
     border: 3px solid rgba(255,255,255,0.2);
+    display: flex;
 }
 
 .chat-app.rooms {
-    float: left;
     height: 100%;
     width: 25%;
     /* background-color: rgba(0,255,0,0.3); */
     border-radius: 7px 0px 0px 7px;
     border-right: 3px solid rgba(255,255,255,0.1);
+    display: flex;
 }
 
 .chat-app.sender {
-    position: relative;
     border-radius: 0px 0px 7px 0px;
     /* background-color: rgba(255,0,0,0.3); */
     height: 15%;
-    width: calc(75% - 3px);
-    left: calc(25% + 3px);
-    top: calc(85% - 3px);
+    width: 75%;
     border-top: 3px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-self: flex-end;
 }
 
 .chat-app.sender textarea {
     resize: none;
-    position: relative;
     width: 85%;
     height: calc(100% - 10px);
-    margin-left: calc(-34% + 2.5px);
     border: none;
     background-color: rgba(255,255,255,0);
     overflow-y: hidden;
