@@ -4,22 +4,34 @@ const sendButton         =   document.querySelector(".chat-app .sender .send-but
 const sendButtonPlane    =   document.querySelector(".chat-app .sender .send-button img");
 const messages           =   document.querySelector(".chat-app.messages");
 
-let websocket = new WebSocket("wss://jaibel.ddns.net/ws/chat");
+let websocket;
+setupWebsocket();
 
-websocket.onmessage = message => {
-    console.log(message.data);
-    const messageElement = document.createElement("p");
-    messageElement.innerText = message.data;
-    messages.appendChild(messageElement);
-};
+function setupWebsocket() {
+    websocket = new WebSocket("wss://jaibel.ddns.net/ws/chat");
+    
+    websocket.onmessage = message => {
+        console.log(message.data);
+        const messageElement = document.createElement("p");
+        messageElement.innerText = message.data;
+        messages.appendChild(messageElement);
+        const distFromBottom = messages.scrollTopMax - messages.scrollTop;
+        console.log({distFromBottom});
+        if (distFromBottom < 200) {
+            messages.scrollBy(0, 200);
+        }
+    };
+
+    websocket.onerror = error => {
+        console.log("A WebSocket error occurred:", error);
+    };
+}
 
 textArea.addEventListener("wheel", event => {
     textArea.scrollBy(0, event.deltaY / 8);
-    console.log(event);
-});
+}, {passive: true});
 
 textArea.addEventListener("keypress", event => {
-    console.log(event);
     if (event.code === "Enter" && !event.shiftKey) {
         sendButton.click();
     }
@@ -40,7 +52,6 @@ sendButtonPlane.addEventListener("animationend", () => {
 
 function send() {
     sendButtonPlane.classList.add("send-animation");
-    console.log(textArea.value);
     websocket.send(textArea.value);
     textArea.value = "";
 }
