@@ -1,0 +1,63 @@
+.chat-app.messages {
+    width: calc(100% - 30px);
+    height: calc(85% - 30px);
+    padding: 15px;
+    /* display: flex;
+    flex-direction: column; */
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /*This removes the scrollbar on firefox*/
+    -ms-overflow-style: none; /*This removes the scrollbar on IE and Edge*/
+}
+
+.chat-app.messages::-webkit-scrollbar { /*This removes the scrollbar on Safari and Chrome*/
+    width: 0;
+    height: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
+.chat-app.messages .message {
+    width: 50%;
+    padding: 15px;
+    padding-bottom: 5px;
+    background-color: rgba(255,255,255,0.25);
+    border-radius: 16px 16px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: right;
+    color: rgba(0,0,0,0.35);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    opacity: 0%;
+}
+
+.chat-app.messages .message .message-sender {
+    margin: 0px;
+    text-align: left;
+    color: rgba(0,0,0,0.6);
+}
+
+.chat-app.messages .message .message-content {
+    margin: 10px 0px 5px 10px;
+    text-align: left;
+    color: rgba(0,0,0,0.6);
+}
+
+.chat-app.messages .message.right {
+    margin-left: auto;
+    text-align: left;
+}
+
+.chat-app.messages .message.right .message-sender {
+    margin-left: auto;
+}
+
+.chat-app.messages .message.right .message-content {
+    margin: 10px 10px 5px 0px;
+    margin-left: auto;
+}

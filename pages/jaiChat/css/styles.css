@@ -1,0 +1,37 @@
+body {
+    background: linear-gradient(140deg, #3498db, #9b59b6);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Open Sans", Consolas, Helvetica, sans-serif;
+}
+
+.chat-app {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.chat-app.container {
+    width: 70vw;
+    height: 70vh;
+    opacity: 0%;
+    border-radius: 10px;
+    border: 3px solid rgba(255,255,255,0.2);
+    display: flex;
+    transition-property: width, height, opacity;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+}
+
+.rooms-online-container {
+    height: 100%;
+    width: 25%;
+}
+
+.messages-sender-container {
+    height: 100%;
+    width: 75%;
+}

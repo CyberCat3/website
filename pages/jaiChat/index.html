@@ -1,28 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JaiChat</title>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="chat-app container">
-        <div class="rooms-online-container">
-            <div class="chat-app online">
-                <div class="indicator"></div>
-                <div class="indicator-text">Not Connected</div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>JaiChat</title>
+        <script src="js/constants.js" defer></script>
+        <script src="js/functions.js" defer></script>
+        <script src="js/page.js" defer></script>
+        <script src="js/script.js" defer></script>
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/messages.css">
+        <link rel="stylesheet" href="css/online_indicator.css">
+        <link rel="stylesheet" href="css/rooms.css">
+        <link rel="stylesheet" href="css/sender.css">
+    </head>
+    <body>
+        <div class="chat-app container">
+            <div class="rooms-online-container">
+                <div class="chat-app online">
+                    <div class="indicator"></div>
+                    <div class="indicator-text">Not Connected</div>
+                </div>
+                <div class="chat-app rooms"></div>
             </div>
-            <div class="chat-app rooms"></div>
-        </div>
-        <div class="messages-sender-container">
-            <div class="chat-app messages"></div>
-            <div class="chat-app sender">
-                <textarea name="Message to be sent textbox" id="messageTextArea" cols="30" rows="10"></textarea>
-                <a href="javascript:send();" class="send-button"><img src="assets/send_icon.svg" alt="Send icon"></a>
+            <div class="messages-sender-container">
+                <div class="chat-app messages"></div>
+                <div class="chat-app sender">
+                    <textarea name="Message to be sent textbox" id="messageTextArea" cols="30" rows="10"></textarea>
+                    <a href="javascript:send();" class="send-button"><img src="assets/send_icon.svg" alt="Send icon"></a>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+        <template id="login-template">
+            <div class="login-form">
+                <h2>Login</h2>
+
+                <input type="text" placeholder="Username">
+            </div>
+        </template>
+    </body>
 </html>

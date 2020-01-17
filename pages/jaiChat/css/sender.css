@@ -1,0 +1,69 @@
+.chat-app.sender {
+    border-radius: 0px 0px 7px 0px;
+    /* background-color: rgba(255,0,0,0.3); */
+    height: calc(15% - 3px);
+    width: 100%;
+    border-top: 3px solid rgba(255,255,255,0.1);
+    display: flex;
+    align-self: flex-end;
+}
+
+.chat-app.sender textarea:focus {
+    background-color: rgba(255,255,255,0.2);
+}
+
+
+textarea:focus, select:focus{
+    outline: none;
+}
+
+.chat-app.sender textarea {
+    resize: none;
+    width: 85%;
+    height: calc(100% - 10px);
+    border: none;
+    background-color: rgba(255,255,255,0);
+    overflow-y: hidden;
+    font-size: 20px;
+    padding: 5px 10px;
+    color: black;
+    transition: background-color 0.2s ease;
+    border-right: 3px solid rgba(255,255,255,0.1);
+}
+
+.chat-app.sender .send-button {
+    height: 100%;
+    width: 15%;
+    opacity: 100%;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.2s ease;
+    border-radius: 0px 0px 7px 0px;
+    outline: none;
+}
+
+@keyframes send-animation-keyframes {
+    0% { transform: translate(0%,0%); }
+    55% { transform: translate(150%, -150%); }
+    56% { transform: translate(150%, 150%); }
+    57% { transform: translate(-150%,150%); }
+    100% { transform: translate(0%,0%); }
+}
+
+.chat-app.sender .send-button:hover {
+    background-color: rgba(255,255,255,0.2);
+}
+
+.chat-app.sender .send-button:active {
+    background-color: rgba(255,255,255,0.8);
+}
+
+.send-animation {
+    animation: send-animation-keyframes 0.3s ease;
+}
+
+.chat-app.sender .send-button img {
+    width: 100%;
+    height: 100%;
+    opacity: 20%;
+    transition: opacity 0.7s ease;
+}
