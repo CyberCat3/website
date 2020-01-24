@@ -1,43 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>JaiChat</title>
-        <script src="js/constants.js" defer></script>
-        <script src="js/functions.js" defer></script>
-        <script src="js/page.js" defer></script>
-        <script src="js/script.js" defer></script>
-        <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/login.css">
-        <link rel="stylesheet" href="css/messages.css">
-        <link rel="stylesheet" href="css/online_indicator.css">
-        <link rel="stylesheet" href="css/rooms.css">
-        <link rel="stylesheet" href="css/sender.css">
-    </head>
-    <body>
-        <div class="chat-app container">
-            <div class="rooms-online-container">
-                <div class="chat-app online">
-                    <div class="indicator"></div>
-                    <div class="indicator-text">Not Connected</div>
-                </div>
-                <div class="chat-app rooms"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JaiChat</title>
+    <script src="js/constants.js" defer></script>
+    <script src="js/functions.js" defer></script>
+    <script src="js/page.js" defer></script>
+    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/messages.css">
+    <link rel="stylesheet" href="css/online_indicator.css">
+    <link rel="stylesheet" href="css/rooms.css">
+    <link rel="stylesheet" href="css/sender.css">
+</head>
+<body>
+    <div class="chat-app container">
+        <div class="rooms-online-container">
+            <div class="chat-app online">
+                <div class="indicator"></div>
+                <div class="indicator-text"></div>
             </div>
-            <div class="messages-sender-container">
-                <div class="chat-app messages"></div>
-                <div class="chat-app sender">
-                    <textarea name="Message to be sent textbox" id="messageTextArea" cols="30" rows="10"></textarea>
-                    <a href="javascript:send();" class="send-button"><img src="assets/send_icon.svg" alt="Send icon"></a>
-                </div>
+            <div class="chat-app rooms"></div>
+        </div>
+        <div class="messages-sender-container">
+            <div class="chat-app messages"></div>
+            <div class="chat-app sender">
+                <textarea name="Message to be sent textbox" id="messageTextArea" cols="30" rows="10"></textarea>
+                <a href="javascript:send();" class="send-button"><img src="assets/send_icon.svg" alt="Send icon"></a>
             </div>
         </div>
-        <template id="login-template">
+    </div>
+    <template id="login-template">
+        <form action="" method="GET" class="login-real-form">
             <div class="login-form">
-                <h2>Login</h2>
-
-                <input type="text" placeholder="Username">
+                <div class="login-headers">
+                    <h2 class="sign-in-header pointer-cursor">Sign In</h2>
+                    <h2 class="sign-up-header pointer-cursor">Sign Up</h2>
+                </div>
+                <div class="sign-in-content">
+                    <input id="login-sign-in-username-input" type="text"     name="sign in username" placeholder="Username" autofocus required>
+                    <input id="login-sign-in-password-input" type="password" name="sign in password" placeholder="Password" required>
+                    <div class="remember-me-div">
+                        <input type="checkbox" name="remember me" id="remember-me-sign-in" class="pointer-cursor" checked>
+                        <label for="remember-me-sign-in" class="pointer-cursor">Remember me</label>
+                    </div>
+                    <button type="submit" class="pointer-cursor login-button" disabled>Sign In</button>
+                </div>
+                <div class="sign-up-content">
+                    <input id="login-sign-up-username-input" type="text"     name="sign up username" placeholder="Username" autofocus required>
+                    <input id="login-sign-up-password-input" type="password" name="sign up password" placeholder="Password" required>
+                    <input id="login-sign-up-confirm-password-input" type="password" name="sign up confirm password" placeholder="Confirm Password" required>
+                    <div class="remember-me-div">
+                        <input type="checkbox" name="remember me" id="remember-me-sign-up" class="pointer-cursor" checked>
+                        <label for="remember-me-sign-up" class="pointer-cursor">Remember me</label>
+                    </div>
+                    <button type="submit" class="pointer-cursor login-button" disabled>Sign Up</button>
+                </div>
             </div>
-        </template>
-    </body>
+        </form>
+    </template>
+</body>
 </html>

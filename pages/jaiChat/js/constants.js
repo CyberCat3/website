@@ -1,11 +1,15 @@
-const textArea              =   document.querySelector(".chat-app.sender textarea");
-const chatAppContainer      =   document.querySelector(".chat-app.container");
-const sendButton            =   document.querySelector(".chat-app .sender .send-button");
-const sendButtonPlane       =   document.querySelector(".chat-app .sender .send-button img");
-const messages              =   document.querySelector(".chat-app.messages");
-const onlineIndicator       =   document.querySelector(".chat-app.online .indicator");
-const onlineIndicatorText   =   document.querySelector(".chat-app.online .indicator-text");
-const loginTemplate         =   document.querySelector("#login-template");
+const docQuery = query => document.querySelector(query);
+
+const textArea              =   docQuery(".chat-app.sender textarea");
+const chatAppContainer      =   docQuery(".chat-app.container");
+const sendButton            =   docQuery(".chat-app .sender .send-button");
+const sendButtonPlane       =   docQuery(".chat-app .sender .send-button img");
+const messages              =   docQuery(".chat-app.messages");
+const onlineIndicator       =   docQuery(".chat-app.online .indicator");
+const onlineIndicatorText   =   docQuery(".chat-app.online .indicator-text");
+const loginTemplate         =   docQuery("#login-template");
+const signInTemplate        =   docQuery("#sign-in-template");
+const signUpTemplate        =   docQuery("#sign-up-template");
 
 const months = [
     "Jan",   "Feb",   "Mar",
