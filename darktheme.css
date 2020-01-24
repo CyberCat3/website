@@ -1,5 +1,5 @@
 body {
-	background-image: url('https://images.wallpaperscraft.com/image/black_background_texture_86812_300x168.jpg');
+	background-image: url('/image/background.jpg');
 	font-family: "Open Sans", Consolas, Helvetica, sans-serif;
 }
 
@@ -76,12 +76,6 @@ button:hover {
 
 button:active {
 	background-color: rgb(50,0,0);
-}
-
-
-#giftxt {
-	background-color: white;
-	color: black;
 }
 
 ul.horiBar {
