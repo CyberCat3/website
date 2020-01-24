@@ -1,4 +1,5 @@
 .login-form {
+    box-sizing: border-box;
     opacity: 0%;
     background-color: rgba(255,255,255,0.25);
     width: 60%;
@@ -11,9 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: height 0.3s ease, max-height 0.3s ease, opacity 1s ease;
-    /* transition: height 0.3s ease;
-    transition: opacity 1s ease; */
+    transition: height 0.3s ease, max-height 0.3s ease, margin-bottom 0.3s ease, opacity 1s ease;
     overflow: hidden;
 }
 
@@ -130,19 +129,19 @@
     opacity: 1;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
     .login-headers h2 {
         font-size: x-large !important; 
     }
 }
 
-@media (max-width: 530px) {
+@media (max-width: 630px) {
     .login-headers h2 {
         font-size: larger !important;
     }
 }
 
-@media (max-width: 430px) {
+@media (max-width: 460px) {
     .login-headers h2 {
         font-size: large !important;
     }
