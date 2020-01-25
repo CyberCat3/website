@@ -3,9 +3,9 @@
     /* background-color: rgba(255,0,0,0.3); */
     height: calc(15% - 3px);
     width: 100%;
+    max-width: 100%;
     border-top: 3px solid rgba(255,255,255,0.1);
     display: flex;
-    align-self: flex-end;
 }
 
 .chat-app.sender textarea:focus {
@@ -19,9 +19,10 @@ textarea:focus, select:focus{
 
 .chat-app.sender textarea {
     resize: none;
-    width: 85%;
     height: calc(100% - 10px);
+    width: 1%;
     border: none;
+    flex-grow: 1;
     background-color: rgba(255,255,255,0);
     overflow-y: hidden;
     font-size: 20px;
@@ -33,10 +34,9 @@ textarea:focus, select:focus{
 
 .chat-app.sender .send-button {
     height: 100%;
-    width: 15%;
     opacity: 100%;
     background-color: rgba(255,255,255,0.1);
-    transition: all 0.2s ease;
+    transition: all 0.2s ease, width 3s ease;
     border-radius: 0px 0px 7px 0px;
     outline: none;
 }

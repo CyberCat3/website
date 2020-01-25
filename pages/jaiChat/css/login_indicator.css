@@ -9,7 +9,6 @@
     padding-top: 6px;
     border-bottom: 3px solid rgba(255,255,255,0.1);
     overflow: hidden;
-    height: 90px;
 }
 
 .chat-app.login-indicator-container p {
@@ -32,6 +31,7 @@
 
 .username-indicator {
     opacity: 0%;
+    overflow-wrap: break-word;
 }
 
 .chat-app.login-indicator-container .log-out-button-content {

@@ -29,6 +29,8 @@ body {
 .rooms-online-container {
     height: 100%;
     width: 25%;
+    min-width: 125px;
+    max-width: 250px;
     border-right: 3px solid rgba(255,255,255,0.2);
     display: flex;
     flex-direction: column;
@@ -36,5 +38,5 @@ body {
 
 .messages-sender-container {
     height: 100%;
-    width: 75%;
+    flex-grow: 1;
 }

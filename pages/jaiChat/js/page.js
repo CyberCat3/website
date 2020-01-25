@@ -20,3 +20,9 @@ setTimeout(() => {
 sendButtonPlane.addEventListener("animationend", () => {
     sendButtonPlane.classList.remove("send-animation");
 });
+
+(window.onresize = event => {
+    sendButton.style.width = `${sendButton.clientHeight}px`;
+})();
+
+setTimeout(window.onresize, 1200);
