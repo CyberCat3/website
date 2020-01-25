@@ -1,6 +1,7 @@
 let loginRealForm, loginForm, loginContent;
 let signInHeader, signInContent, signInButton, signInUsername, signInPassword;
 let signUpHeader, signUpContent, signUpButton, signUpUsername, signUpPassword, signUpConfirmPassword;
+let isLoggedIn = false;
 
 function hideLogin() {
     setTimeout(() => {
@@ -176,11 +177,13 @@ function setupWebsocket() {
             }
             case "sign-in-confirmed": {
                 myName = response.username;
+                isLoggedIn = true;
                 hideLogin();
                 break;
             }
             case "sign-up-confirmed": {
                 myName = response.username;
+                isLoggedIn = true;
                 hideLogin();
                 break;
             }
