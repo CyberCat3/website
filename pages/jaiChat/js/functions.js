@@ -153,11 +153,13 @@ function setupWebsocket() {
 
     websocket.onopen = () => {
         try { 
-            const localLogin = JSON.parse(localLoginRawString);
+            console.log("In try block");
+            const localLogin = JSON.parse(localStorage.getItem("jaiChat-loginInfo"));
+            console.log(localLogin);
             if (localLogin && localLogin.username && localLogin.password) {
                 websocket.send(JSON.stringify({type: "sign-in", username: localLogin.username, password: localLogin.password})); 
             }
-        } catch {}
+        } catch {console.log("In catch block");}
         showLogin();
         online();
     }
