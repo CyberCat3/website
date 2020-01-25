@@ -11,7 +11,7 @@ function hideLogin() {
             loginForm.style.maxHeight = "0px"
             loginForm.style.marginBottom = "-30px";
         }, 400);
-    }, 100);
+    }, 110);
 }
 
 function showLogin() {
@@ -137,7 +137,7 @@ function showLogin() {
         }
         console.log("request: ",request);
         websocket.send(JSON.stringify(request));
-        return false;
+        return false; // To prevent page reload
     }
     //--------------------------------------------------//
 }
@@ -153,13 +153,11 @@ function setupWebsocket() {
 
     websocket.onopen = () => {
         try { 
-            console.log("In try block");
             const localLogin = JSON.parse(localStorage.getItem("jaiChat-loginInfo"));
-            console.log(localLogin);
             if (localLogin && localLogin.username && localLogin.password) {
                 websocket.send(JSON.stringify({type: "sign-in", username: localLogin.username, password: localLogin.password})); 
             }
-        } catch {console.log("In catch block");}
+        } catch {}
         showLogin();
         online();
     }
@@ -179,12 +177,14 @@ function setupWebsocket() {
             }
             case "sign-in-confirmed": {
                 myName = response.username;
+                updateLoginIndicator(myName);
                 isLoggedIn = true;
                 hideLogin();
                 break;
             }
             case "sign-up-confirmed": {
                 myName = response.username;
+                updateLoginIndicator(myName);
                 isLoggedIn = true;
                 hideLogin();
                 break;
@@ -220,6 +220,22 @@ function send() {
     }
 }
 
+function updateLoginIndicator(name) {
+    loggedInIndicatorText.style.opacity = "0%";
+    setTimeout(() => {
+        loggedInIndicatorText.style.opacity = "100%";
+        loggedInIndicatorText.innerText = "Logged in as";
+        usernameIndicator.innerText = name;
+        usernameIndicator.style.opacity = "100%";
+        logOutButton.style.opacity = "100%";
+    }, 700);
+}
+
+function logout() {
+    localStorage.removeItem("jaiChat-loginInfo");
+    window.location.href = window.location.href;
+}
+
 function online() {
     onlineIndicator.style.opacity = "0%";
     onlineIndicatorText.style.opacity = "0%";
@@ -244,6 +260,14 @@ function offline() {
     }, 700);
     sendButtonPlane.style.opacity = "20%";
     isOnline = false;
+
+    loggedInIndicatorText.style.opacity = "0%";
+    usernameIndicator.style.opacity = "0%";
+    logOutButton.style.opacity = "0%";
+    setTimeout(() => {
+        loggedInIndicatorText.innerText = "Not logged in";
+        loggedInIndicatorText.style.opacity = "100%";
+    }, 700);
 }
 
 function formatTime(millis) {

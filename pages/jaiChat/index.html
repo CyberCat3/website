@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/messages.css">
     <link rel="stylesheet" href="css/online_indicator.css">
+    <link rel="stylesheet" href="css/login_indicator.css">
     <link rel="stylesheet" href="css/rooms.css">
     <link rel="stylesheet" href="css/sender.css">
 </head>
@@ -21,6 +22,16 @@
             <div class="chat-app online">
                 <div class="indicator"></div>
                 <div class="indicator-text"></div>
+            </div>
+            <div class="chat-app login-indicator-container">
+                <p id="logged-in-indicator-text">Not logged in</p>
+                <p class="username-indicator">At all</p>
+                <button class="log-out-button pointer-cursor" type="button" onclick="logout()">
+                    <span class="log-out-button-content">
+                        <p>Logout</p>
+                        <img src="assets/logout_icon.svg" alt="logout icon">
+                    </span>
+                </button>
             </div>
             <div class="chat-app rooms"></div>
         </div>

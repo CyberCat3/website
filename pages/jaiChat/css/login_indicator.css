@@ -1,0 +1,66 @@
+.chat-app.login-indicator-container > * {
+    transition: opacity 0.7s ease;
+}
+
+.chat-app.login-indicator-container {
+    box-sizing: border-box;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding-top: 6px;
+    border-bottom: 3px solid rgba(255,255,255,0.1);
+    overflow: hidden;
+    height: 90px;
+}
+
+.chat-app.login-indicator-container p {
+    margin: 0;
+}
+
+.chat-app.login-indicator-container .log-out-button {
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    width: 90%;
+    border-radius: 0.5rem;
+    color: rgba(0,0,0,0.6);
+    padding: 6px 0px;
+    margin: 5px 0px 10px 0px;
+    background-color: rgba(255,255,255,0.2);
+    transition: color 0.4s ease, background-color 0.4s ease, opacity 0.7s ease;
+    opacity: 0%;
+}
+
+.username-indicator {
+    opacity: 0%;
+}
+
+.chat-app.login-indicator-container .log-out-button-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.chat-app.login-indicator-container .log-out-button img {
+    width: 1.4em;
+    height: 1.4em;
+    margin-left: 5px;
+    opacity: 60%;
+    transition: opacity 0.4s ease;
+}
+
+.chat-app.login-indicator-container .log-out-button:hover {
+    color: rgba(0,0,0,1);
+    background-color: rgba(255,255,255,0.4);
+}
+
+.chat-app.login-indicator-container .log-out-button:active {
+    background-color: rgba(255,255,255,0.8);
+    color: rgba(0,0,0,0.1);
+}
+
+.chat-app.login-indicator-container .log-out-button:hover img {
+    opacity: 100%;
+}
+
+.chat-app.login-indicator-container .log-out-button:active img {
+    opacity: 10%;
+}
