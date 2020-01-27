@@ -1,6 +1,7 @@
 let loginRealForm, loginForm, loginContent;
 let signInHeader, signInContent, signInButton, signInUsername, signInPassword;
 let signUpHeader, signUpContent, signUpButton, signUpUsername, signUpPassword, signUpConfirmPassword;
+
 let isLoggedIn = false;
 
 function hideLogin() {
@@ -132,6 +133,8 @@ function showLogin() {
             request.password = signUpPassword.value;
             rememberMe = signInRememberMe.checked;
         }
+        username = request.username;
+        password = request.password;
         if (rememberMe) {
             localStorage.setItem("jaiChat-loginInfo", JSON.stringify({username: request.username, password: request.password}));
         }
@@ -152,43 +155,39 @@ function setupWebsocket() {
     }
 
     websocket.onopen = () => {
-        try { 
-            const localLogin = JSON.parse(localStorage.getItem("jaiChat-loginInfo"));
-            if (localLogin && localLogin.username && localLogin.password) {
-                websocket.send(JSON.stringify({type: "sign-in", username: localLogin.username, password: localLogin.password})); 
-            }
-        } catch {}
+        if (username && password) {
+            websocket.send(JSON.stringify({type: "sign-in", username, password}));
+        }
         showLogin();
         online();
     }
+    
     websocket.onclose = () => {
         offline();
     }
-
-    let myName;
 
     websocket.onmessage = data => {
         const response = JSON.parse(data.data);
         console.log(`Received message: ${data.data}`);
         switch (response.type) {
             case "message": {
-                receiveMessage(response.sender, response.content, response.time, myName === response.sender);
+                receiveMessage(response.sender, response.content, response.time, username === response.sender);
                 break;
             }
             case "sign-in-confirmed": {
-                myName = response.username;
-                updateLoginIndicator(myName);
+                username = response.username;
+                updateLoginIndicator(username);
                 isLoggedIn = true;
                 hideLogin();
-                showNotification(`Logged in as ${myName}`, "#2ecc71");
+                showNotification(`Logged in as ${username}`, "#2ecc71");
                 break;
             }
             case "sign-up-confirmed": {
-                myName = response.username;
+                username = response.username;
                 updateLoginIndicator(myName);
                 isLoggedIn = true;
                 hideLogin();
-                showNotification(`Created account and logged in as ${myName}`, "#2ecc71");
+                showNotification(`Created account and logged in as ${username}`, "#2ecc71");
                 break;
             }
             case "sign-in-denied": {
