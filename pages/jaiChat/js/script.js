@@ -4,5 +4,5 @@ setInterval(() => {
     if (!websocket || websocket.readyState === websocket.CLOSED) {
         setTimeout(setupWebsocket, 700);
     }
-}, 2000);
+}, 2500);
 setupWebsocket();

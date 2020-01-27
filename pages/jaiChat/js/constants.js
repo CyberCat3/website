@@ -14,6 +14,12 @@ const loggedInIndicatorDiv    =   docQuery(".chat-app .login-indicator-container
 const loggedInIndicatorText   =   docQuery("#logged-in-indicator-text");
 const usernameIndicator       =   docQuery(".username-indicator");
 const logOutButton            =   docQuery(".log-out-button");
+const notification            =   docQuery(".notification");
+
+const BAD_PASSWORD             =   "BAD_PASSWORD";
+const ACCOUNT_NOT_FOUND        =   "ACCOUNT_NOT_FOUND";
+const ACCOUNT_ALREADY_EXISTS   =   "ACCOUNT_ALREADY_EXISTS";
+const DATABASE_ERROR           =   "DATABASE_ERROR";
 
 const months = [
     "Jan",   "Feb",   "Mar",

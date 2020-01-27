@@ -144,7 +144,7 @@ function showLogin() {
 
 function setupWebsocket() {
     if (window.location.href.indexOf("jaibel.ddns.net") === -1) {
-        websocket = new WebSocket("ws://localhost:8080");
+        websocket = new WebSocket("ws://localhost:4431");
         console.log("connecting to localhost");
     } else {
         websocket = new WebSocket("wss://jaibel.ddns.net/ws/chat");
@@ -180,6 +180,7 @@ function setupWebsocket() {
                 updateLoginIndicator(myName);
                 isLoggedIn = true;
                 hideLogin();
+                showNotification(`Logged in as ${myName}`, "#2ecc71");
                 break;
             }
             case "sign-up-confirmed": {
@@ -187,12 +188,23 @@ function setupWebsocket() {
                 updateLoginIndicator(myName);
                 isLoggedIn = true;
                 hideLogin();
+                showNotification(`Created account and logged in as ${myName}`, "#2ecc71");
                 break;
             }
             case "sign-in-denied": {
+                showNotification(`Couldn't sign in: ${response.reason}`, "#e74c3c");
+                if (response.reason === BAD_PASSWORD || response.reason === ACCOUNT_NOT_FOUND) {
+                    localStorage.removeItem("jaiChat-loginInfo");
+                    console.log("Unsaved password from localstorage");
+                }
                 break;
             }
             case "sign-up-denied": {
+                showNotification(`Couldn't create account: ${response.reason}`, "#e74c3c");
+                if (response.reason === BAD_PASSWORD || response.reason === ACCOUNT_ALREADY_EXISTS) {
+                    localStorage.removeItem("jaiChat-loginInfo");
+                    console.log("Unsaved password from localstorage");
+                }
                 break;
             }
         }
@@ -247,6 +259,34 @@ function online() {
     }, 700);
     sendButtonPlane.style.opacity = "70%";
     isOnline = true;
+}
+
+let timeOnLastNotification = -Infinity;
+function showNotification(message, color) {
+    const NOTIFICATION_TIME = 3000;
+    const timeDiff = performance.now() - timeOnLastNotification;
+    // console.log("Time since last notification: " + timeDiff);
+
+    
+    if (timeDiff < NOTIFICATION_TIME) {
+        // console.log(`Notification to soon, delaying ${NOTIFICATION_TIME - timeDiff + 800} millis`);
+        setTimeout(() => showNotification(message, color), NOTIFICATION_TIME - timeDiff + 800);
+        return;
+    }
+
+    timeOnLastNotification = performance.now();
+
+    currentlyShowingNotification = true;
+    // console.log(`[snowNotifcation message: ${message}, color: ${color}]`);
+    notification.innerText = message;
+    notification.style.backgroundColor = color;
+    notification.style.opacity = "100%";
+    notification.style.top = "5%";
+    setTimeout(() => {
+        notification.style.opacity = "0%";
+        notification.style.top = "-6%";
+        currentlyShowingNotification = false;
+    }, NOTIFICATION_TIME);
 }
 
 function offline() {
