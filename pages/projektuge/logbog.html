@@ -9,49 +9,56 @@
         * {
             box-sizing: border-box;
         }
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-color: #2980b9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .header {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            /* padding: 15px 0px; */
+            margin: 0px 0px 0px 0px;
+            z-index: 1;
+            position: fixed;
+            width: 100vw;
+            top: 0px;
+            opacity: 97%;
+        }
         .content {
             width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 75px auto 0px auto;
         }
-
         .section {
-            background-color: #777777;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
+           background-color: #3498db; 
+           padding: 5px 20px;
+           color: rgba(255,255,255,0.8);
+           margin-bottom: 40px;
         }
-
-        h1,h3 {
-            margin-bottom: 0px;
-        }
-        h1 {
-            margin: 0px;
+        .section h1 {
             position: sticky;
-            top: 0px;
-            padding: 10px 0px;
-            background-color: #aaaaaa;
-            color: #ffffff;
-            text-align: center;
+            top: 85px;
+            background-color: #9b59b6;
+            padding: 20px 15px;
+            margin: -5px -20px 0px -20px;
+            color: white;
         }
-        p {
-            margin-top: 0px;
+        .section h3 {
+            color: white;
+            margin-bottom: 3px;
+            margin-top: 20px;
         }
-        h3,p {
-            margin-left: 30px;
-        }
-        body {
-            position: relative;
-            margin: 0px;
-            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #555555;
-        }
-        hr {
-            margin: 50px;
+        .section p {
+            margin-top: 3px;
         }
     </style>
 </head>
 <body>
-    <h1 style="background-color: rgba(0,0,0,0.4);">Logbog</h1>
+    <div class="header">
+        <h1>Logbog</h1>
+    </div>    
     <div class="content">
         <div class="section">
             <h1>Dag 1 (Tirsdag, Uge 1  28-01-2020)</h1>
