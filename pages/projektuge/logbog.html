@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Logbog</title>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         * {
             box-sizing: border-box;
         }
@@ -19,7 +22,6 @@
             background-color: #34495e;
             color: white;
             text-align: center;
-            /* padding: 15px 0px; */
             margin: 0px 0px 0px 0px;
             z-index: 1;
             position: fixed;
@@ -29,12 +31,12 @@
         }
         .content {
             width: 600px;
-            margin: 75px auto 0px auto;
+            margin: 75px auto 135px auto;
         }
         .section {
            background-color: #3498db; 
            padding: 5px 20px;
-           color: rgba(255,255,255,0.8);
+           color: rgba(255,255,255,0.9);
            margin-bottom: 40px;
         }
         .section h1 {
@@ -49,10 +51,19 @@
             color: white;
             margin-bottom: 3px;
             margin-top: 20px;
+            font-size: 1.15rem;
         }
+
         .section p {
             margin-top: 3px;
+            font-size: 1.15rem;
+            margin-left: 13px;
         }
+
+        #section4,#section5,#section6 {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -60,44 +71,35 @@
         <h1>Logbog</h1>
     </div>    
     <div class="content">
-        <div class="section">
+        <div class="section" id="section1">
             <h1>Dag 1 (Tirsdag, Uge 1  28-01-2020)</h1>
             <h3>Mål for i dag</h3>
             <p>Mine mål for i dag er, at jeg gerne vil have nogle holdnings- og vurderingsspørgsmål.</p>
-            <h3>Hvad skal jeg/vi nå?</h3>
-            <p>Jeg skal opfylde mine mål og skrive logbog.</p>
-            <h3>Hvordan fordeler vi opgaverne?</h3>
-            <p>Jeg er en person, så dette spørgsmål er irrelevant. Jeg vil ikke svare på det i fremtiden.</p>
             <h3>Refleksion over gruppens arbejdsindsats</h3>
-            <p>Jeg har opnået mine, dog ikke særlig ambitiøse, mål. Jeg har ikke været sådan super produktiv i dag, men jeg er har også været temmelig træt.</p>
+            <p>Jeg har opnået mine, dog ikke særlig ambitiøse, mål. Jeg har ikke været sådan super produktiv i dag, men jeg har også været temmelig træt.</p>
             <h3>Evaluering af dagen</h3>
             <p>Jeg har fundet en ny problemstilling, og ændrede lidt på nogle af de andre. Jeg har fundet 3 kilder jeg kan bruge til mit projekt. Jeg er begyndt på at sætte ting i mit slides.</p>
             <h3>Nåede jeg målet?</h3>
             <p>Ja, det gjorde jeg. Jeg fandt den ekstra problemstilling, og mere til.</p>
         </div>
-        <div class="section" style="display: none;">
+        <div class="section" id="section2">
             <h1>Dag 2 (Onsdag, Uge 1  29-01-2020)</h1>
             <h3>Mål for i dag</h3>
-            <p>Ikke udfyldt endnu</p>
-            <h3>Hvad skal jeg/vi nå?</h3>
-            <p>Ikke udfyldt endnu</p>
-            <h3>Hvordan fordeler vi opgaverne?</h3>
-            <p>Ikke udfyldt endnu</p>
+            <p>Jeg vil gerne blive generalt blive klogere på automation, og svare på de to første problemstillingere. Jeg vil også gerne putte det i Slides.</p>
+            <h3>Vejledning</h3>
+            <p><b>Før) </b>Mine mål med vejledningen er, at få bedre styr på mit produkt, og sikre at mit arbejde går i den rigtige vej.</p>
+            <p><b>Efter) </b>Efter vejledningen fandt jeg ud af, hvad mit produkt skal være. Det skal være en bil, der kører rundt i en bane. Vi skal så se, hvordan den bliver bedre og bedre med tiden. Det kan så sammenlignes med selvkørende biler, og hvor mange jobs det vil overtage.</p>
             <h3>Refleksion over gruppens arbejdsindsats</h3>
-            <p>Ikke udfyldt endnu</p>
+            <p>Jeg arbejdet godt og grundigt da jeg var i skolen. Da jeg kom hjem, var jeg ret træt, og var ikke lige så fokuseret.</p>
             <h3>Evaluering af dagen</h3>
-            <p>Ikke udfyldt endnu</p>
+            <p>Jeg fandt frem til hvad mit produkt skulle være. Jeg har mange flere kilder og læst mig mere klog på emnet. Jeg kom også temmelig langt med de første problemstillinger.</p>
             <h3>Nåede jeg målet?</h3>
-            <p>Ikke udfyldt endnu</p>
+            <p>Jeg blev ikke helt færdig med målene. Til gengæld fandt jeg ud af, hvad mit produkt skal være, og jeg fik læst en hel del.</p>
         </div>
-        <div class="section" style="display: none;">
+        <div class="section" id="section3">
             <h1>Dag 3 (Torsdag, Uge 1  30-01-2020)</h1>
             <h3>Mål for i dag</h3>
-            <p>Ikke udfyldt endnu</p>
-            <h3>Hvad skal jeg/vi nå?</h3>
-            <p>Ikke udfyldt endnu</p>
-            <h3>Hvordan fordeler vi opgaverne?</h3>
-            <p>Ikke udfyldt endnu</p>
+            <p>Jeg skal havde gjort historien om automation færdig, og lavet tilhørende slides. Jeg vil også have svaret på, hvad eksperterne mener, og finde nogle holdningskolder.</p>
             <h3>Refleksion over gruppens arbejdsindsats</h3>
             <p>Ikke udfyldt endnu</p>
             <h3>Evaluering af dagen</h3>
@@ -105,14 +107,10 @@
             <h3>Nåede jeg målet?</h3>
             <p>Ikke udfyldt endnu</p>
         </div>
-        <div class="section" style="display: none;">
+        <div class="section" id="section4">
             <h1>Dag 4 (Fredag, Uge 1  31-01-2020)</h1>
             <h3>Mål for i dag</h3>
             <p>Ikke udfyldt endnu</p>
-            <h3>Hvad skal jeg/vi nå?</h3>
-            <p>Ikke udfyldt endnu</p>
-            <h3>Hvordan fordeler vi opgaverne?</h3>
-            <p>Ikke udfyldt endnu</p>
             <h3>Refleksion over gruppens arbejdsindsats</h3>
             <p>Ikke udfyldt endnu</p>
             <h3>Evaluering af dagen</h3>
@@ -120,14 +118,10 @@
             <h3>Nåede jeg målet?</h3>
             <p>Ikke udfyldt endnu</p>
         </div>
-        <div class="section" style="display: none;">
+        <div class="section" id="section5">
             <h1>Dag 5 (Mandag, Uge 2  03-02-2020)</h1>
             <h3>Mål for i dag</h3>
             <p>Ikke udfyldt endnu</p>
-            <h3>Hvad skal jeg/vi nå?</h3>
-            <p>Ikke udfyldt endnu</p>
-            <h3>Hvordan fordeler vi opgaverne?</h3>
-            <p>Ikke udfyldt endnu</p>
             <h3>Refleksion over gruppens arbejdsindsats</h3>
             <p>Ikke udfyldt endnu</p>
             <h3>Evaluering af dagen</h3>
@@ -135,13 +129,9 @@
             <h3>Nåede jeg målet?</h3>
             <p>Ikke udfyldt endnu</p>
         </div>
-        <div class="section" style="display: none;">
+        <div class="section" id="section6">
             <h1>Dag 6 (Tirsdag, Uge 2  04-02-2020)</h1>
             <h3>Mål for i dag</h3>
-            <p>Ikke udfyldt endnu</p>
-            <h3>Hvad skal jeg/vi nå?</h3>
-            <p>Ikke udfyldt endnu</p>
-            <h3>Hvordan fordeler vi opgaverne?</h3>
             <p>Ikke udfyldt endnu</p>
             <h3>Refleksion over gruppens arbejdsindsats</h3>
             <p>Ikke udfyldt endnu</p>
