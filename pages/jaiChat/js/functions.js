@@ -13,6 +13,7 @@ function hideLogin() {
             loginForm.style.marginBottom = "-30px";
         }, 400);
     }, 110);
+    setTimeout(() => loginForm.style.visibility = "hidden", 810);
 }
 
 function showLogin() {
@@ -39,6 +40,7 @@ function showLogin() {
 
     //-------------SHOWS LOGIN-------------//
     loginForm.style.removeProperty("pointer-events");
+    usernameIndicator.style.visibility = "visible";
     loginForm.style.marginBottom = "20px";
     setTimeout(() => loginForm.style.opacity = "100%", 100);
 
@@ -77,7 +79,14 @@ function showLogin() {
     signUpUsername.onkeyup = checkIfValidSignUp;
 
     // Sign in
-    signInUsername.onkeyup = signInPassword.onkeyup = checkIfValidSignIn;
+    (signInUsername.onkeyup = signInPassword.onkeyup = checkIfValidSignIn)();
+
+    // sign up when you press enter
+    signUpConfirmPassword.onkeydown = event => {
+        if (event.key === "Enter" && !signUpButton.disabled) {
+            signUpButton.click();
+        }
+    }
 
     //-------------TAB SWITCHING-------------//
     let mode;
@@ -136,7 +145,7 @@ function showLogin() {
         username = request.username;
         password = request.password;
         if (rememberMe) {
-            localStorage.setItem("jaiChat-loginInfo", JSON.stringify({username: request.username, password: request.password}));
+            localStorage.setItem(LOGIN_INFO_KEY, JSON.stringify({username: request.username, password: request.password}));
         }
         console.log("request: ",request);
         websocket.send(JSON.stringify(request));
@@ -168,7 +177,7 @@ function setupWebsocket() {
 
     websocket.onmessage = data => {
         const response = JSON.parse(data.data);
-        console.log(`Received message: ${data.data}`);
+        // console.log(`Received message: ${data.data}`);
         switch (response.type) {
             case "message": {
                 receiveMessage(response.sender, response.content, response.time, username === response.sender);
@@ -184,7 +193,7 @@ function setupWebsocket() {
             }
             case "sign-up-confirmed": {
                 username = response.username;
-                updateLoginIndicator(myName);
+                updateLoginIndicator(username);
                 isLoggedIn = true;
                 hideLogin();
                 showNotification(`Created account and logged in as ${username}`, "#2ecc71");
@@ -193,7 +202,7 @@ function setupWebsocket() {
             case "sign-in-denied": {
                 showNotification(`Couldn't sign in: ${response.reason}`, "#e74c3c");
                 if (response.reason === BAD_PASSWORD || response.reason === ACCOUNT_NOT_FOUND) {
-                    localStorage.removeItem("jaiChat-loginInfo");
+                    localStorage.removeItem(LOGIN_INFO_KEY);
                     console.log("Unsaved password from localstorage");
                 }
                 break;
@@ -201,7 +210,7 @@ function setupWebsocket() {
             case "sign-up-denied": {
                 showNotification(`Couldn't create account: ${response.reason}`, "#e74c3c");
                 if (response.reason === BAD_PASSWORD || response.reason === ACCOUNT_ALREADY_EXISTS) {
-                    localStorage.removeItem("jaiChat-loginInfo");
+                    localStorage.removeItem(LOGIN_INFO_KEY);
                     console.log("Unsaved password from localstorage");
                 }
                 break;
@@ -210,12 +219,14 @@ function setupWebsocket() {
     };
 }
 
+// const receivedMessages = [];
+
 function receiveMessage(person, messageContent, unixEpochTimeMillis, isRight) {
     const messageElement = createMessageElement(person, messageContent, unixEpochTimeMillis, isRight);
+    // messages.prepend(messageElement);
     messages.appendChild(messageElement);
-    // The animation doesn't work, if this timeout isn't here.
-    setTimeout(() => messages.lastElementChild.style.opacity = "100%", 0);
     
+
     const distFromBottom = messages.scrollHeight - messages.clientHeight - messages.scrollTop;
     if (distFromBottom < 400) {
         messages.scrollBy(0, distFromBottom - 20);
@@ -243,7 +254,7 @@ function updateLoginIndicator(name) {
 }
 
 function logout() {
-    localStorage.removeItem("jaiChat-loginInfo");
+    localStorage.removeItem(LOGIN_INFO_KEY);
     window.location.href = window.location.href;
 }
 

@@ -19,6 +19,11 @@ p {
     margin-top: 0;
 }
 
+@keyframes fade-in-frames {
+    from { opacity: 0%; }
+    to { opacity: 100%; }
+}
+
 .chat-app.messages .message {
     width: 50%;
     padding: 15px;
@@ -32,8 +37,8 @@ p {
     color: rgba(0,0,0,0.35);
     margin-bottom: 20px;
     overflow: hidden;
-    transition: all 0.5s ease;
-    opacity: 0%;
+    /* transition: all 0.5s ease; */
+    animation: fade-in-frames 0.5s ease;
 }
 
 .chat-app.messages .message .message-sender {
