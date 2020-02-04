@@ -1,5 +1,10 @@
 class Car {
     constructor(x, y) {
+        this.reset(x,y);
+        this.brain = new NeuralNetwork(5,4,3,2);
+    }
+
+    reset(x, y) {
         this.x = x;
         this.y = y;
         this.xVel = 0;
@@ -10,6 +15,8 @@ class Car {
             {x: -0.1, y:  0.1}, {x: 0.1, y:  0.1}
         ];
         this.vision = [1, 1, 1, 1, 1];
+        this.timesUpdated = 0;
+        this.dead = false;
     }
 
     update() {
@@ -80,7 +87,22 @@ class Car {
                 }
             }
             this.vision[i] = isFinite(bestDist) ? Math.sqrt(bestDist) : 1;
+            this.vision[i] = this.vision[i];
         }
+
+        // for (let i = 0; i < this.vision.length; ++i) {
+        //     this.vision[i] = map(this.vision[i], 0.02, 0.5, -1, 1);
+        // }
+        const brainOutput = this.brain.predict(this.vision);
+        
+        if (brainOutput[0] > 0.5) {
+            this.rot -= 0.04;
+        }
+        if (brainOutput[1] > 0.5) {
+            this.rot += 0.04;
+        }
+
+        ++this.timesUpdated;
     }
 
     draw() {
@@ -98,8 +120,8 @@ class Car {
         pop();
 
         imageMode(CENTER);
-        image(carImg, 0, 0, 30, 18);
-
+        image(carImg, 0, 0, nptw(0.07), nptw(0.05));
+        
         pop();
         
 

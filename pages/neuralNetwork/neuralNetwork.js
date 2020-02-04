@@ -57,6 +57,8 @@ class NeuralNetwork {
         const clonedNetwork = new NeuralNetwork(...this.shape);
         for (let layer = 1; layer < this.network.length; ++layer) {
             for (let perceptron = 0; perceptron < this.network[layer].length; ++perceptron) {
+                clonedNetwork.network[layer][perceptron].bias =
+                         this.network[layer][perceptron].bias;
                 for (let weight = 0; weight < this.network[layer][perceptron].weights.length; ++weight) {
                     clonedNetwork.network[layer][perceptron].weights[weight] =
                              this.network[layer][perceptron].weights[weight];
