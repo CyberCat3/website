@@ -102,22 +102,30 @@ class Car {
             this.rot += 0.04;
         }
 
+        // this.rot += (brainOutput[0] - 0.5) * 0.04;
+
         ++this.timesUpdated;
+    }
+
+    drawVisionLines() {
+        push();
+        translate(nptw(this.x), nptw(this.y));
+        rotate(this.rot);
+
+        stroke(160);
+        strokeWeight(1);
+        rotate(-QUARTER_PI);
+        for (let i = 0; i < this.vision.length; ++i) {
+            line(0, 0, nptw(this.vision[i]) * 0.95, 0);
+            rotate(QUARTER_PI / 2);
+        }
+        pop(); // It looks really fun if you remove this.
     }
 
     draw() {
         push();
         translate(nptw(this.x), nptw(this.y));
         rotate(this.rot);
-
-        push();
-        strokeWeight(2);
-        rotate(-QUARTER_PI);
-        for (let i = 0; i < this.vision.length; ++i) {
-            line(0, 0, nptw(this.vision[i]), 0);
-            rotate(QUARTER_PI / 2);
-        }
-        pop();
 
         imageMode(CENTER);
         image(carImg, 0, 0, nptw(0.07), nptw(0.05));

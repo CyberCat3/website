@@ -32,25 +32,6 @@ function setup() {
 }
 
 function draw() {
-    if (keysPressed.has("w")) {
-        cam.zoom += 0.02;
-    }
-    if (keysPressed.has("s")) {
-        cam.zoom -= 0.02;
-    }
-    if (keysPressed.has("ArrowUp")) {
-        cam.posY -= 0.02;
-    }
-    if (keysPressed.has("ArrowDown")) {
-        cam.posY += 0.02;
-    }
-    if (keysPressed.has("ArrowLeft")) {
-        cam.posX -= 0.02;
-    }
-    if (keysPressed.has("ArrowRight")) {
-        cam.posX += 0.02;
-    }
-
     let anyCarAlive = false;
     for (const car of cars) {
         if (!car.dead) {
@@ -77,19 +58,12 @@ function draw() {
     stroke(255);
     strokeWeight(3);
 
-    ellipse(normalPlaneToWindow( 1), normalPlaneToWindow( 1), 10, 10);
-    ellipse(normalPlaneToWindow( 1), normalPlaneToWindow(-1), 10, 10);
-    ellipse(normalPlaneToWindow(-1), normalPlaneToWindow( 1), 10, 10);
-    ellipse(normalPlaneToWindow(-1), normalPlaneToWindow(-1), 10, 10);
-    ellipse(normalPlaneToWindow( 0), normalPlaneToWindow( 0), 10, 10);
+    for (const car of cars) {
+        car.drawVisionLines();
+    }
 
     for (const currLine of courseWalls) {
-        line(
-            normalPlaneToWindow(currLine.pa.x),
-            normalPlaneToWindow(currLine.pa.y),
-            normalPlaneToWindow(currLine.pb.x),
-            normalPlaneToWindow(currLine.pb.y)
-        )
+        line(nptw(currLine.pa.x), nptw(currLine.pa.y), nptw(currLine.pb.x), nptw(currLine.pb.y));
     }
 
     for (const car of cars) {
@@ -111,12 +85,12 @@ function draw() {
     if (prevFps.length > 60) {
         prevFps.unshift();
     }
-    cars[0].brain.draw(0,windowHeight-400,600,400, true);
+    cars[0].brain.draw(0,windowHeight-250,300,250, false);
 }
 
 const normalPlaneToWindow = val => map(val, -1, 1, -minSide / 2, minSide / 2);
-const distSq = (x1,y1, x2,y2) => Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2);
 const nptw = normalPlaneToWindow;
+const distSq = (x1,y1, x2,y2) => Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2);
 
 let speedTimer;
 
@@ -143,7 +117,10 @@ function windowResized() {
 
 function resetAndEvolve() {
     cars.sort((c1, c2) => c2.timesUpdated - c1.timesUpdated);
-    console.log(`Best this generation: ${cars[0].timesUpdated}`);
+    if (cars[0].timesUpdated != bestLastGeneration) {
+        console.log(`The AI improved: ${cars[0].timesUpdated}`);
+    }
+    bestLastGeneration = cars[0].timesUpdated;
 
     for (let i = 0; i < POPULATION_SIZE / 2; ++i) {
         cars.pop();
@@ -158,22 +135,19 @@ function resetAndEvolve() {
     }
     ++generationCounter;
     if (generationCounter == 41) {
-        noLoop();
-        fetch("good_car.json").then(data => data.json())
+        noLoop(); // Stop the simulation while the good car is loading.
+        fetch("good_car.json").then(data => data.json()) // Get the good car and make it json.
         .then(json => {
-            myNewCar = new Car(-0.8, -0.8);
-            myNewCar.brain.network = json.brain.network;
-            const nn = myNewCar.brain.network;
-            nn[0].forEach(ip => ip.activation = InputPerceptron.prototype.activation);
+            myNewCar = new Car(-0.8, -0.8); // Create a new car
+            myNewCar.brain.network = json.brain.network; // Put in the loaded brain
+            const nn = myNewCar.brain.network; // Handle for the brain
+            nn[0].forEach(ip => ip.activation = InputPerceptron.prototype.activation); // Add activation functions for the input
             for (let i = 1; i < nn.length; ++i) {
-                nn[i].forEach(p => p.activation = Perceptron.prototype.activation);
-                nn[i].forEach(p => {
-                    p.children = nn[i-1];
-                });
+                nn[i].forEach(p => p.activation = Perceptron.prototype.activation); // Add activation functions for the rest
+                nn[i].forEach(p => p.children = nn[i-1]); // Connect the neurons.
             }
             cars.push(myNewCar);
-            console.log(json);
-            loop();
+            loop(); // Start the simulation when the good car has loaded.
             console.log("Loaded good car");
         });
     }
