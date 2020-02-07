@@ -70,6 +70,7 @@ function showLogin() {
             signUpConfirmPassword.style.border = "3px solid #e74c3c";
         }
     }
+
     //-------------ASIGNS EVENT HANDLERS-------------//
     // Sign up
     signUpPassword.onkeyup = signUpConfirmPassword.onkeyup = () => {
@@ -80,13 +81,6 @@ function showLogin() {
 
     // Sign in
     (signInUsername.onkeyup = signInPassword.onkeyup = checkIfValidSignIn)();
-
-    // sign up when you press enter
-    signUpConfirmPassword.onkeydown = event => {
-        if (event.key === "Enter" && !signUpButton.disabled) {
-            signUpButton.click();
-        }
-    }
 
     //-------------TAB SWITCHING-------------//
     let mode;
@@ -104,7 +98,7 @@ function showLogin() {
             signInContent.style.display = "block";
             signInUsername.required = signInPassword.required = true;
 
-            loginForm.style.maxHeight = "305px";
+            loginForm.style.maxHeight = "315px";
         }, 200);
     };
 
@@ -121,7 +115,7 @@ function showLogin() {
             signUpContent.style.display = "block";
             signUpUsername.required = signUpPassword.required = signUpConfirmPassword.required = true;
 
-            loginForm.style.maxHeight = "377px";
+            loginForm.style.maxHeight = "387px";
         }, 200);
     };
     
@@ -165,7 +159,9 @@ function setupWebsocket() {
 
     websocket.onopen = () => {
         if (username && password) {
-            websocket.send(JSON.stringify({type: "sign-in", username, password}));
+            const request = {type: "sign-in", username, password};
+            console.log("request: ", request);
+            websocket.send(JSON.stringify(request));
         }
         showLogin();
         online();
@@ -177,7 +173,7 @@ function setupWebsocket() {
 
     websocket.onmessage = data => {
         const response = JSON.parse(data.data);
-        // console.log(`Received message: ${data.data}`);
+        console.log("response: ", response);
         switch (response.type) {
             case "message": {
                 receiveMessage(response.sender, response.content, response.time, username === response.sender);

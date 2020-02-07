@@ -39,6 +39,7 @@ p {
     overflow: hidden;
     /* transition: all 0.5s ease; */
     animation: fade-in-frames 0.5s ease;
+    word-break: break-all;
 }
 
 .chat-app.messages .message .message-sender {
@@ -48,7 +49,7 @@ p {
 }
 
 .chat-app.messages .message .message-content {
-    margin: 10px 0px 5px 10px;
+    margin: 10px 0px 5px 15px;
     text-align: left;
     color: rgba(0,0,0,0.6);
 }
@@ -63,6 +64,6 @@ p {
 }
 
 .chat-app.messages .message.right .message-content {
-    margin: 10px 10px 5px 0px;
+    margin: 10px 15px 5px 0px;
     margin-left: auto;
 }
