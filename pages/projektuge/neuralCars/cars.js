@@ -21,13 +21,7 @@ class Car {
 
     update() {
         if (this.dead) { return; }
-        if (keysPressed.has("a")) {
-            this.rot -= 0.04;
-        }
-        if (keysPressed.has("d")) {
-            this.rot += 0.04;
-        }
-        // this.rot -= 0.015;
+
         this.xVel += Math.cos(this.rot) * 0.0007;
         this.yVel += Math.sin(this.rot) * 0.0007;
 

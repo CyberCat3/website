@@ -1,5 +1,9 @@
-const POPULATION_SIZE = 80;
-let courseWalls;
+const POPULATION_SIZE = 80;  // The initial population size, it wont change.
+const LEARNING_RATE = 0.20; // How mutative mutations are.
+let drawDeadCars = false; // Whether or not dead cars should be drawn.
+let drawVisionLines = false; // Whether or not to draw vision lines.
+
+let rawCourseJSON, courseWalls, startingPosition;
 
 const keysPressed = new Set();
 
@@ -13,21 +17,25 @@ let carImg;
 let prevFps = [];
 let generationCounter = 1;
 let bestLastGeneration = -1;
+let timesSinceLastImprovement = 0;
 
+// My neural network library uses a sigmoid function, this replaces that with a ReLU, as that is better.
+sigmoid = n => Math.max(0,n);
 
 function preload() {
-    courseWalls = loadJSON("course.json");
+    rawCourseJSON = loadJSON("course.json");
     carImg = loadImage("car.png");
 }
 
 function setup() {
-    courseWalls = Object.values(courseWalls); // loadJSON returns indexed object, this turns it into an array.
+    startingPosition = [rawCourseJSON.startX, rawCourseJSON.startY];
+    courseWalls = Object.values(rawCourseJSON.walls); // loadJSON returns indexed object, this turns it into an array.
 
     createCanvas(windowWidth, windowHeight);
     minSide = Math.min(windowWidth, windowHeight);
 
-    for (let i = 0; i < POPULATION_SIZE - 1; ++i) {
-        cars.push(new Car(-0.8, -0.8));
+    for (let i = 0; i < POPULATION_SIZE; ++i) {
+        cars.push(new Car(...startingPosition));
     }
 }
 
@@ -59,6 +67,9 @@ function draw() {
     strokeWeight(3);
 
     for (const car of cars) {
+        if (car.dead || !drawVisionLines) {
+            continue;
+        }
         car.drawVisionLines();
     }
 
@@ -67,6 +78,9 @@ function draw() {
     }
 
     for (const car of cars) {
+        if (car.dead && !drawDeadCars) {
+            continue;
+        }
         car.draw();
     }
 
@@ -86,7 +100,7 @@ function draw() {
     if (prevFps.length > 60) {
         prevFps.unshift();
     }
-    cars[0].brain.draw(0,windowHeight-250,300,250, false);
+    cars[0].brain.draw(5,windowHeight-255,300,250, false);
 }
 
 const normalPlaneToWindow = val => map(val, -1, 1, -minSide / 2, minSide / 2);
@@ -117,39 +131,53 @@ function windowResized() {
 }
 
 function resetAndEvolve() {
+    // Sort the cars based on performance
     cars.sort((c1, c2) => c2.timesUpdated - c1.timesUpdated);
-    if (cars[0].timesUpdated != bestLastGeneration) {
-        console.log(`The AI improved: ${cars[0].timesUpdated}`);
+
+    // Log AI Improvements.
+    if (cars[0].timesUpdated > bestLastGeneration) {
+        console.log(`The AI improved: ${cars[0].timesUpdated} Last Improvement: ${timesSinceLastImprovement} gens. ago`);
+        timesSinceLastImprovement = 0;
     }
     bestLastGeneration = cars[0].timesUpdated;
+    ++timesSinceLastImprovement;
 
-    for (let i = 0; i < POPULATION_SIZE / 2; ++i) {
+    // Kill the worst performing.
+    for (let i = 0; i < POPULATION_SIZE / 3 * 2; ++i) {
         cars.pop();
     }
-    
-    for (let i = 0; i < POPULATION_SIZE / 2; ++i) {
-        const myNewCar = new Car(-0.8, -0.8);
-        myNewCar.brain = cars[i].brain.clone();
-        myNewCar.brain.mutate(0.2);
-        cars.push(myNewCar);
-        cars[i].reset(-0.8, -0.8);
+
+    // Creates an array of reproduction chances.
+    const chances = normaliseArr(cars.map(car => car.timesUpdated));
+
+    // Reset the cars that remain alive.
+    cars.forEach(car => car.reset(...startingPosition));
+
+    // repopulate based on the chances
+    while (cars.length < POPULATION_SIZE) {
+        const oldCar = selectWithChanceMap(cars, chances);
+        const newCar = new Car(...startingPosition);
+        newCar.brain = oldCar.brain.clone();
+        newCar.brain.mutate(LEARNING_RATE);
+        cars.push(newCar);
     }
+
+
+    // Increment generation counter
     ++generationCounter;
-    if (generationCounter == 41) {
-        noLoop(); // Stop the simulation while the good car is loading.
-        fetch("good_car.json").then(data => data.json()) // Get the good car and make it json.
-        .then(json => {
-            myNewCar = new Car(-0.8, -0.8); // Create a new car
-            myNewCar.brain.network = json.brain.network; // Put in the loaded brain
-            const nn = myNewCar.brain.network; // Handle for the brain
-            nn[0].forEach(ip => ip.activation = InputPerceptron.prototype.activation); // Add activation functions for the input
-            for (let i = 1; i < nn.length; ++i) {
-                nn[i].forEach(p => p.activation = Perceptron.prototype.activation); // Add activation functions for the rest
-                nn[i].forEach(p => p.children = nn[i-1]); // Connect the neurons.
-            }
-            cars.push(myNewCar);
-            loop(); // Start the simulation when the good car has loaded.
-            console.log("Loaded good car");
-        });
+}
+
+function normaliseArr(arr) {
+    const sum = arr.reduce((pv, cv) => pv + cv);
+    return arr.map(n => n / sum);
+}
+
+function selectWithChanceMap(source, chances) {
+    const minLength = Math.min(source.length, chances.length);
+    let num = Math.random();
+    for (let i = 0; i < minLength; ++i) {
+        if ((num -= chances[i]) <= 0) {
+            return source[i];
+        }
     }
 }
