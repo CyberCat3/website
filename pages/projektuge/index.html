@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekt uge 2020 - Andreas D. Kunz</title>
+    <meta name="description" content="Denne side omhandler Andreas D. Kunz's projektopgave i 2020.">
+    <style>
+        * {
+            color: white;
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #0984e3;
+            margin: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        h2 {
+            font-size: xx-large;
+            font-weight: 600;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+        @media (orientation: landscape) {
+            .content {
+                flex-direction: row;
+            }
+        }
+
+        .other-entry {
+            display: block;
+            text-decoration: none;
+            width: 95%;
+            height: 200px;
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(0,0,0,0.3);
+            border: 3px solid white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.5s ease;
+        }
+        .other-entry:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+        .other-entry h3 {
+            margin-bottom: 10px;
+        }
+        img {
+            width: 95%;
+            margin: 10px;
+            padding: 10px;
+            background-color: rgba(0,0,0,0.3);
+            border: 3px solid white;
+            cursor: pointer;
+            transition: background-color 0.5s ease;
+        }
+        img:hover {
+            background-color: rgba(255,255,255,0.3);
+        }
+        .overlay {
+            position: fixed;
+            left: calc(100vw / 2 - 90vmin / 2);
+            top: 50px;
+            width: 90vmin;
+            background-color: rgba(0,0,0,0.95);
+            padding: 10px;
+            border: 3px solid white;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .images {
+            flex-grow: 1;
+            flex-basis: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .other {
+            flex-grow: 1;
+            flex-basis: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Projektuge 2020 - Andreas D. Kunz</h1>
+    <div class="content">
+        <div class="other">
+            <h2>Afleveringer</h2>
+            <a href="neuralCars/" class="other-entry"><h3>NeuralCars</h3></a>
+            <a href="logbog.html" class="other-entry"><h3>Logbog</h3></a>
+        </div>
+        <div class="images">
+            <h2>Billeder</h2>
+            <img src="potentiel_samfunds_udvikling.png" alt="En model, der viser hvilke veje vores samfund kan tage, under automation.">
+            <img src="nyteknologi-flere-jobs.png" alt="En model, der viser hvordan automation kan skabe flere jobs.">
+            <img src="dødning_skull.png" alt="Et billede af et dødninge hoved">
+        </div>
+    </div>
+
+   <script>
+    HTMLCollection.prototype.forEach = function(callback) {
+        for (const item of this) { callback(item); }
+    };
+    
+    const images = document.getElementsByTagName("img");
+
+    window.addEventListener("click", () => {
+        images.forEach(img => img.classList.remove("overlay"));
+    });
+
+    images.forEach(img => {
+        img.onclick = () => setTimeout(() => img.classList.add("overlay"), 0); // closure
+        // img.onclick = function() { console.log(this) }; // function changes lexical enviroment    
+    });
+   </script> 
+</body>
+</html>

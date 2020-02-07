@@ -80,6 +80,7 @@ function draw() {
     for (const f of prevFps) {
         average += f;
     }
+
     average /= prevFps.length;
     text(`FPS: ${Math.round(average)}\nGeneration: ${generationCounter}`, 5, 36);
     if (prevFps.length > 60) {
