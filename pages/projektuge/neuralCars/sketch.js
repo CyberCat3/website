@@ -5,8 +5,6 @@ let drawVisionLines = false; // Whether or not to draw vision lines.
 
 let rawCourseJSON, courseWalls, startingPosition;
 
-const keysPressed = new Set();
-
 let minSide;
 
 const cam = {zoom: 2, posX: 0, posY: 0, targetX: 0, targetY: 0}
@@ -23,13 +21,22 @@ let timesSinceLastImprovement = 0;
 sigmoid = n => Math.max(0,n);
 
 function preload() {
-    rawCourseJSON = loadJSON("course.json");
+    if (!window.location.href.match(/load_custom_course/)) {
+        rawCourseJSON = loadJSON("course.json");
+    }
     carImg = loadImage("car.png");
 }
 
 function setup() {
-    startingPosition = [rawCourseJSON.startX, rawCourseJSON.startY];
-    courseWalls = Object.values(rawCourseJSON.walls); // loadJSON returns indexed object, this turns it into an array.
+
+    if (window.location.href.match(/load_custom_course/)) {
+        const rawJson = JSON.parse(sessionStorage.getItem("neuralCarsCreator-customCourse"));
+        startingPosition = [rawJson.startX, rawJson.startY];
+        courseWalls = rawJson.walls;
+    } else {
+        startingPosition = [rawCourseJSON.startX, rawCourseJSON.startY];
+        courseWalls = Object.values(rawCourseJSON.walls); // loadJSON returns indexed object, this turns it into an array.
+    }
 
     createCanvas(windowWidth, windowHeight);
     minSide = Math.min(windowWidth, windowHeight);
@@ -100,7 +107,13 @@ function draw() {
     if (prevFps.length > 60) {
         prevFps.unshift();
     }
-    cars[0].brain.draw(5,windowHeight-255,300,250, false);
+
+    for (const car of cars) {
+        if (!car.dead) {
+            car.brain.draw(5,windowHeight-255,300,250, false);
+            break;
+        }
+    }
 }
 
 const normalPlaneToWindow = val => map(val, -1, 1, -minSide / 2, minSide / 2);
@@ -110,7 +123,6 @@ const distSq = (x1,y1, x2,y2) => Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2);
 let speedTimer;
 
 function keyPressed() {
-    keysPressed.add(key);
     if (key === "f") {
         if (speedTimer) {
             clearInterval(speedTimer);
@@ -118,11 +130,9 @@ function keyPressed() {
         } else {
             speedTimer = setInterval(redraw, 1);
         }
+    } else if (key === "e") {
+        window.location.href = window.location.href.substring(0, window.location.href.lastIndexOf("/")) + "/creator";
     }
-}
-
-function keyReleased() {
-    keysPressed.delete(key);
 }
 
 function windowResized() {

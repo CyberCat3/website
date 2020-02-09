@@ -84,9 +84,6 @@ class Car {
             this.vision[i] = this.vision[i];
         }
 
-        // for (let i = 0; i < this.vision.length; ++i) {
-        //     this.vision[i] = map(this.vision[i], 0.02, 0.5, -1, 1);
-        // }
         const brainOutput = this.brain.predict(this.vision);
         
         if (brainOutput[0] > 0.5) {
@@ -95,8 +92,6 @@ class Car {
         if (brainOutput[1] > 0.5) {
             this.rot += 0.04;
         }
-
-        // this.rot += (brainOutput[0] - 0.5) * 0.04;
 
         ++this.timesUpdated;
     }
@@ -125,46 +120,5 @@ class Car {
         image(carImg, 0, 0, nptw(0.07), nptw(0.05));
         
         pop();
-        
-
-        // strokeWeight(2);
-        // for (let i = 0; i < this.vision.length; ++i) {
-        //     const ox = Math.cos(this.rot + i * HALF_PI / 4 - QUARTER_PI);
-        //     const oy = Math.sin(this.rot + i * HALF_PI / 4 - QUARTER_PI);
-    
-        //     let nearestPointX, nearestPointY, bestDist = Infinity;
-        //     for (const wallLine of courseWalls) {
-        //         const result = collideLineLine(this.x, this.y, this.x + ox, this.y + oy,
-        //             wallLine.pa.x, wallLine.pa.y, wallLine.pb.x, wallLine.pb.y, true);
-        //         if (result.x) {
-        //             const dist = distSq(this.x, this.y, result.x, result.y);
-        //             if (dist < bestDist) {
-        //                 nearestPointX = result.x;
-        //                 nearestPointY = result.y;
-        //                 bestDist = dist;
-        //             }
-        //         }
-        //     }
-
-        //     fill(0,255,0);
-        //     noStroke();
-        //     ellipse(nptw(nearestPointX), nptw(nearestPointY), 5, 5);
-            
-        //     strokeWeight(2);
-        //     stroke(255);
-        //     line(nptw(this.x), nptw(this.y), nptw(nearestPointX), nptw(nearestPointY));
-        // }
-
-
-        // for (let i = 0; i < this.corners.length; ++i) {
-        //     stroke(255);
-        //     strokeWeight(1);
-        //     line(
-        //         nptw(this.corners[i].x + this.x),
-        //         nptw(this.corners[i].y + this.y),
-        //         nptw(this.corners[(i + 1) % this.corners.length].x + this.x),
-        //         nptw(this.corners[(i + 1) % this.corners.length].y + this.y))
-        // }
-        
     }
 }
