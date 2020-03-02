@@ -114,6 +114,7 @@ function draw() {
             break;
         }
     }
+
 }
 
 const normalPlaneToWindow = val => map(val, -1, 1, -minSide / 2, minSide / 2);
@@ -175,6 +176,28 @@ function resetAndEvolve() {
 
     // Increment generation counter
     ++generationCounter;
+
+    if (generationCounter > 20) {
+        noLoop();
+        fetch("good_car.json")
+            .then(data => data.json())
+            .then(json => {
+                const gCar = new Car(0.8, 0.8);
+                gCar.brain.network = json.brain.network;
+                const nn = gCar.brain.network;
+                nn[0].forEach(ip => ip.activation = InputPerceptron.prototype.activation);
+                for (let i = 1; i < nn.length; ++i) {
+                    nn[i].forEach(p => p.activation = Perceptron.prototype.activation);
+                    nn[i].forEach(p => {
+                        p.children = nn[i-1];
+                    });
+                }
+                gCar.reset(...startingPosition);
+                cars.push(gCar);
+                loop();
+                console.log("Spawned good car");
+        });
+    }
 }
 
 function normaliseArr(arr) {
