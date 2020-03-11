@@ -28,7 +28,7 @@ function jaibelGround() {
 	var c = document.getElementsByTagName('body');
 	for (let i = 0; i < c.length; ++i) {
 		if (backgroundIsJaibel)
-			c[i].style = "background-image: url('https://images.wallpaperscraft.com/image/black_background_texture_86812_300x168.jpg')"
+			c[i].style = "background-image: url('/image/background.jpg')"
 		else
 			c[i].style = "background-image: url('/image/Jaibel.gif')";
 	}
