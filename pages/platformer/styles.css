@@ -1,0 +1,28 @@
+body {
+    overflow: hidden;
+    font-family: monospace;
+}
+
+h1 {
+    font-size: 10vmin;
+}
+
+.loading_screen {
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 100%;
+    transition: all 1s;
+}
+
+.loading_header {
+    margin-bottom: 20vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
