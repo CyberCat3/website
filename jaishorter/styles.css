@@ -69,6 +69,7 @@ main h2 {
     background-color: rgba(253, 121, 168, 0.7);
     transition: all 0.3s ease;
     margin-top: 140px;
+    min-width: 114px;
     cursor: pointer;
 }
 
@@ -91,6 +92,7 @@ main h2 {
 
 input[type=submit] {
     width: 35%;
+    min-width: 180px;
     margin: 22px 0px 0px calc((100%  - 35%) / 2);
     height: 2rem;
     border: none;

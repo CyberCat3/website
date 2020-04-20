@@ -38,7 +38,7 @@ submitButton.addEventListener("click", async e => {
 
     linkShorter.style.opacity = "0%";
 
-    const response = await fetch("/", {
+    const response = await fetch("/s/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({shortUrl, longUrl})
