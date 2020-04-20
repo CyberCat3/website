@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+    <title>Jaibel's Link Forkorter!</title>
+</head>
+<body>
+    <header>
+        <h1>Jaibel's Link Forkorter!</h1>
+        <noscript>
+            <h1 class="noscript-text">Denne side fungerer laaaaangt bedre med Javascript.</h1>
+        </noscript>
+    </header>
+    
+    <main>
+        <div class="link-shorter">
+            <h2>Forkort et link</h2>
+            <form method="POST" action="/" class="shorten-form">
+                <div>
+                    <input type="text" name="long_url" id="long_url" placeholder="Dit lange link" required>
+                </div>
+                <div>
+                    <span class="short-link-text">jaibel.ddns.net/s/</span>
+                    <input type="text" name="short_url" id="short_url" placeholder="Dit korte link" required>
+                </div>
+                <input type="submit" value="GØR DET KORT!" id="url_submit_btn" disabled>
+            </form>
+        </div>
+
+        <div class="feedback">
+            <h2 class="error-or-success">Linket blev forkortet!</h2>
+            <p class="message">Prøv linket her</p>
+            <div class="align-right">
+                <button class="back-btn">Tilbage</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
