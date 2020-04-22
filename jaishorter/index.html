@@ -30,14 +30,15 @@
                 <input type="submit" value="GØR DET KORT!" id="url_submit_btn" disabled>
             </form>
         </div>
-
-        <div class="feedback">
-            <h2 class="error-or-success">Linket blev forkortet!</h2>
-            <p class="message">Prøv linket her</p>
-            <div class="align-right">
-                <button class="back-btn">Tilbage</button>
-            </div>
-        </div>
     </main>
+
+    <div class="feedback">
+        <div class="feedback-wrapper">
+            <a href="javascript:closeFeedback()" class="feedback-close-btn">x</a>
+            <p class="feedback-title">Linket kunne ikke forkortes.</p> <!-- FJERN TEKSTEN HER, DET SKAL IKKE MED I SØGEMASKINE -->
+            <p class="feedback-message">Her er dit link: <a href="http://google.com">test</a></p> <!-- FJERN TEKSTEN HER, DET SKAL IKKE MED I SØGEMASKINE -->
+            <div class="loader"></div>
+        </div>
+    </div>
 </body>
 </html>

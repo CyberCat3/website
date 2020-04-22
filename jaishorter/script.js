@@ -6,11 +6,50 @@ const submitButton = $("#url_submit_btn");
 const form = $(".shorten-form");
 const linkShorter = $(".link-shorter");
 
-const feedbackHeader = $(".error-or-success");
-const feedbackMessage = $(".message");
-const backBtn = $(".back-btn");
 const feedback = $(".feedback");
+const loader = $(".feedback .loader");
+const feedbackTitle = $(".feedback-title");
+const feedbackMessage = $(".feedback-message");
+const closeBtn = $(".feedback-close-btn");
 
+const sleep = (millis) => new Promise(r => setTimeout(r, millis));
+
+async function closeFeedback() {
+    feedback.style.opacity = "0%";
+    feedback.style.pointerEvents = "none";
+    await sleep(200);
+    feedback.style.display = "none";
+}
+
+function openFeedback() {
+    feedback.style.display = "block";
+    loader.style.display = "block";
+    loader.style.opacity = "100%";
+    [feedbackTitle, feedbackMessage, closeBtn].forEach(n => {
+        n.style.display = "none";
+        n.style.opacity = "0%";
+    });
+    feedback.style.pointerEvents = "all";
+    sleep(0).then(() => feedback.style.opacity = "100%");
+}
+
+async function populateFeedback(title, message) {
+    loader.style.opacity = "0%";
+    await sleep(400);
+    loader.style.display = "none";
+    feedbackTitle.innerHTML = title;
+    feedbackMessage.innerHTML = message;
+    Promise.all([feedbackMessage, feedbackTitle, closeBtn].map(async fb => {
+        fb.style.display = "block";
+        await sleep(50);
+        fb.style.opacity = "100%";
+    }));
+}
+
+async function fakeServerResponse() {
+    await sleep(5000);
+    return {type: "SUCCESS", shortUrl: "hejmeddig"};
+}
 
 const validateInputHandler = e => {
     const valid = longUrlText.value.length && shortUrlText.value.length;
@@ -29,22 +68,26 @@ submitButton.addEventListener("click", async e => {
     const shortUrl = shortUrlText.value;
     let longUrl = longUrlText.value;
 
-    console.log({shortUrl});
-    console.log({longUrl});
-
-    
-
     console.log(JSON.stringify({shortUrl, longUrl}));
 
-    linkShorter.style.opacity = "0%";
-    linkShorter.style.pointerEvents = "none";
+    openFeedback();
 
-    const response = await fetch("/s/", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({shortUrl, longUrl})
-    }).then(res => res.json());
+    let response;
 
+    try {
+        response = /*await fakeServerResponse();*/ fetch("/s/", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({shortUrl, longUrl})
+        }).then(res => res.json());
+    } catch (e) {
+        console.error(e);
+        closeFeedback();
+        return;
+    }
+
+    let title, message;
+    
     if (response.type === "SUCCESS") {
         let devmode = window.location.href.indexOf("jaibel.ddns.net") === -1;
         
@@ -53,54 +96,23 @@ submitButton.addEventListener("click", async e => {
         const httpPrefix = devmode ? "http://" : "https://";
 
         const shortLink = `${urlPrefix}/${response.shortUrl}`;
-        feedbackHeader.innerText = "Linket blev forkortet!";
-        feedbackMessage.innerHTML = `Her er det: <a href=${httpPrefix}${shortLink} target="_blank">${shortLink}</a>` 
+
+        title = "Linket blev forkortet!";
+        message = `Her er det: <a href=${httpPrefix}${shortLink} target="_blank">${shortLink}</a>`;
     } else if (response.type === "ERROR") {
-        feedbackHeader.innerText = "Linket kunne ikke forkortes";
+        title = "Linket kunne ikke forkortes"
 
         switch (response.code) {
-            case 1: feedbackMessage.innerText = "Det korte link er optaget, prøv et andet."; break;
-            case 2: feedbackMessage.innerText = "Linket du vil forkorte kan ikke nåes."; break;
-            case 3: feedbackMessage.innerText = "Du må ikke angive et blankt link."; break;
+            case 1: message = "Det korte link er optaget, prøv et andet."; break;
+            case 2: message = "Linket du vil forkorte kan ikke nåes."; break;
+            case 3: message = "Du må ikke angive et blankt link."; break;
         }
-
-
-        if (response.code === 1) {
-            feedbackMessage.innerText = "Det korte link er optaget, prøv et andet.";
-        } else if (response.code === 2) {
-            feedbackMessage.innerText = "Linket du vil forkorte kan ikke nåes.";
-        } else if (response.code === 3) {
-            feedbackMessage.innerText = "Du må ikke angive et blankt link.";
-        }
-
 
     } else {
         alert("Der skete en fejl, serveren sendte et ukendt svar :-(");
     }
 
-    switchToFeedback();
+    populateFeedback(title, message);
 
     console.log("response:", response);
 });
-
-function switchToFeedback() {
-    linkShorter.style.display = "none";
-    feedback.style.display = "block";
-    setTimeout(() => {
-        feedback.style.opacity = "100%";
-    }, 50);
-}
-
-function switchToShorter() {
-    linkShorter.style.pointerEvents = "unset";
-    feedback.style.display = "none";
-    linkShorter.style.display = "block";
-    setTimeout(() => {
-        linkShorter.style.opacity = "100%";
-    }, 50);
-}
-
-backBtn.onclick = () => {
-    feedback.style.opacity = "0%";
-    setTimeout(switchToShorter, 300);
-}
