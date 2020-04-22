@@ -117,6 +117,8 @@ input[type=submit]:active {
 
 input[type=submit]:disabled {
     box-shadow: none;
+    transform: none;
+    cursor: unset;
 }
 
 input[type=text] {

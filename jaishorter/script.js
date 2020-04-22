@@ -37,6 +37,7 @@ submitButton.addEventListener("click", async e => {
     console.log(JSON.stringify({shortUrl, longUrl}));
 
     linkShorter.style.opacity = "0%";
+    linkShorter.style.pointerEvents = "none";
 
     const response = await fetch("/s/", {
         method: "POST",
@@ -91,6 +92,7 @@ function switchToFeedback() {
 }
 
 function switchToShorter() {
+    linkShorter.style.pointerEvents = "unset";
     feedback.style.display = "none";
     linkShorter.style.display = "block";
     setTimeout(() => {
