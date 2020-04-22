@@ -75,7 +75,7 @@ submitButton.addEventListener("click", async e => {
     let response;
 
     try {
-        response = /*await fakeServerResponse();*/ fetch("/s/", {
+        response = await /*fakeServerResponse();*/ fetch("/s/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({shortUrl, longUrl})
@@ -110,6 +110,7 @@ submitButton.addEventListener("click", async e => {
 
     } else {
         alert("Der skete en fejl, serveren sendte et ukendt svar :-(");
+        closeFeedback();
     }
 
     populateFeedback(title, message);
