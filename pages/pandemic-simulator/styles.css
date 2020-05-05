@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(20, 20, 20);
+    color: white;
+    
+}
+
+h1 {
+    margin: 20px;
+    font-size: 3rem;
+}
+
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: min(100%, 1700px);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pandemic-btn {
+    padding: 0.7rem 1.4rem;
+    border-radius: 0.5rem;
+    background-color: rgba(255,255,0,0.05);
+    border: 2px solid yellow;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 0rem 1rem 2rem 1rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    width: 13rem;
+}
+
+.pandemic-btn:hover {
+    transform: scale(1.05, 1.05);
+}
+
+.pandemic-btn.selected {
+    background-color: yellow;
+    color: black;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandemi Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5" defer></script>
+    <script src="sim/lib.js" defer></script>
+    <script src="sim/particle.js" defer></script>
+    <script src="sim/agent.js" defer></script>
+    <script src="sim/virus.js" defer></script>
+    <script src="sim/sketch.js" defer></script>
+    <script src="script.js" defer></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1>Pandemi Simulator</h1>
+        <nav>
+            <button class="pandemic-btn" id="start-stop-simulation-btn" >Start</button>
+            <button class="pandemic-btn" id="reset-btn"                 >Nulstil</button>
+            <button class="pandemic-btn" id="speed-btn"                 >1x Hastighed</button>
+            <button class="pandemic-btn" id="draw-graph-btn"            >Graf</button>
+            <button class="pandemic-btn" id="social-distancing-btn"     >Social Afstand</button>
+            <button class="pandemic-btn" id="handwashing-btn"           >Bedre Hygienje</button>
+            <button class="pandemic-btn" id="mask-btn"                  >Masker</button>
+        </nav>
+        <div id="p5-sketch-holder"></div>
+    </div>
+</body>
+</html>
