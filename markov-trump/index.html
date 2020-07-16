@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markov Trump</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="markov-script.js" defer></script>
+</head>
+<body>
+    <div class="content">
+        <h1>Markov Trump</h1>
+        <h3>Tekst generation med en Markov-kæde, baseret på Trumps udtalelser.</h3>
+        <form class="form-grid">
+            <label for="words-to-generate">Antal ord</label>
+            <input type="number" name="words to generate" id="words-to-generate" value="100">
+            <input type="submit" value="Generér!" id="generate-btn">        
+            <textarea name="Trump Text" id="markov-text" cols="30" rows="10"readonly></textarea>
+        </form>
+    </div>
+</body>
+</html>
